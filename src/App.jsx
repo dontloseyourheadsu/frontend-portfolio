@@ -4,6 +4,8 @@ import './App.css';
 
 // Import portfolio examples
 import GameDevPortfolio from './pages/portfolio/GameDevPortfolio';
+import WebDeveloperPortfolio from './pages/portfolio/WebDeveloperPortfolio';
+import UXDesignerPortfolio from './pages/portfolio/UXDesignerPortfolio';
 
 const App = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -12,6 +14,8 @@ const App = () => {
   // Available examples
   const examples = [
     { path: '/portfolio/gamedev', name: 'Game Developer Portfolio', component: <GameDevPortfolio /> },
+    { path: '/portfolio/webdev', name: 'Web Developer Portfolio', component: <WebDeveloperPortfolio /> },
+    { path: '/portfolio/uxdesign', name: 'UX Designer Portfolio', component: <UXDesignerPortfolio /> },
     // Add more examples as they get implemented
     // { path: '/lead-capture', name: 'Lead Capture Page', component: <LeadCapturePage /> },
     // { path: '/click-through', name: 'Click-Through Page', component: <ClickThroughPage /> },

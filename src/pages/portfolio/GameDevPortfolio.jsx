@@ -19,7 +19,7 @@ const GameDevPortfolio = () => {
 
   // Smooth scroll for nav links
   useEffect(() => {
-    const anchors = document.querySelectorAll('a[href^="#"]');
+    const anchors = document.querySelectorAll('.game-portfolio-app a[href^="#"]');
     anchors.forEach((anchor) => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -35,7 +35,7 @@ const GameDevPortfolio = () => {
   useEffect(() => {
     const onScroll = () => {
       const scrolled = window.pageYOffset;
-      const elements = document.querySelectorAll('.section');
+      const elements = document.querySelectorAll('.game-portfolio-app .section');
       elements.forEach((el, i) => {
         const speed = 0.5 + i * 0.1;
         el.style.transform = `translateY(${scrolled * speed * 0.1}px)`;
@@ -47,7 +47,7 @@ const GameDevPortfolio = () => {
 
   // Form submit animation
   useEffect(() => {
-    const form = document.querySelector('.contact-form');
+    const form = document.querySelector('.game-portfolio-app .contact-form');
     if (!form) return;
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -68,7 +68,7 @@ const GameDevPortfolio = () => {
   }, []);
 
   return (
-    <div className="App">
+    <div className="game-portfolio-app">
       <div className="particles">
         {particles.map((p) => (
           <div
