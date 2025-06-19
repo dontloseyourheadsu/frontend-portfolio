@@ -24,10 +24,9 @@
   width: 90%; /* 90% of screen width */
   transform: translateX(-50%) translateY(100%); /* Center horizontally and hide by default */
   background: #000000; /* Solid black background */
-  border: 2px solid transparent; /* Changed from border-top to border all around */
+  border: 1px solid transparent; /* Changed from border-top to border all around */
   z-index: 999;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  padding: 10px 20px;
   background-clip: padding-box;
   border-radius: 10px; /* Add rounded corners */
 }
@@ -58,33 +57,86 @@
   z-index: -1;
 }
 
-/* Show nav bar on hover */
-.bottom-hover-area:hover ~ .nav-bottom-bar,
-.nav-bottom-bar:hover,
+/* Show nav bar when toggled */
 .nav-bottom-bar.show-nav {
   transform: translateX(-50%) translateY(0); /* Show while maintaining horizontal centering */
 }
 
-/* Create a hover area at the bottom of the page */
-.bottom-hover-area {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30px; /* Increased hover area height to accommodate floating nav */
-  z-index: 997;
+/* Navigation toggle button styles */
+.nav-toggle-button {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #000000;
+  border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 0;
 }
 
-/* Show nav bar when hovering over trigger area or the nav itself */
-/* Removed duplicate declaration */
+/* Gradient border for button */
+.nav-toggle-button::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  background: linear-gradient(90deg, #5200FF, #FF0000);
+  z-index: -1;
+  border-radius: 22px;
+}
 
-/* No longer using a handle bar */
+/* Button inner black background */
+.nav-toggle-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000000;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+/* Arrow styles - Fixed to show clear up/down arrows */
+.arrow {
+  display: inline-block;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  padding: 4px;
+  transition: transform 0.3s ease;
+}
+
+.arrow.up {
+  transform: rotate(-135deg);
+  margin-top: 4px; /* Adjust position for up arrow */
+}
+
+.arrow.down {
+  transform: rotate(45deg);
+  margin-bottom: 4px; /* Adjust position for down arrow */
+}
+
+/* Remove the previous arrow::before element */
+.arrow::before {
+  content: none;
+}
 
 .nav-inner {
   display: flex;
   align-items: center;
   width: 100%;
+  /* Add margin-top to create space between toggle button and content */
+  margin-top: 15px;
 }
 
 .nav-top {
@@ -105,6 +157,67 @@
   align-items: center;
   min-width: 55px; /* Fixed minimum width */
   margin-right: 5px;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .nav-bottom-bar {
+    min-width: 300px;
+    padding: 15px;
+  }
+  
+  .nav-inner, .nav-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .logo-container {
+    width: 100%;
+    justify-content: center;
+    margin-right: 0;
+  }
+  
+  .nav-categories {
+    max-width: 100%; /* Full width on mobile */
+    margin: 10px 0;
+  }
+  
+  .nav-categories ul {
+    justify-content: center; /* Center align on mobile */
+  }
+  
+  .nav-random {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+  }
+  
+  .nav-random button {
+    padding: 10px 30px;
+    font-weight: 600;
+  }
+}
+
+/* Random button - enhanced styling with clearer border */
+.nav-random button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background: #000000;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  /* Make the gradient border more visible */
+  border: 1px solid var(--purple);
+  background-clip: padding-box;
 }
 
 .logo-img {
@@ -182,68 +295,6 @@
 .nav-random {
   min-width: 80px; /* Fixed minimum width */
   margin-left: 5px;
-}
-
-/* Mobile responsive styles */
-@media (max-width: 768px) {
-  .nav-bottom-bar {
-    min-width: 300px;
-    padding: 15px;
-  }
-  
-  .nav-inner, .nav-top {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .nav-categories {
-    max-width: 100%; /* Full width on mobile */
-    margin: 10px 0;
-  }
-  
-  .nav-categories ul {
-    justify-content: flex-start; /* Left align on mobile */
-  }
-}
-
-/* Random button */
-.nav-random button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 16px;
-  background: #000000;
-  color: white;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.nav-random button::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  bottom: -1px;
-  left: -1px;
-  right: -1px;
-  border: 1px solid transparent;
-  background: var(--gradient); /* This is only for the border */
-  border-radius: 6px;
-  z-index: -1;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
-}
-
-.nav-random button:active {
-  transform: translateY(1px);
 }
 
 /* Content area (where examples are displayed) */

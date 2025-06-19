@@ -44,6 +44,11 @@ const App = () => {
     setIsNavOpen(false);
   };
 
+  // Toggle navigation visibility
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
   return (
     <Router>
       <div className="portfolio-app">
@@ -136,11 +141,11 @@ const App = () => {
           </Routes>
         </div>
         
-        {/* Hover area at bottom of page */}
-        <div className="bottom-hover-area"></div>
-        
         {/* Bottom Navigation Bar */}
         <div className={`nav-bottom-bar ${isNavOpen ? 'show-nav' : ''}`}>
+          <button className="nav-toggle-button" onClick={toggleNav}>
+            <span className={`arrow ${isNavOpen ? 'down' : 'up'}`}></span>
+          </button>
           <div className="nav-inner">
             <div className="nav-top">
               <div className="logo-container">
