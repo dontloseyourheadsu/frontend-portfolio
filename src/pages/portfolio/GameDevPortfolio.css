@@ -199,6 +199,7 @@ header {
     width: 0;
     margin-left: auto;
     margin-right: auto;
+    white-space: wrap;
 }
 
 @keyframes typewriter {
