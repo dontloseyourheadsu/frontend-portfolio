@@ -17,6 +17,11 @@ import ModernClickThrough from './pages/click-through/ModernClickThrough';
 import ProductClickThrough from './pages/click-through/ProductClickThrough';
 import VideoClickThrough from './pages/click-through/VideoClickThrough';
 
+// Import coming soon examples
+import CountdownComingSoon from './pages/coming-soon/CountdownComingSoon';
+import AnimatedComingSoon from './pages/coming-soon/AnimatedComingSoon';
+import MinimalComingSoon from './pages/coming-soon/MinimalComingSoon';
+
 const App = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [randomExample, setRandomExample] = useState(null);
@@ -34,6 +39,10 @@ const App = () => {
     { path: '/click-through/modern', name: 'Modern Click-Through Page', component: <ModernClickThrough /> },
     { path: '/click-through/product', name: 'Product Click-Through Page', component: <ProductClickThrough /> },
     { path: '/click-through/video', name: 'Video Click-Through Page', component: <VideoClickThrough /> },
+    // Coming soon examples
+    { path: '/coming-soon/countdown', name: 'Countdown Coming Soon Page', component: <CountdownComingSoon /> },
+    { path: '/coming-soon/animated', name: 'Animated Coming Soon Page', component: <AnimatedComingSoon /> },
+    { path: '/coming-soon/minimal', name: 'Minimal Coming Soon Page', component: <MinimalComingSoon /> },
     // Add more examples as they get implemented
   ];
 
@@ -133,7 +142,12 @@ const App = () => {
               <div className="placeholder-page">
                 <div>
                   <h2>Splash & Coming Soon Pages</h2>
-                  <p>Examples of attention-grabbing splash pages coming soon!</p>
+                  <p>Check out our coming soon page examples:</p>
+                  <div className="example-links">
+                    <Link to="/coming-soon/countdown" className="example-link">Countdown Timer</Link>
+                    <Link to="/coming-soon/animated" className="example-link">Animated Background</Link>
+                    <Link to="/coming-soon/minimal" className="example-link">Minimal Design</Link>
+                  </div>
                 </div>
               </div>
             } />

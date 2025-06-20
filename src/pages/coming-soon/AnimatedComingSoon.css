@@ -1,0 +1,377 @@
+/* Scope all styles to animated-coming-soon class */
+.animated-coming-soon * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.animated-coming-soon {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background */
+.animated-coming-soon .animated-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.animated-coming-soon .circle-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: rotate 40s linear infinite;
+  opacity: 0.5;
+}
+
+.animated-coming-soon .circle-container:nth-child(1) {
+  animation-duration: 35s;
+}
+
+.animated-coming-soon .circle-container:nth-child(2) {
+  animation-duration: 45s;
+  animation-direction: reverse;
+}
+
+.animated-coming-soon .circle-container:nth-child(3) {
+  animation-duration: 55s;
+}
+
+.animated-coming-soon .circle-container:nth-child(4) {
+  animation-duration: 65s;
+  animation-direction: reverse;
+}
+
+.animated-coming-soon .circle-container:nth-child(5) {
+  animation-duration: 75s;
+}
+
+.animated-coming-soon .circle-container:nth-child(6) {
+  animation-duration: 85s;
+  animation-direction: reverse;
+}
+
+.animated-coming-soon .circle-container:nth-child(7) {
+  animation-duration: 95s;
+}
+
+.animated-coming-soon .circle-container:nth-child(8) {
+  animation-duration: 105s;
+  animation-direction: reverse;
+}
+
+.animated-coming-soon .circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(103, 58, 183, 0.15), rgba(233, 30, 99, 0.15));
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.animated-coming-soon .circle-container:nth-child(1) .circle {
+  width: 200px;
+  height: 200px;
+  left: 75%;
+  top: 25%;
+}
+
+.animated-coming-soon .circle-container:nth-child(2) .circle {
+  width: 150px;
+  height: 150px;
+  left: 25%;
+  top: 75%;
+}
+
+.animated-coming-soon .circle-container:nth-child(3) .circle {
+  width: 300px;
+  height: 300px;
+  left: 85%;
+  top: 80%;
+}
+
+.animated-coming-soon .circle-container:nth-child(4) .circle {
+  width: 80px;
+  height: 80px;
+  left: 15%;
+  top: 15%;
+}
+
+.animated-coming-soon .circle-container:nth-child(5) .circle {
+  width: 250px;
+  height: 250px;
+  left: 50%;
+  top: 95%;
+}
+
+.animated-coming-soon .circle-container:nth-child(6) .circle {
+  width: 120px;
+  height: 120px;
+  left: 90%;
+  top: 10%;
+}
+
+.animated-coming-soon .circle-container:nth-child(7) .circle {
+  width: 180px;
+  height: 180px;
+  left: 5%;
+  top: 45%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Content */
+.animated-coming-soon .content-container {
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+  padding: 60px 30px;
+  border-radius: 20px;
+  background: rgba(30, 30, 46, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.animated-coming-soon .brand {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.animated-coming-soon .brand-logo {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.animated-coming-soon .brand-cube {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, #673ab7, #e91e63);
+  transform: rotate(45deg);
+  top: 10px;
+  left: 10px;
+  border-radius: 5px;
+}
+
+.animated-coming-soon .brand-circle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #673ab7;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.animated-coming-soon .brand-name {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #fff;
+}
+
+.animated-coming-soon .coming-soon h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #673ab7, #e91e63);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.animated-coming-soon .description {
+  font-size: 16px;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.animated-coming-soon .progress-container {
+  margin-bottom: 40px;
+}
+
+.animated-coming-soon .progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.animated-coming-soon .progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.animated-coming-soon .progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #673ab7, #e91e63);
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+.animated-coming-soon .subscribe {
+  margin-bottom: 40px;
+}
+
+.animated-coming-soon .subscribe h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.animated-coming-soon .subscribe form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.animated-coming-soon .subscribe input {
+  flex: 1;
+  min-width: 200px;
+  padding: 15px 20px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 4px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.animated-coming-soon .subscribe input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.animated-coming-soon .subscribe button {
+  background: linear-gradient(135deg, #673ab7, #e91e63);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 15px 25px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.animated-coming-soon .subscribe button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(103, 58, 183, 0.3);
+}
+
+.animated-coming-soon .success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.animated-coming-soon .checkmark {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #673ab7, #e91e63);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+.animated-coming-soon .social-links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.animated-coming-soon .social-link {
+  margin: 0 10px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.animated-coming-soon .social-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(135deg, #673ab7, #e91e63);
+  transition: width 0.3s ease;
+}
+
+.animated-coming-soon .social-link:hover {
+  color: #fff;
+}
+
+.animated-coming-soon .social-link:hover::after {
+  width: 100%;
+}
+
+.animated-coming-soon .footer {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .animated-coming-soon .content-container {
+    padding: 40px 20px;
+  }
+  
+  .animated-coming-soon .coming-soon h1 {
+    font-size: 28px;
+  }
+}
