@@ -12,6 +12,11 @@ import MinimalErrorPage from './pages/404/MinimalErrorPage';
 import GlitchErrorPage from './pages/404/GlitchErrorPage';
 import SpatialErrorPage from './pages/404/SpatialErrorPage';
 
+// Import click-through examples
+import ModernClickThrough from './pages/click-through/ModernClickThrough';
+import ProductClickThrough from './pages/click-through/ProductClickThrough';
+import VideoClickThrough from './pages/click-through/VideoClickThrough';
+
 const App = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [randomExample, setRandomExample] = useState(null);
@@ -25,10 +30,11 @@ const App = () => {
     { path: '/404/minimal', name: 'Minimal 404 Page', component: <MinimalErrorPage /> },
     { path: '/404/glitch', name: 'Glitch 404 Page', component: <GlitchErrorPage /> },
     { path: '/404/space', name: 'Spatial 404 Page', component: <SpatialErrorPage /> },
+    // Click-through examples
+    { path: '/click-through/modern', name: 'Modern Click-Through Page', component: <ModernClickThrough /> },
+    { path: '/click-through/product', name: 'Product Click-Through Page', component: <ProductClickThrough /> },
+    { path: '/click-through/video', name: 'Video Click-Through Page', component: <VideoClickThrough /> },
     // Add more examples as they get implemented
-    // { path: '/lead-capture', name: 'Lead Capture Page', component: <LeadCapturePage /> },
-    // { path: '/click-through', name: 'Click-Through Page', component: <ClickThroughPage /> },
-    // ...
   ];
 
   // Define categories
@@ -90,7 +96,12 @@ const App = () => {
               <div className="placeholder-page">
                 <div>
                   <h2>Click-Through Pages</h2>
-                  <p>Examples of effective click-through pages coming soon!</p>
+                  <p>Check out our click-through page examples:</p>
+                  <div className="example-links">
+                    <Link to="/click-through/modern" className="example-link">Modern Workflow</Link>
+                    <Link to="/click-through/product" className="example-link">Product Tour</Link>
+                    <Link to="/click-through/video" className="example-link">Video Registration</Link>
+                  </div>
                 </div>
               </div>
             } />
@@ -130,7 +141,6 @@ const App = () => {
               <div className="placeholder-page">
                 <div>
                   <h2>404 & Utility Pages</h2>
-                  {/* Fixed: Removed <div> inside <p> by separating them */}
                   <p>Check out our 404 page examples:</p>
                   <div className="example-links">
                     <Link to="/404/minimal" className="example-link">Minimal Design</Link>

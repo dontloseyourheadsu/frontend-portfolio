@@ -1,0 +1,526 @@
+.video-click-through {
+  --primary: #FF4B91;
+  --primary-dark: #DF3B7F;
+  --primary-light: #FF71A7;
+  --secondary: #4CACBC;
+  --dark: #2A2A2A;
+  --light: #FFFFFF;
+  --gray: #F5F5F5;
+  --gray-medium: #E0E0E0;
+  --gray-dark: #9E9E9E;
+  --success: #4CAF50;
+  
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: var(--dark);
+}
+
+.video-click-through * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.video-click-through .background-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 400px;
+  background: linear-gradient(135deg, #FF4B91, #4CACBC);
+  z-index: 0;
+}
+
+.video-click-through .content-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Video Side Styles */
+.video-click-through .video-side {
+  flex: 1;
+  min-width: 300px;
+}
+
+.video-click-through .video-wrapper {
+  background: var(--light);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.video-click-through .video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  overflow: hidden;
+}
+
+.video-click-through video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-click-through .play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.video-click-through .play-overlay:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.video-click-through .play-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.video-click-through .play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 75, 145, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.video-click-through .play-button:hover {
+  transform: scale(1.1);
+  background: var(--primary);
+}
+
+.video-click-through .play-button svg {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  color: white;
+}
+
+.video-click-through .video-info {
+  padding: 20px;
+}
+
+.video-click-through .video-info h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+
+.video-click-through .video-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: var(--gray-dark);
+  font-size: 0.9rem;
+}
+
+.video-click-through .presenter {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.video-click-through .presenter-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.video-click-through .presenter-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.video-click-through .presenter-title {
+  font-size: 0.85rem;
+  color: var(--gray-dark);
+}
+
+/* Form Side Styles */
+.video-click-through .form-side {
+  flex: 1;
+  min-width: 300px;
+}
+
+.video-click-through .progress-indicator {
+  margin-bottom: 30px;
+}
+
+.video-click-through .progress-line {
+  height: 4px;
+  background-color: var(--gray-medium);
+  border-radius: 2px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.video-click-through .progress-filled {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.video-click-through .step-numbers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.video-click-through .step-number {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--light);
+  border: 2px solid var(--gray-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-dark);
+  position: relative;
+}
+
+.video-click-through .step-number.active {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.video-click-through .step-number.completed {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.video-click-through .form-content {
+  background-color: var(--light);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.video-click-through .step-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--dark);
+}
+
+.video-click-through .step-description {
+  font-size: 1rem;
+  color: var(--gray-dark);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.video-click-through .form-group {
+  margin-bottom: 25px;
+}
+
+.video-click-through .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.video-click-through .form-group input,
+.video-click-through .form-group select,
+.video-click-through .form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--gray-medium);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.video-click-through .form-group input:focus,
+.video-click-through .form-group select:focus,
+.video-click-through .form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 75, 145, 0.1);
+}
+
+.video-click-through .radio-group,
+.video-click-through .checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.video-click-through .radio-option,
+.video-click-through .checkbox-option {
+  display: flex;
+  align-items: center;
+}
+
+.video-click-through .radio-option input,
+.video-click-through .checkbox-option input {
+  width: auto;
+  margin-right: 10px;
+}
+
+.video-click-through .radio-option label,
+.video-click-through .checkbox-option label {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.video-click-through .form-button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.video-click-through .form-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 75, 145, 0.3);
+}
+
+.video-click-through .button-group {
+  display: flex;
+  gap: 15px;
+}
+
+.video-click-through .back-button {
+  background-color: transparent;
+  color: var(--gray-dark);
+  border: 1px solid var(--gray-medium);
+  border-radius: 30px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.video-click-through .back-button:hover {
+  background-color: var(--gray);
+}
+
+/* Testimonials */
+.video-click-through .testimonials {
+  background-color: var(--gray);
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.video-click-through .testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.video-click-through .testimonial-text {
+  font-style: italic;
+  color: var(--dark);
+  line-height: 1.6;
+  position: relative;
+}
+
+.video-click-through .testimonial-text::before {
+  content: '"';
+  font-size: 50px;
+  color: var(--primary-light);
+  position: absolute;
+  top: -15px;
+  left: -10px;
+  opacity: 0.3;
+}
+
+.video-click-through .testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.video-click-through .author-info {
+  flex: 1;
+}
+
+.video-click-through .author-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.video-click-through .author-position {
+  font-size: 0.85rem;
+  color: var(--gray-dark);
+}
+
+/* Final Step Styles */
+.video-click-through .final-step {
+  text-align: center;
+}
+
+.video-click-through .success-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--success);
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.video-click-through .workshop-details {
+  margin: 30px 0;
+  text-align: left;
+}
+
+.video-click-through .workshop-details h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.video-click-through .workshop-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.video-click-through .workshop-items li {
+  display: flex;
+  align-items: center;
+}
+
+.video-click-through .item-icon {
+  font-size: 1.5rem;
+  margin-right: 15px;
+  min-width: 30px;
+  text-align: center;
+}
+
+.video-click-through .cta-button {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+}
+
+.video-click-through .cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(76, 172, 188, 0.3);
+}
+
+.video-click-through .social-share {
+  margin-top: 30px;
+}
+
+.video-click-through .social-share p {
+  font-size: 0.9rem;
+  color: var(--gray-dark);
+  margin-bottom: 10px;
+}
+
+.video-click-through .social-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.video-click-through .social-icon {
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.video-click-through .social-icon.twitter {
+  background-color: #1DA1F2;
+}
+
+.video-click-through .social-icon.linkedin {
+  background-color: #0077B5;
+}
+
+.video-click-through .social-icon.facebook {
+  background-color: #4267B2;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .video-click-through .content-container {
+    padding: 30px 15px;
+  }
+  
+  .video-click-through .video-side,
+  .video-click-through .form-side {
+    flex: 100%;
+  }
+  
+  .video-click-through .video-wrapper {
+    margin-bottom: 30px;
+  }
+  
+  .video-click-through .play-button {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .video-click-through .form-content,
+  .video-click-through .testimonials {
+    padding: 20px;
+  }
+  
+  .video-click-through .step-content h2 {
+    font-size: 1.5rem;
+  }
+}
