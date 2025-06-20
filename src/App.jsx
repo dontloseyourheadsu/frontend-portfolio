@@ -7,6 +7,11 @@ import GameDevPortfolio from './pages/portfolio/GameDevPortfolio';
 import WebDeveloperPortfolio from './pages/portfolio/WebDeveloperPortfolio';
 import UXDesignerPortfolio from './pages/portfolio/UXDesignerPortfolio';
 
+// Import 404 page examples
+import MinimalErrorPage from './pages/404/MinimalErrorPage';
+import GlitchErrorPage from './pages/404/GlitchErrorPage';
+import SpatialErrorPage from './pages/404/SpatialErrorPage';
+
 const App = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [randomExample, setRandomExample] = useState(null);
@@ -16,6 +21,10 @@ const App = () => {
     { path: '/portfolio/gamedev', name: 'Game Developer Portfolio', component: <GameDevPortfolio /> },
     { path: '/portfolio/webdev', name: 'Web Developer Portfolio', component: <WebDeveloperPortfolio /> },
     { path: '/portfolio/uxdesign', name: 'UX Designer Portfolio', component: <UXDesignerPortfolio /> },
+    // 404 page examples
+    { path: '/404/minimal', name: 'Minimal 404 Page', component: <MinimalErrorPage /> },
+    { path: '/404/glitch', name: 'Glitch 404 Page', component: <GlitchErrorPage /> },
+    { path: '/404/space', name: 'Spatial 404 Page', component: <SpatialErrorPage /> },
     // Add more examples as they get implemented
     // { path: '/lead-capture', name: 'Lead Capture Page', component: <LeadCapturePage /> },
     // { path: '/click-through', name: 'Click-Through Page', component: <ClickThroughPage /> },
@@ -121,7 +130,13 @@ const App = () => {
               <div className="placeholder-page">
                 <div>
                   <h2>404 & Utility Pages</h2>
-                  <p>Examples of effective utility pages coming soon!</p>
+                  {/* Fixed: Removed <div> inside <p> by separating them */}
+                  <p>Check out our 404 page examples:</p>
+                  <div className="example-links">
+                    <Link to="/404/minimal" className="example-link">Minimal Design</Link>
+                    <Link to="/404/glitch" className="example-link">Glitch Effect</Link>
+                    <Link to="/404/space" className="example-link">Space Theme</Link>
+                  </div>
                 </div>
               </div>
             } />

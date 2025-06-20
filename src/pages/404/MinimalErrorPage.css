@@ -1,0 +1,122 @@
+.minimal-404 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.minimal-404 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.minimal-404 .content {
+  max-width: 500px;
+  padding: 40px 20px;
+}
+
+.minimal-404 h1 {
+  font-size: 120px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  line-height: 1;
+}
+
+.minimal-404 .message {
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.minimal-404 .detail {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+.minimal-404 .go-back-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: #333;
+  color: white;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.minimal-404 .go-back-btn:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+.minimal-404 .error-face {
+  width: 120px;
+  height: 120px;
+  background-color: #ffde59;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.minimal-404 .eye-socket {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.minimal-404 .eye-socket:first-child {
+  left: 30px;
+}
+
+.minimal-404 .eye-socket:last-child {
+  right: 30px;
+}
+
+.minimal-404 .eye-1, 
+.minimal-404 .eye-2 {
+  width: 12px;
+  height: 12px;
+  background-color: #333;
+  border-radius: 50%;
+  transition: transform 0.1s ease;
+}
+
+.minimal-404 .sad-mouth {
+  width: 40px;
+  height: 20px;
+  border-bottom: 5px solid #333;
+  border-radius: 0 0 40px 40px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 480px) {
+  .minimal-404 h1 {
+    font-size: 100px;
+  }
+  
+  .minimal-404 .message {
+    font-size: 24px;
+  }
+}

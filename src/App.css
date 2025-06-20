@@ -332,3 +332,27 @@
   font-weight: 700;
   color: #ffffff; /* Regular white text, no gradient */
 }
+
+/* Example links for category pages */
+.example-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.example-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background: linear-gradient(90deg, #5200FF, #FF0000);
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.example-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(82, 0, 255, 0.4);
+}
