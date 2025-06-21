@@ -22,6 +22,11 @@ import CountdownComingSoon from './pages/coming-soon/CountdownComingSoon';
 import AnimatedComingSoon from './pages/coming-soon/AnimatedComingSoon';
 import MinimalComingSoon from './pages/coming-soon/MinimalComingSoon';
 
+// Import course examples
+import OnlineCourse from './pages/course/OnlineCourse';
+import MembershipSite from './pages/course/MembershipSite';
+import CodeBootcamp from './pages/course/CodeBootcamp';
+
 const App = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [randomExample, setRandomExample] = useState(null);
@@ -43,6 +48,14 @@ const App = () => {
     { path: '/coming-soon/countdown', name: 'Countdown Coming Soon Page', component: <CountdownComingSoon /> },
     { path: '/coming-soon/animated', name: 'Animated Coming Soon Page', component: <AnimatedComingSoon /> },
     { path: '/coming-soon/minimal', name: 'Minimal Coming Soon Page', component: <MinimalComingSoon /> },
+    // Course examples
+    { path: '/course/online', name: 'Online Course Landing Page', component: <OnlineCourse /> },
+    { path: '/course/membership', name: 'Membership Site', component: <MembershipSite /> },
+    { path: '/course/bootcamp', name: 'Code Bootcamp', component: <CodeBootcamp /> },
+    // Course examples
+    { path: '/course/online', name: 'Online Course', component: <OnlineCourse /> },
+    { path: '/course/membership', name: 'Membership Site', component: <MembershipSite /> },
+    { path: '/course/bootcamp', name: 'Code Bootcamp', component: <CodeBootcamp /> },
     // Add more examples as they get implemented
   ];
 
@@ -134,7 +147,12 @@ const App = () => {
               <div className="placeholder-page">
                 <div>
                   <h2>Course & Membership Pages</h2>
-                  <p>Examples of effective course and membership pages coming soon!</p>
+                  <p>Check out our course and membership page examples:</p>
+                  <div className="example-links">
+                    <Link to="/course/online" className="example-link">Online Course</Link>
+                    <Link to="/course/membership" className="example-link">Membership Site</Link>
+                    <Link to="/course/bootcamp" className="example-link">Code Bootcamp</Link>
+                  </div>
                 </div>
               </div>
             } />
