@@ -27,6 +27,11 @@ import OnlineCourse from './pages/course/OnlineCourse';
 import MembershipSite from './pages/course/MembershipSite';
 import CodeBootcamp from './pages/course/CodeBootcamp';
 
+// Import e-book examples
+import ModernEbook from './pages/e-book/ModernEbook';
+import MinimalEbook from './pages/e-book/MinimalEbook';
+import PromoEbook from './pages/e-book/PromoEbook';
+
 const App = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [randomExample, setRandomExample] = useState(null);
@@ -52,10 +57,10 @@ const App = () => {
     { path: '/course/online', name: 'Online Course Landing Page', component: <OnlineCourse /> },
     { path: '/course/membership', name: 'Membership Site', component: <MembershipSite /> },
     { path: '/course/bootcamp', name: 'Code Bootcamp', component: <CodeBootcamp /> },
-    // Course examples
-    { path: '/course/online', name: 'Online Course', component: <OnlineCourse /> },
-    { path: '/course/membership', name: 'Membership Site', component: <MembershipSite /> },
-    { path: '/course/bootcamp', name: 'Code Bootcamp', component: <CodeBootcamp /> },
+    // E-book examples
+    { path: '/e-book/modern', name: 'Modern Ebook Landing Page', component: <ModernEbook /> },
+    { path: '/e-book/minimal', name: 'Minimal Ebook Landing Page', component: <MinimalEbook /> },
+    { path: '/e-book/promo', name: 'Promotional Ebook Landing Page', component: <PromoEbook /> },
     // Add more examples as they get implemented
   ];
 
@@ -64,6 +69,7 @@ const App = () => {
     { path: '/lead-capture', name: 'Lead Capture' },
     { path: '/click-through', name: 'Click-Through' },
     { path: '/product-sales-page', name: 'Product / Sales' },
+    { path: '/e-book', name: 'E-Book' },
     { path: '/webinar', name: 'Webinar Registration' },
     { path: '/course', name: 'Course / Membership' },
     { path: '/splash', name: 'Splash / Coming Soon' },
@@ -132,6 +138,19 @@ const App = () => {
                 <div>
                   <h2>Product Sales Pages</h2>
                   <p>Examples of persuasive product sales pages coming soon!</p>
+                </div>
+              </div>
+            } />
+            <Route path="/e-book" element={
+              <div className="placeholder-page">
+                <div>
+                  <h2>E-Book Landing Pages</h2>
+                  <p>Check out our e-book landing page examples:</p>
+                  <div className="example-links">
+                    <Link to="/e-book/modern" className="example-link">Modern Design</Link>
+                    <Link to="/e-book/minimal" className="example-link">Minimal Design</Link>
+                    <Link to="/e-book/promo" className="example-link">Promotional Design</Link>
+                  </div>
                 </div>
               </div>
             } />
@@ -222,6 +241,7 @@ const App = () => {
                   <li><Link to="/lead-capture" onClick={() => setIsNavOpen(false)}>Lead Capture</Link></li>
                   <li><Link to="/click-through" onClick={() => setIsNavOpen(false)}>Click-Through</Link></li>
                   <li><Link to="/product-sales-page" onClick={() => setIsNavOpen(false)}>Product / Sales</Link></li>
+                  <li><Link to="/e-book" onClick={() => setIsNavOpen(false)}>E-Book</Link></li>
                   <li><Link to="/webinar" onClick={() => setIsNavOpen(false)}>Webinar Registration</Link></li>
                   <li><Link to="/course" onClick={() => setIsNavOpen(false)}>Course / Membership</Link></li>
                   <li><Link to="/splash" onClick={() => setIsNavOpen(false)}>Splash / Coming Soon</Link></li>
