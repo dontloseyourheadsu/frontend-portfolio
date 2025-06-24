@@ -4,7 +4,7 @@ import './ModernEbook.css';
 const ModernEbook = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubscribed(true);
@@ -77,7 +77,7 @@ const ModernEbook = () => {
           </nav>
         </div>
       </header>
-      
+
       <section className="hero">
         <div className="container hero-content">
           <div className="hero-text">
@@ -87,7 +87,7 @@ const ModernEbook = () => {
               A practical guide to scaling your business in today's competitive landscape.
               Learn proven strategies from industry experts that you can implement immediately.
             </p>
-            
+
             <div className="book-stats">
               <div className="stat">
                 <span className="stat-number">200+</span>
@@ -102,7 +102,7 @@ const ModernEbook = () => {
                 <span className="stat-label">Case Studies</span>
               </div>
             </div>
-            
+
             <div className="pricing">
               <div className="price">
                 <span className="old-price">$29.99</span>
@@ -111,7 +111,7 @@ const ModernEbook = () => {
               <button className="cta-button">Get Your Copy Now</button>
             </div>
           </div>
-          
+
           <div className="hero-image">
             <div className="book-cover">
               <div className="book-spine"></div>
@@ -125,7 +125,7 @@ const ModernEbook = () => {
           </div>
         </div>
       </section>
-      
+
       <section id="features" className="features">
         <div className="container">
           <h2 className="section-title">What You'll Learn</h2>
@@ -140,7 +140,7 @@ const ModernEbook = () => {
           </div>
         </div>
       </section>
-      
+
       <section id="preview" className="preview">
         <div className="container">
           <h2 className="section-title">Book Preview</h2>
@@ -148,15 +148,15 @@ const ModernEbook = () => {
             <div className="chapter-title">Chapter 1: The Growth Mindset</div>
             <div className="preview-content">
               <p>
-                In today's rapidly evolving digital landscape, businesses must adapt quickly or risk becoming obsolete. 
+                In today's rapidly evolving digital landscape, businesses must adapt quickly or risk becoming obsolete.
                 The first step in this journey is developing what I call the "Continuous Growth Mindset."
               </p>
               <p>
-                Unlike traditional approaches that focus on stable, predictable growth patterns, 
+                Unlike traditional approaches that focus on stable, predictable growth patterns,
                 the Continuous Growth Mindset embraces uncertainty and views challenges as opportunities.
               </p>
               <p>
-                In this chapter, we'll explore how successful companies have leveraged this mindset 
+                In this chapter, we'll explore how successful companies have leveraged this mindset
                 to disrupt industries and create new markets where none existed before.
               </p>
               <p className="preview-fade">
@@ -166,7 +166,7 @@ const ModernEbook = () => {
           </div>
         </div>
       </section>
-      
+
       <section id="testimonials" className="testimonials">
         <div className="container">
           <h2 className="section-title">Reader Testimonials</h2>
@@ -191,17 +191,17 @@ const ModernEbook = () => {
           </div>
         </div>
       </section>
-      
+
       <section className="cta-section">
         <div className="container">
           <h2>Ready to Transform Your Business?</h2>
           <p>Get immediate access to all strategies, case studies, and resources.</p>
-          
+
           <div className="subscription-form">
             {!subscribed ? (
               <form onSubmit={handleSubmit}>
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
@@ -215,17 +215,17 @@ const ModernEbook = () => {
               </div>
             )}
           </div>
-          
+
           <div className="guarantee">
             <div className="guarantee-badge">100% Satisfaction Guaranteed</div>
             <p>
-              If you're not completely satisfied with the e-book within 30 days, 
+              If you're not completely satisfied with the e-book within 30 days,
               we'll refund your purchase. No questions asked.
             </p>
           </div>
         </div>
       </section>
-      
+
       <footer>
         <div className="container">
           <div className="copyright">

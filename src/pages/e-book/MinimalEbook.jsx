@@ -4,18 +4,18 @@ import './MinimalEbook.css';
 const MinimalEbook = () => {
   const [email, setEmail] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormSubmitted(true);
-    
+
     // Reset form after 3 seconds
     setTimeout(() => {
       setEmail('');
       setFormSubmitted(false);
     }, 3000);
   };
-  
+
   // Table of contents
   const tableOfContents = [
     'Introduction: Why Minimalism Matters',
@@ -29,7 +29,7 @@ const MinimalEbook = () => {
     'Chapter 8: Digital Minimalism for Designers',
     'Conclusion: Implementing Your Minimalist Vision'
   ];
-  
+
   return (
     <div className="minimal-ebook">
       <div className="container">
@@ -40,7 +40,7 @@ const MinimalEbook = () => {
             <button className="buy-button">Buy Now</button>
           </div>
         </header>
-        
+
         <main>
           <section className="book-intro">
             <div className="book-category">INTERIOR DESIGN</div>
@@ -49,7 +49,7 @@ const MinimalEbook = () => {
               Discover the principles of minimalism that create powerful, functional, and beautiful spaces.
               A comprehensive guide for designers and enthusiasts alike.
             </p>
-            
+
             <div className="book-meta">
               <div className="author">
                 <div className="author-name">
@@ -57,7 +57,7 @@ const MinimalEbook = () => {
                   <span>NATALIE REID</span>
                 </div>
               </div>
-              
+
               <div className="book-details">
                 <div className="detail">
                   <div className="detail-value">248</div>
@@ -74,7 +74,7 @@ const MinimalEbook = () => {
               </div>
             </div>
           </section>
-          
+
           <section className="book-showcase">
             <div className="book-cover-container">
               <div className="book-cover">
@@ -85,7 +85,7 @@ const MinimalEbook = () => {
                 <div className="book-author">NATALIE REID</div>
               </div>
             </div>
-            
+
             <div className="book-format">
               <div className="format-title">Available formats</div>
               <div className="format-options">
@@ -104,15 +104,15 @@ const MinimalEbook = () => {
               </div>
             </div>
           </section>
-          
+
           <section className="quote-section">
             <div className="quote">
-              "Perfection is achieved not when there is nothing more to add, 
+              "Perfection is achieved not when there is nothing more to add,
               but when there is nothing left to take away."
             </div>
             <div className="quote-author">— Antoine de Saint-Exupéry</div>
           </section>
-          
+
           <section className="contents-section">
             <h2>Table of Contents</h2>
             <div className="table-of-contents">
@@ -124,34 +124,34 @@ const MinimalEbook = () => {
               ))}
             </div>
           </section>
-          
+
           <section className="preview-section">
             <h2>Book Preview</h2>
             <div className="book-preview">
               <h3>Introduction: Why Minimalism Matters</h3>
               <p>
                 In a world of overwhelming visual stimuli, minimalism offers clarity and purpose.
-                It's not merely an aesthetic choice; it's a philosophy that guides how we 
+                It's not merely an aesthetic choice; it's a philosophy that guides how we
                 interact with our surroundings and how our environments impact our well-being.
               </p>
               <p>
-                The principles of minimalist design extend beyond the removal of excess. 
-                They involve careful attention to each element, ensuring that what remains 
+                The principles of minimalist design extend beyond the removal of excess.
+                They involve careful attention to each element, ensuring that what remains
                 serves a specific purpose—whether functional, emotional, or both.
               </p>
               <p>
-                This book explores minimalism not as a trend, but as an enduring approach to 
-                design that prioritizes intention over abundance, quality over quantity, 
+                This book explores minimalism not as a trend, but as an enduring approach to
+                design that prioritizes intention over abundance, quality over quantity,
                 and substance over style.
               </p>
             </div>
           </section>
-          
+
           <section className="cta-section">
             <div className="cta-container">
               <h2>Get Your Copy Today</h2>
               <p>
-                Receive the e-book directly in your inbox moments after purchase. 
+                Receive the e-book directly in your inbox moments after purchase.
                 Begin your journey to creating more meaningful spaces.
               </p>
               <div className="purchase-options">
@@ -165,7 +165,7 @@ const MinimalEbook = () => {
                   </ul>
                   <button className="buy-button">Purchase Now</button>
                 </div>
-                
+
                 <div className="premium-price">
                   <div className="price-category">Premium Edition</div>
                   <div className="price-amount">$38</div>
@@ -180,18 +180,18 @@ const MinimalEbook = () => {
               </div>
             </div>
           </section>
-          
+
           <section className="newsletter-section">
             <h2>Stay Updated</h2>
             <p>
-              Join our mailing list to receive exclusive design insights, free resources, 
+              Join our mailing list to receive exclusive design insights, free resources,
               and updates on future publications.
             </p>
             {!formSubmitted ? (
               <form onSubmit={handleSubmit} className="subscribe-form">
-                <input 
-                  type="email" 
-                  placeholder="Your email address" 
+                <input
+                  type="email"
+                  placeholder="Your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -205,7 +205,7 @@ const MinimalEbook = () => {
             )}
           </section>
         </main>
-        
+
         <footer>
           <div className="footer-content">
             <div className="copyright">© {new Date().getFullYear()} Essentialist Publishing</div>
