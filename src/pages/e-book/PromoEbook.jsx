@@ -10,7 +10,7 @@ const PromoEbook = () => {
     minutes: 30,
     seconds: 0
   });
-  
+
   // Countdown timer effect
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -42,21 +42,21 @@ const PromoEbook = () => {
         });
       }
     }, 1000);
-    
+
     return () => clearTimeout(timer);
   }, [timeLeft]);
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormSubmitted(true);
-    
+
     // Reset after 3 seconds
     setTimeout(() => {
       setEmail('');
       setFormSubmitted(false);
     }, 3000);
   };
-  
+
   // Book benefits
   const benefits = [
     {
@@ -80,7 +80,7 @@ const PromoEbook = () => {
       description: 'Step-by-step plan for launching your product with maximum impact and sales.'
     }
   ];
-  
+
   // FAQs
   const faqs = [
     {
@@ -115,7 +115,7 @@ const PromoEbook = () => {
           </div>
         </div>
       </header>
-      
+
       <section className="hero-section">
         <div className="container">
           <div className="hero-content">
@@ -124,27 +124,27 @@ const PromoEbook = () => {
                 <div className="subtitle">THE ULTIMATE GUIDE TO</div>
                 <h1>Building a Profitable Online Business</h1>
               </div>
-              
+
               <div className="book-description">
                 <p>
-                  Discover the proven system used by successful entrepreneurs to create, 
-                  launch, and scale their online businesses from scratch — without technical skills, 
+                  Discover the proven system used by successful entrepreneurs to create,
+                  launch, and scale their online businesses from scratch — without technical skills,
                   a big budget, or a large audience.
                 </p>
-                
+
                 <div className="offer-statement">
                   <div className="value-offer">
                     <div className="value-amount">$247</div>
                     <div className="value-label">TOTAL VALUE</div>
                   </div>
-                  
+
                   <div className="price-offer">
                     <div className="now-only">NOW ONLY</div>
                     <div className="promo-price">$37</div>
                     <div className="discount-badge">85% OFF</div>
                   </div>
                 </div>
-                
+
                 <div className="timer-container">
                   <div className="timer-label">OFFER EXPIRES IN:</div>
                   <div className="countdown-timer">
@@ -169,14 +169,14 @@ const PromoEbook = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <a href="#get-access" className="cta-button">
                   <span className="cta-text">GET INSTANT ACCESS</span>
                   <span className="cta-arrow">→</span>
                 </a>
               </div>
             </div>
-            
+
             <div className="hero-image">
               <div className="book-cover">
                 <div className="book-title">
@@ -190,7 +190,7 @@ const PromoEbook = () => {
                 </div>
                 <div className="edition-label">2nd EDITION</div>
               </div>
-              
+
               <div className="includes-badge">
                 <div className="badge-label">INCLUDES</div>
                 <div className="badge-items">
@@ -203,13 +203,13 @@ const PromoEbook = () => {
           </div>
         </div>
       </section>
-      
+
       <section className="social-proof">
         <div className="container">
           <div className="readers-counter">
             <span className="counter">10,000+</span> entrepreneurs have used this guide to build their businesses
           </div>
-          
+
           <div className="testimonial-preview">
             <div className="stars">★★★★★</div>
             <div className="quote">"I made over $5,800 in my first month after implementing just one strategy from the book."</div>
@@ -217,7 +217,7 @@ const PromoEbook = () => {
           </div>
         </div>
       </section>
-      
+
       <section className="benefits-section">
         <div className="container">
           <h2>What You'll Learn</h2>
@@ -232,45 +232,45 @@ const PromoEbook = () => {
           </div>
         </div>
       </section>
-      
+
       <section className="bonus-section">
         <div className="container">
           <h2>Special Bonuses <span className="value-tag">($210 Value)</span></h2>
-          
+
           <div className="bonuses">
             <div className="bonus-card">
               <div className="bonus-number">BONUS #1</div>
               <h3>The Viral Content Formula</h3>
               <div className="bonus-value">$67 Value</div>
               <p>
-                Learn exactly how to create content that gets shared and drives traffic to your offers. 
+                Learn exactly how to create content that gets shared and drives traffic to your offers.
                 Includes 15 content templates you can use immediately.
               </p>
             </div>
-            
+
             <div className="bonus-card">
               <div className="bonus-number">BONUS #2</div>
               <h3>Sales Page Blueprint</h3>
               <div className="bonus-value">$97 Value</div>
               <p>
-                Copy-and-paste sales page template that converts visitors into customers. 
+                Copy-and-paste sales page template that converts visitors into customers.
                 Just fill in the blanks with your offer details.
               </p>
             </div>
-            
+
             <div className="bonus-card">
               <div className="bonus-number">BONUS #3</div>
               <h3>30-Day Email Sequence</h3>
               <div className="bonus-value">$47 Value</div>
               <p>
-                Pre-written email sequence to nurture new subscribers and turn them into buyers. 
+                Pre-written email sequence to nurture new subscribers and turn them into buyers.
                 Customize with your own voice and offer.
               </p>
             </div>
           </div>
         </div>
       </section>
-      
+
       <section id="get-access" className="cta-section">
         <div className="container">
           <div className="cta-box">
@@ -282,7 +282,7 @@ const PromoEbook = () => {
                   <div className="price-arrow">→</div>
                   <div className="final-price">$37</div>
                 </div>
-                
+
                 <ul className="whats-included">
                   <li>Digital Entrepreneur's Blueprint E-book</li>
                   <li>Bonus #1: The Viral Content Formula</li>
@@ -292,13 +292,13 @@ const PromoEbook = () => {
                   <li>Lifetime Updates</li>
                 </ul>
               </div>
-              
+
               <div className="order-column">
                 {!formSubmitted ? (
                   <form onSubmit={handleSubmit} className="order-form">
-                    <input 
-                      type="email" 
-                      placeholder="Your email address" 
+                    <input
+                      type="email"
+                      placeholder="Your email address"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
@@ -313,12 +313,12 @@ const PromoEbook = () => {
                     Thank you! Check your email for your purchase details.
                   </div>
                 )}
-                
+
                 <div className="secure-badge">
                   <div className="secure-icon">🔒</div>
                   <div className="secure-text">Secure Checkout - 30 Day Money Back Guarantee</div>
                 </div>
-                
+
                 <div className="payment-methods">
                   <div className="method">Visa</div>
                   <div className="method">MC</div>
@@ -330,11 +330,11 @@ const PromoEbook = () => {
           </div>
         </div>
       </section>
-      
+
       <section className="faq-section">
         <div className="container">
           <h2>Frequently Asked Questions</h2>
-          
+
           <div className="faq-grid">
             {faqs.map((faq, index) => (
               <div key={index} className="faq-item">
@@ -345,14 +345,14 @@ const PromoEbook = () => {
           </div>
         </div>
       </section>
-      
+
       <section className="final-cta">
         <div className="container">                <h2>Do not Miss This Limited-Time Offer!</h2>
           <p>
-            Get the complete Digital Entrepreneur's Blueprint package today for just $37 
+            Get the complete Digital Entrepreneur's Blueprint package today for just $37
             and start building your profitable online business now.
           </p>
-          
+
           <div className="timer-container centered">
             <div className="timer-label">OFFER EXPIRES IN:</div>
             <div className="countdown-timer">
@@ -377,14 +377,14 @@ const PromoEbook = () => {
               </div>
             </div>
           </div>
-          
+
           <a href="#get-access" className="cta-button">
             <span className="cta-text">YES, I WANT ACCESS NOW</span>
             <span className="cta-arrow">→</span>
           </a>
         </div>
       </section>
-      
+
       <footer>
         <div className="container">
           <div className="footer-content">
@@ -398,9 +398,9 @@ const PromoEbook = () => {
               <a href="#">Refund Policy</a>
             </div>
           </div>
-          
+
           <div className="disclaimer">
-            Results may vary. The testimonials shown are real experiences from paying users of the Digital Entrepreneur's Blueprint. 
+            Results may vary. The testimonials shown are real experiences from paying users of the Digital Entrepreneur's Blueprint.
             This is not a "get rich quick scheme." Your success depends on your effort, background, and motivation.
           </div>
         </div>

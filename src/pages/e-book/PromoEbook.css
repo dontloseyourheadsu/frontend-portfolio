@@ -706,38 +706,38 @@
   .promo-ebook .hero-content {
     flex-direction: column-reverse;
   }
-  
+
   .promo-ebook .hero-text {
     text-align: center;
   }
-  
+
   .promo-ebook h1 {
     font-size: 32px;
   }
-  
+
   .promo-ebook .offer-statement {
     justify-content: center;
   }
-  
+
   .promo-ebook .faq-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .promo-ebook .footer-content {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .promo-ebook .book-cover {
     width: 260px;
     height: 380px;
     padding: 20px 15px;
   }
-  
+
   .promo-ebook .book-title h2 {
     font-size: 18px;
   }
-  
+
   .promo-ebook .cta-box {
     padding: 30px 20px;
   }

@@ -1,0 +1,275 @@
+/* Magazine-style Advertisement Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --x-gradient: linear-gradient(90deg, #5200FF, #FF0000);
+  --dark: #000000;
+  --light: #ffffff;
+  --accent: #fcd34d;
+}
+
+/* Add a full page container to host the ad */
+.ad-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark);
+  padding: 20px;
+}
+
+.magazine-ad {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  color: var(--light);
+  line-height: 1.2;
+  background-color: var(--dark);
+  position: relative;
+  width: 1280px;
+  height: 769px;
+  border: 2px solid var(--light);
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+/* Brand Logo */
+.x-logo {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 4rem;  /* Increased size for the logo */
+  height: auto; /* Let height adjust based on width */
+  z-index: 10;
+}
+
+.x-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the logo maintains its aspect ratio */
+}
+
+/* Ad Content */
+.ad-content {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  justify-content: center;
+}
+
+/* Headline */
+.ad-headline {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.gradient-text {
+  background: var(--x-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: block;
+  font-size: 3.5rem;
+}
+
+.delivery-tag {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 0.25rem;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  background: var(--x-gradient);
+  color: var(--light);
+  text-decoration: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: 50px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.25);
+  margin: 1rem 0;
+}
+
+.cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.35);
+}
+
+/* Features */
+.ad-features {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.feature-text {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--light);
+}
+
+/* Price Tag */
+.price-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.starting-at {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.25rem;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+/* Testimonial */
+.testimonial {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  border-left: 3px solid;
+  border-image: var(--x-gradient) 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.testimonial-author {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+/* Footer */
+.ad-footer {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  opacity: 0.7;
+  font-size: 0.8rem;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Background and Animation */
+.magazine-ad::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(circle at top right, rgba(82, 0, 255, 0.15), transparent 70%),
+              radial-gradient(circle at bottom left, rgba(255, 0, 0, 0.15), transparent 70%);
+  z-index: -1;
+}
+
+/* Responsive */
+@media (max-width: 1300px) {
+  .magazine-ad {
+    width: 100%;
+    max-width: 1280px;
+    height: auto;
+    min-height: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ad-headline {
+    font-size: 2.5rem;
+  }
+  
+  .gradient-text {
+    font-size: 3rem;
+  }
+  
+  .delivery-tag {
+    font-size: 1.2rem;
+  }
+  
+  .ad-features {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .feature {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .magazine-ad {
+    padding: 1.5rem 1rem;
+  }
+  
+  .ad-headline {
+    font-size: 2rem;
+  }
+  
+  .gradient-text {
+    font-size: 2.5rem;
+  }
+  
+  .testimonial {
+    width: 95%;
+  }
+
+}

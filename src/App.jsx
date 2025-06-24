@@ -32,6 +32,9 @@ import ModernEbook from './pages/e-book/ModernEbook';
 import MinimalEbook from './pages/e-book/MinimalEbook';
 import PromoEbook from './pages/e-book/PromoEbook';
 
+// Import advertisement
+import Advertisement from './pages/Advertisement';
+
 const App = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [randomExample, setRandomExample] = useState(null);
@@ -61,6 +64,8 @@ const App = () => {
     { path: '/e-book/modern', name: 'Modern Ebook Landing Page', component: <ModernEbook /> },
     { path: '/e-book/minimal', name: 'Minimal Ebook Landing Page', component: <MinimalEbook /> },
     { path: '/e-book/promo', name: 'Promotional Ebook Landing Page', component: <PromoEbook /> },
+    // Advertisement
+    { path: '/advertisement', name: 'Fiverr Service Advertisement', component: <Advertisement /> },
     // Add more examples as they get implemented
   ];
 
@@ -75,6 +80,7 @@ const App = () => {
     { path: '/splash', name: 'Splash / Coming Soon' },
     { path: '/404', name: '404 / Utility' },
     { path: '/pricing', name: 'Pricing' },
+    { path: '/advertisement', name: 'Advertisement' },
   ];
 
   // Select a random example on first load
@@ -104,13 +110,13 @@ const App = () => {
           <Routes>
             {/* Routes for examples */}
             {examples.map((example, index) => (
-              <Route 
-                key={index} 
-                path={example.path} 
-                element={example.component} 
+              <Route
+                key={index}
+                path={example.path}
+                element={example.component}
               />
             ))}
-            
+
             {/* Routes for categories */}
             <Route path="/lead-capture" element={
               <div className="placeholder-page">
@@ -209,9 +215,20 @@ const App = () => {
                 </div>
               </div>
             } />
-            
+            <Route path="/advertisement" element={
+              <div className="placeholder-page">
+                <div>
+                  <h2>Service Advertisement</h2>
+                  <p>Check out this promotional page for web design services:</p>
+                  <div className="example-links">
+                    <Link to="/advertisement" className="example-link">Landing Page Service</Link>
+                  </div>
+                </div>
+              </div>
+            } />
+
             {/* Home route shows the random example */}
-            <Route path="/" element={randomExample?.component || 
+            <Route path="/" element={randomExample?.component ||
               <div className="placeholder-page">
                 <div>
                   <h2>Loading Example...</h2>
@@ -220,7 +237,7 @@ const App = () => {
             } />
           </Routes>
         </div>
-        
+
         {/* Bottom Navigation Bar */}
         <div className={`nav-bottom-bar ${isNavOpen ? 'show-nav' : ''}`}>
           <button className="nav-toggle-button" onClick={toggleNav}>
@@ -229,13 +246,13 @@ const App = () => {
           <div className="nav-inner">
             <div className="nav-top">
               <div className="logo-container">
-                <img 
-                  src="/images/tiempo-de-code-logo.png" 
-                  alt="X Logo" 
+                <img
+                  src="/images/tiempo-de-code-logo.png"
+                  alt="X Logo"
                   className="logo-img"
                 />
               </div>
-              
+
               <div className="nav-categories">
                 <ul>
                   <li><Link to="/lead-capture" onClick={() => setIsNavOpen(false)}>Lead Capture</Link></li>
@@ -247,9 +264,10 @@ const App = () => {
                   <li><Link to="/splash" onClick={() => setIsNavOpen(false)}>Splash / Coming Soon</Link></li>
                   <li><Link to="/404" onClick={() => setIsNavOpen(false)}>404 / Utility</Link></li>
                   <li><Link to="/pricing" onClick={() => setIsNavOpen(false)}>Pricing</Link></li>
+                  <li><Link to="/advertisement" onClick={() => setIsNavOpen(false)}>Advertisement</Link></li>
                 </ul>
               </div>
-              
+
               <div className="nav-random">
                 <button onClick={loadRandomExample}>
                   Random
