@@ -32,6 +32,11 @@ import ModernEbook from './pages/e-book/ModernEbook';
 import MinimalEbook from './pages/e-book/MinimalEbook';
 import PromoEbook from './pages/e-book/PromoEbook';
 
+// Import event registration examples
+import CorporateEventRegistration from './pages/event-registration/CorporateEventRegistration';
+import ConferenceRegistration from './pages/event-registration/ConferenceRegistration';
+import WebinarRegistration from './pages/event-registration/WebinarRegistration';
+
 // Import advertisement
 import Advertisement from './pages/Advertisement';
 
@@ -64,6 +69,10 @@ const App = () => {
     { path: '/e-book/modern', name: 'Modern Ebook Landing Page', component: <ModernEbook /> },
     { path: '/e-book/minimal', name: 'Minimal Ebook Landing Page', component: <MinimalEbook /> },
     { path: '/e-book/promo', name: 'Promotional Ebook Landing Page', component: <PromoEbook /> },
+    // Event registration examples
+    { path: '/event-registration/corporate', name: 'Corporate Event Registration', component: <CorporateEventRegistration /> },
+    { path: '/event-registration/conference', name: 'Conference Registration', component: <ConferenceRegistration /> },
+    { path: '/event-registration/webinar', name: 'Webinar Registration', component: <WebinarRegistration /> },
     // Advertisement
     { path: '/advertisement', name: 'Fiverr Service Advertisement', component: <Advertisement /> },
     // Add more examples as they get implemented
@@ -76,6 +85,7 @@ const App = () => {
     { path: '/product-sales-page', name: 'Product / Sales' },
     { path: '/e-book', name: 'E-Book' },
     { path: '/webinar', name: 'Webinar Registration' },
+    { path: '/event-registration', name: 'Event Registration' },
     { path: '/course', name: 'Course / Membership' },
     { path: '/splash', name: 'Splash / Coming Soon' },
     { path: '/404', name: '404 / Utility' },
@@ -165,6 +175,19 @@ const App = () => {
                 <div>
                   <h2>Webinar Registration Pages</h2>
                   <p>Examples of engaging webinar registration pages coming soon!</p>
+                </div>
+              </div>
+            } />
+            <Route path="/event-registration" element={
+              <div className="placeholder-page">
+                <div>
+                  <h2>Event Registration Pages</h2>
+                  <p>Check out our event registration page examples:</p>
+                  <div className="example-links">
+                    <Link to="/event-registration/corporate" className="example-link">Corporate Event</Link>
+                    <Link to="/event-registration/conference" className="example-link">Conference</Link>
+                    <Link to="/event-registration/webinar" className="example-link">Webinar</Link>
+                  </div>
                 </div>
               </div>
             } />
@@ -260,6 +283,7 @@ const App = () => {
                   <li><Link to="/product-sales-page" onClick={() => setIsNavOpen(false)}>Product / Sales</Link></li>
                   <li><Link to="/e-book" onClick={() => setIsNavOpen(false)}>E-Book</Link></li>
                   <li><Link to="/webinar" onClick={() => setIsNavOpen(false)}>Webinar Registration</Link></li>
+                  <li><Link to="/event-registration" onClick={() => setIsNavOpen(false)}>Event Registration</Link></li>
                   <li><Link to="/course" onClick={() => setIsNavOpen(false)}>Course / Membership</Link></li>
                   <li><Link to="/splash" onClick={() => setIsNavOpen(false)}>Splash / Coming Soon</Link></li>
                   <li><Link to="/404" onClick={() => setIsNavOpen(false)}>404 / Utility</Link></li>
