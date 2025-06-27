@@ -42,6 +42,11 @@ import SaaSOnboarding from './pages/get-started/SaaSOnboarding';
 import AppOnboarding from './pages/get-started/AppOnboarding';
 import ServiceSetup from './pages/get-started/ServiceSetup';
 
+// Import lead capture examples
+import NewsletterSignup from './pages/lead-capture/NewsletterSignup';
+import FreeGuideCapture from './pages/lead-capture/FreeGuideCapture';
+import ConsultationBooking from './pages/lead-capture/ConsultationBooking';
+
 // Import advertisement
 import Advertisement from './pages/Advertisement';
 
@@ -82,6 +87,10 @@ const App = () => {
     { path: '/get-started/saas', name: 'SaaS Onboarding', component: <SaaSOnboarding /> },
     { path: '/get-started/app', name: 'App Onboarding', component: <AppOnboarding /> },
     { path: '/get-started/service', name: 'Service Setup', component: <ServiceSetup /> },
+    // Lead capture examples
+    { path: '/lead-capture/newsletter', name: 'Newsletter Signup', component: <NewsletterSignup /> },
+    { path: '/lead-capture/free-guide', name: 'Free Guide Capture', component: <FreeGuideCapture /> },
+    { path: '/lead-capture/consultation', name: 'Consultation Booking', component: <ConsultationBooking /> },
     // Advertisement
     { path: '/advertisement', name: 'Fiverr Service Advertisement', component: <Advertisement /> },
     // Add more examples as they get implemented
@@ -142,7 +151,12 @@ const App = () => {
               <div className="placeholder-page">
                 <div>
                   <h2>Lead Capture Pages</h2>
-                  <p>Examples of high-converting lead capture pages coming soon!</p>
+                  <p>Check out our lead capture page examples:</p>
+                  <div className="example-links">
+                    <Link to="/lead-capture/newsletter" className="example-link">Newsletter Signup</Link>
+                    <Link to="/lead-capture/free-guide" className="example-link">Free Guide Capture</Link>
+                    <Link to="/lead-capture/consultation" className="example-link">Consultation Booking</Link>
+                  </div>
                 </div>
               </div>
             } />
