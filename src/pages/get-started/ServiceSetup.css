@@ -1,0 +1,712 @@
+/* Scope all styles to service-setup class to prevent clashes */
+.service-setup * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.service-setup {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  color: #0f172a;
+  background: linear-gradient(135deg, #0ea5e9, #3b82f6, #6366f1);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.service-setup-container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 900px;
+  overflow: hidden;
+}
+
+/* Header styles */
+.service-setup-header {
+  background: linear-gradient(135deg, #1e293b, #334155);
+  padding: 30px 40px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.service-logo-icon {
+  font-size: 2rem;
+}
+
+.service-logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.service-logo-accent {
+  color: #0ea5e9;
+}
+
+.service-step-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.service-step-track {
+  display: flex;
+  gap: 8px;
+}
+
+.service-step-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.service-step-dot.active {
+  background: #0ea5e9;
+}
+
+.service-step-dot.current {
+  background: #f59e0b;
+  transform: scale(1.2);
+}
+
+.service-step-text {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Content styles */
+.service-setup-content {
+  padding: 50px 40px;
+}
+
+.service-step-content {
+  animation: slideInFade 0.5s ease-out;
+}
+
+@keyframes slideInFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-step-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.service-step-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.service-step-header p {
+  font-size: 1.125rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Service plans grid */
+.service-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.service-plan-card {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.service-plan-card.selected {
+  border-color: #0ea5e9;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.05), rgba(59, 130, 246, 0.05));
+}
+
+.service-plan-card.recommended {
+  border-color: #f59e0b;
+}
+
+.service-plan-badge {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  background: #f59e0b;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 0 0 12px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.service-plan-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.service-plan-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.service-plan-price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0ea5e9;
+  margin-bottom: 4px;
+}
+
+.service-plan-duration {
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+.service-plan-features {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.service-plan-features li {
+  padding: 8px 0;
+  position: relative;
+  padding-left: 25px;
+  color: #475569;
+}
+
+.service-plan-features li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+.service-plan-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Form styles */
+.service-form {
+  margin-bottom: 30px;
+}
+
+.service-form-group {
+  margin-bottom: 24px;
+}
+
+.service-form-group label {
+  display: block;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.service-form-group input,
+.service-form-group select,
+.service-form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #111827;
+  transition: all 0.3s ease;
+}
+
+.service-form-group input:focus,
+.service-form-group select:focus,
+.service-form-group textarea:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.service-form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.service-form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.service-form-row .service-form-group {
+  flex: 1;
+}
+
+/* Checkbox grid */
+.service-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.service-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.service-checkbox-label:hover {
+  background: #f9fafb;
+  border-color: #0ea5e9;
+}
+
+.service-checkbox-label input[type="checkbox"]:checked + span {
+  color: #0ea5e9;
+  font-weight: 500;
+}
+
+/* Agreement */
+.service-agreement {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.service-agreement .service-checkbox-label {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+/* Consultation note */
+.service-consultation-note {
+  display: flex;
+  gap: 16px;
+  background: linear-gradient(135deg, #fef3c7, #fed7aa);
+  border: 1px solid #fbbf24;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.service-note-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.service-note-content h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #92400e;
+  margin-bottom: 4px;
+}
+
+.service-note-content p {
+  color: #a16207;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Form actions */
+.service-form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.service-back-button,
+.service-next-button {
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.service-back-button {
+  background: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+}
+
+.service-back-button:hover {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.service-next-button {
+  background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+  color: white;
+  flex: 1;
+  max-width: 300px;
+  margin-left: auto;
+}
+
+.service-next-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
+}
+
+/* Success screen */
+.service-success-screen {
+  padding: 50px 40px;
+  text-align: center;
+}
+
+.service-success-header {
+  margin-bottom: 50px;
+}
+
+.service-success-icon {
+  font-size: 4rem;
+  margin-bottom: 24px;
+}
+
+.service-success-header h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.service-success-header p {
+  font-size: 1.125rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Project summary */
+.service-project-summary {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.service-project-summary h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.service-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.service-summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.service-summary-label {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.service-summary-value {
+  font-size: 1rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* Timeline */
+.service-next-steps {
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.service-next-steps h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.service-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.service-timeline-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.service-timeline-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.service-timeline-content h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.service-timeline-content p {
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Contact card */
+.service-contact-info {
+  margin-bottom: 40px;
+}
+
+.service-contact-card {
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  border: 1px solid #cbd5e1;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: left;
+}
+
+.service-contact-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.service-manager-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.service-manager-avatar {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.service-manager-details h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.service-manager-details p {
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.service-manager-details a {
+  display: block;
+  color: #0ea5e9;
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.service-manager-details a:hover {
+  text-decoration: underline;
+}
+
+/* Resources */
+.service-resources h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.service-resource-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.service-resource-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #0ea5e9;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 16px;
+  border: 1px solid #0ea5e9;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.service-resource-link:hover {
+  background: #0ea5e9;
+  color: white;
+}
+
+.service-resource-icon {
+  font-size: 1.125rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .service-setup {
+    padding: 15px;
+  }
+  
+  .service-setup-header {
+    padding: 25px 30px;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .service-step-indicator {
+    align-items: center;
+  }
+  
+  .service-setup-content,
+  .service-success-screen {
+    padding: 40px 30px;
+  }
+  
+  .service-plans-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .service-setup-header {
+    padding: 20px;
+  }
+  
+  .service-setup-content,
+  .service-success-screen {
+    padding: 30px 20px;
+  }
+  
+  .service-step-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .service-form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .service-form-actions {
+    flex-direction: column;
+  }
+  
+  .service-checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-summary-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-manager-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .service-resource-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-plan-card {
+    padding: 20px;
+  }
+  
+  .service-plan-price {
+    font-size: 2rem;
+  }
+  
+  .service-timeline-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .service-consultation-note {
+    flex-direction: column;
+    text-align: center;
+  }
+}
