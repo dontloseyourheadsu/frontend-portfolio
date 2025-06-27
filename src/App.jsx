@@ -47,6 +47,11 @@ import NewsletterSignup from './pages/lead-capture/NewsletterSignup';
 import FreeGuideCapture from './pages/lead-capture/FreeGuideCapture';
 import ConsultationBooking from './pages/lead-capture/ConsultationBooking';
 
+// Import membership examples
+import PremiumMembership from './pages/membership/PremiumMembership';
+import CommunityMembership from './pages/membership/CommunityMembership';
+import ExclusiveMembership from './pages/membership/ExclusiveMembership';
+
 // Import advertisement
 import Advertisement from './pages/Advertisement';
 
@@ -91,6 +96,10 @@ const App = () => {
     { path: '/lead-capture/newsletter', name: 'Newsletter Signup', component: <NewsletterSignup /> },
     { path: '/lead-capture/free-guide', name: 'Free Guide Capture', component: <FreeGuideCapture /> },
     { path: '/lead-capture/consultation', name: 'Consultation Booking', component: <ConsultationBooking /> },
+    // Membership examples
+    { path: '/membership/premium', name: 'Premium Membership', component: <PremiumMembership /> },
+    { path: '/membership/community', name: 'Community Membership', component: <CommunityMembership /> },
+    { path: '/membership/exclusive', name: 'Exclusive Membership', component: <ExclusiveMembership /> },
     // Advertisement
     { path: '/advertisement', name: 'Fiverr Service Advertisement', component: <Advertisement /> },
     // Add more examples as they get implemented
@@ -106,6 +115,7 @@ const App = () => {
     { path: '/event-registration', name: 'Event Registration' },
     { path: '/get-started', name: 'Get Started / Onboarding' },
     { path: '/course', name: 'Course / Membership' },
+    { path: '/membership', name: 'Membership' },
     { path: '/splash', name: 'Splash / Coming Soon' },
     { path: '/404', name: '404 / Utility' },
     { path: '/pricing', name: 'Pricing' },
@@ -241,6 +251,19 @@ const App = () => {
                 </div>
               </div>
             } />
+            <Route path="/membership" element={
+              <div className="placeholder-page">
+                <div>
+                  <h2>Membership Pages</h2>
+                  <p>Check out our membership page examples:</p>
+                  <div className="example-links">
+                    <Link to="/membership/premium" className="example-link">Premium Membership</Link>
+                    <Link to="/membership/community" className="example-link">Community Membership</Link>
+                    <Link to="/membership/exclusive" className="example-link">Exclusive Membership</Link>
+                  </div>
+                </div>
+              </div>
+            } />
             <Route path="/splash" element={
               <div className="placeholder-page">
                 <div>
@@ -323,6 +346,7 @@ const App = () => {
                   <li><Link to="/event-registration" onClick={() => setIsNavOpen(false)}>Event Registration</Link></li>
                   <li><Link to="/get-started" onClick={() => setIsNavOpen(false)}>Get Started / Onboarding</Link></li>
                   <li><Link to="/course" onClick={() => setIsNavOpen(false)}>Course / Membership</Link></li>
+                  <li><Link to="/membership" onClick={() => setIsNavOpen(false)}>Membership</Link></li>
                   <li><Link to="/splash" onClick={() => setIsNavOpen(false)}>Splash / Coming Soon</Link></li>
                   <li><Link to="/404" onClick={() => setIsNavOpen(false)}>404 / Utility</Link></li>
                   <li><Link to="/pricing" onClick={() => setIsNavOpen(false)}>Pricing</Link></li>
