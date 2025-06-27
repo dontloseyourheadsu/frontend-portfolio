@@ -37,6 +37,11 @@ import CorporateEventRegistration from './pages/event-registration/CorporateEven
 import ConferenceRegistration from './pages/event-registration/ConferenceRegistration';
 import WebinarRegistration from './pages/event-registration/WebinarRegistration';
 
+// Import get started examples
+import SaaSOnboarding from './pages/get-started/SaaSOnboarding';
+import AppOnboarding from './pages/get-started/AppOnboarding';
+import ServiceSetup from './pages/get-started/ServiceSetup';
+
 // Import advertisement
 import Advertisement from './pages/Advertisement';
 
@@ -73,6 +78,10 @@ const App = () => {
     { path: '/event-registration/corporate', name: 'Corporate Event Registration', component: <CorporateEventRegistration /> },
     { path: '/event-registration/conference', name: 'Conference Registration', component: <ConferenceRegistration /> },
     { path: '/event-registration/webinar', name: 'Webinar Registration', component: <WebinarRegistration /> },
+    // Get started examples
+    { path: '/get-started/saas', name: 'SaaS Onboarding', component: <SaaSOnboarding /> },
+    { path: '/get-started/app', name: 'App Onboarding', component: <AppOnboarding /> },
+    { path: '/get-started/service', name: 'Service Setup', component: <ServiceSetup /> },
     // Advertisement
     { path: '/advertisement', name: 'Fiverr Service Advertisement', component: <Advertisement /> },
     // Add more examples as they get implemented
@@ -86,6 +95,7 @@ const App = () => {
     { path: '/e-book', name: 'E-Book' },
     { path: '/webinar', name: 'Webinar Registration' },
     { path: '/event-registration', name: 'Event Registration' },
+    { path: '/get-started', name: 'Get Started / Onboarding' },
     { path: '/course', name: 'Course / Membership' },
     { path: '/splash', name: 'Splash / Coming Soon' },
     { path: '/404', name: '404 / Utility' },
@@ -191,6 +201,19 @@ const App = () => {
                 </div>
               </div>
             } />
+            <Route path="/get-started" element={
+              <div className="placeholder-page">
+                <div>
+                  <h2>Get Started & Onboarding Pages</h2>
+                  <p>Check out our onboarding and get started page examples:</p>
+                  <div className="example-links">
+                    <Link to="/get-started/saas" className="example-link">SaaS Onboarding</Link>
+                    <Link to="/get-started/app" className="example-link">App Onboarding</Link>
+                    <Link to="/get-started/service" className="example-link">Service Setup</Link>
+                  </div>
+                </div>
+              </div>
+            } />
             <Route path="/course" element={
               <div className="placeholder-page">
                 <div>
@@ -284,6 +307,7 @@ const App = () => {
                   <li><Link to="/e-book" onClick={() => setIsNavOpen(false)}>E-Book</Link></li>
                   <li><Link to="/webinar" onClick={() => setIsNavOpen(false)}>Webinar Registration</Link></li>
                   <li><Link to="/event-registration" onClick={() => setIsNavOpen(false)}>Event Registration</Link></li>
+                  <li><Link to="/get-started" onClick={() => setIsNavOpen(false)}>Get Started / Onboarding</Link></li>
                   <li><Link to="/course" onClick={() => setIsNavOpen(false)}>Course / Membership</Link></li>
                   <li><Link to="/splash" onClick={() => setIsNavOpen(false)}>Splash / Coming Soon</Link></li>
                   <li><Link to="/404" onClick={() => setIsNavOpen(false)}>404 / Utility</Link></li>
