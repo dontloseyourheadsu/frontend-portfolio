@@ -52,6 +52,11 @@ import PremiumMembership from './pages/membership/PremiumMembership';
 import CommunityMembership from './pages/membership/CommunityMembership';
 import ExclusiveMembership from './pages/membership/ExclusiveMembership';
 
+// Import microsite examples
+import ProductLaunchMicrosite from './pages/microsite/ProductLaunchMicrosite';
+import EventMicrosite from './pages/microsite/EventMicrosite';
+import CampaignMicrosite from './pages/microsite/CampaignMicrosite';
+
 // Import advertisement
 import Advertisement from './pages/Advertisement';
 
@@ -100,6 +105,10 @@ const App = () => {
     { path: '/membership/premium', name: 'Premium Membership', component: <PremiumMembership /> },
     { path: '/membership/community', name: 'Community Membership', component: <CommunityMembership /> },
     { path: '/membership/exclusive', name: 'Exclusive Membership', component: <ExclusiveMembership /> },
+    // Microsite examples
+    { path: '/microsite/product-launch', name: 'Product Launch Microsite', component: <ProductLaunchMicrosite /> },
+    { path: '/microsite/event', name: 'Event Microsite', component: <EventMicrosite /> },
+    { path: '/microsite/campaign', name: 'Campaign Microsite', component: <CampaignMicrosite /> },
     // Advertisement
     { path: '/advertisement', name: 'Fiverr Service Advertisement', component: <Advertisement /> },
     // Add more examples as they get implemented
@@ -116,6 +125,7 @@ const App = () => {
     { path: '/get-started', name: 'Get Started / Onboarding' },
     { path: '/course', name: 'Course / Membership' },
     { path: '/membership', name: 'Membership' },
+    { path: '/microsite', name: 'Microsite' },
     { path: '/splash', name: 'Splash / Coming Soon' },
     { path: '/404', name: '404 / Utility' },
     { path: '/pricing', name: 'Pricing' },
@@ -264,6 +274,19 @@ const App = () => {
                 </div>
               </div>
             } />
+            <Route path="/microsite" element={
+              <div className="placeholder-page">
+                <div>
+                  <h2>Microsite Examples</h2>
+                  <p>Check out our microsite examples:</p>
+                  <div className="example-links">
+                    <Link to="/microsite/product-launch" className="example-link">Product Launch</Link>
+                    <Link to="/microsite/event" className="example-link">Event Microsite</Link>
+                    <Link to="/microsite/campaign" className="example-link">Campaign Microsite</Link>
+                  </div>
+                </div>
+              </div>
+            } />
             <Route path="/splash" element={
               <div className="placeholder-page">
                 <div>
@@ -347,6 +370,7 @@ const App = () => {
                   <li><Link to="/get-started" onClick={() => setIsNavOpen(false)}>Get Started / Onboarding</Link></li>
                   <li><Link to="/course" onClick={() => setIsNavOpen(false)}>Course / Membership</Link></li>
                   <li><Link to="/membership" onClick={() => setIsNavOpen(false)}>Membership</Link></li>
+                  <li><Link to="/microsite" onClick={() => setIsNavOpen(false)}>Microsite</Link></li>
                   <li><Link to="/splash" onClick={() => setIsNavOpen(false)}>Splash / Coming Soon</Link></li>
                   <li><Link to="/404" onClick={() => setIsNavOpen(false)}>404 / Utility</Link></li>
                   <li><Link to="/pricing" onClick={() => setIsNavOpen(false)}>Pricing</Link></li>
