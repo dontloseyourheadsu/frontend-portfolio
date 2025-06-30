@@ -62,6 +62,11 @@ import ModernSaaSPricing from './pages/pricing/ModernSaaSPricing';
 import CreativeAgencyPricing from './pages/pricing/CreativeAgencyPricing';
 import EnterprisePricing from './pages/pricing/EnterprisePricing';
 
+// Import product sales page examples
+import TechProductSales from './pages/product-sales-page/TechProductSales';
+import FashionProductSales from './pages/product-sales-page/FashionProductSales';
+import FitnessProductSales from './pages/product-sales-page/FitnessProductSales';
+
 // Import advertisement
 import Advertisement from './pages/Advertisement';
 
@@ -118,6 +123,10 @@ const App = () => {
     { path: '/pricing/saas', name: 'Modern SaaS Pricing', component: <ModernSaaSPricing /> },
     { path: '/pricing/agency', name: 'Creative Agency Pricing', component: <CreativeAgencyPricing /> },
     { path: '/pricing/enterprise', name: 'Enterprise Pricing', component: <EnterprisePricing /> },
+    // Product sales page examples
+    { path: '/product-sales-page/tech', name: 'Tech Product Sales Page', component: <TechProductSales /> },
+    { path: '/product-sales-page/fashion', name: 'Fashion Product Sales Page', component: <FashionProductSales /> },
+    { path: '/product-sales-page/fitness', name: 'Fitness Product Sales Page', component: <FitnessProductSales /> },
     // Advertisement
     { path: '/advertisement', name: 'Fiverr Service Advertisement', component: <Advertisement /> },
     // Add more examples as they get implemented
@@ -206,7 +215,12 @@ const App = () => {
               <div className="placeholder-page">
                 <div>
                   <h2>Product Sales Pages</h2>
-                  <p>Examples of persuasive product sales pages coming soon!</p>
+                  <p>Check out our product sales page examples:</p>
+                  <div className="example-links">
+                    <Link to="/product-sales-page/tech" className="example-link">Tech Product Sales</Link>
+                    <Link to="/product-sales-page/fashion" className="example-link">Fashion Product Sales</Link>
+                    <Link to="/product-sales-page/fitness" className="example-link">Fitness Product Sales</Link>
+                  </div>
                 </div>
               </div>
             } />

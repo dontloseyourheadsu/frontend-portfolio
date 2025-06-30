@@ -1,0 +1,666 @@
+/* Tech Product Sales Page Styles */
+.tech-product-sales {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background-color: #ffffff;
+}
+
+.tech-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Hero Section Styles */
+.tech-hero-section {
+  padding: 120px 0 80px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.tech-hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.tech-badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.tech-hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #111827;
+}
+
+.tech-gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tech-hero-subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.tech-hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.tech-stat {
+  text-align: center;
+}
+
+.tech-stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1f2937;
+  line-height: 1;
+}
+
+.tech-stat-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tech-hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.tech-btn {
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.tech-btn-primary {
+  background: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+}
+
+.tech-btn-primary:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+}
+
+.tech-btn-secondary {
+  background: transparent;
+  color: #374151;
+  border: 2px solid #e5e7eb;
+}
+
+.tech-btn-secondary:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.tech-play-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Hero Visual */
+.tech-hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tech-dashboard-mockup {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.tech-mockup-header {
+  background: #f3f4f6;
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tech-mockup-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.tech-mockup-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #d1d5db;
+}
+
+.tech-mockup-dots span:first-child {
+  background: #ef4444;
+}
+
+.tech-mockup-dots span:nth-child(2) {
+  background: #f59e0b;
+}
+
+.tech-mockup-dots span:last-child {
+  background: #10b981;
+}
+
+.tech-mockup-content {
+  padding: 40px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-chart-bars {
+  display: flex;
+  gap: 12px;
+  align-items: end;
+  height: 200px;
+}
+
+.tech-bar {
+  width: 40px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  border-radius: 4px 4px 0 0;
+  transition: all 0.3s ease;
+}
+
+/* Product Tabs */
+.tech-product-tabs {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.tech-tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 60px;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 8px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+}
+
+.tech-tab {
+  flex: 1;
+  padding: 12px 24px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tech-tab.active {
+  background: #ffffff;
+  color: #1f2937;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tech-tab-content {
+  min-height: 300px;
+}
+
+.tech-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.tech-feature-card {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tech-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: #3b82f6;
+}
+
+.tech-feature-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.tech-feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+.tech-feature-card p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.tech-integrations-content,
+.tech-security-content {
+  text-align: center;
+}
+
+.tech-integrations-content h3,
+.tech-security-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #1f2937;
+}
+
+.tech-integration-logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tech-integration-item {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+
+.tech-security-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.tech-security-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+}
+
+.tech-check {
+  color: #10b981;
+  font-weight: 700;
+}
+
+/* Pricing Section */
+.tech-pricing-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.tech-pricing-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.tech-section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #1f2937;
+}
+
+.tech-section-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tech-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.tech-pricing-card {
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 40px 32px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tech-pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.tech-pricing-card.popular {
+  border-color: #3b82f6;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.tech-pricing-card.selected {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.tech-popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #3b82f6;
+  color: #ffffff;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.tech-plan-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #1f2937;
+  text-align: center;
+}
+
+.tech-plan-pricing {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.tech-plan-price {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+.tech-plan-period {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-left: 4px;
+}
+
+.tech-plan-original {
+  font-size: 1.125rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+
+.tech-plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+}
+
+.tech-plan-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.tech-check-icon {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.tech-plan-button {
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.tech-plan-button.primary {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.tech-plan-button.primary:hover {
+  background: #2563eb;
+}
+
+.tech-plan-button.secondary {
+  background: transparent;
+  color: #3b82f6;
+  border: 2px solid #3b82f6;
+}
+
+.tech-plan-button.secondary:hover {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.tech-pricing-guarantee {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Social Proof */
+.tech-social-proof {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.tech-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.tech-testimonial-card {
+  background: #f8fafc;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.tech-testimonial-rating {
+  margin-bottom: 16px;
+}
+
+.tech-star {
+  font-size: 1.25rem;
+}
+
+.tech-testimonial-content {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  color: #374151;
+  font-style: italic;
+}
+
+.tech-testimonial-author strong {
+  display: block;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.tech-testimonial-author span {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* CTA Section */
+.tech-cta-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #ffffff;
+}
+
+.tech-cta-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tech-cta-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.tech-cta-subtitle {
+  font-size: 1.125rem;
+  margin-bottom: 32px;
+  opacity: 0.9;
+}
+
+.tech-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.tech-btn-large {
+  padding: 18px 36px;
+  font-size: 1.125rem;
+}
+
+.tech-btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.tech-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+}
+
+.tech-cta-note {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tech-hero-content {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    text-align: center;
+  }
+  
+  .tech-hero-stats {
+    justify-content: center;
+  }
+  
+  .tech-pricing-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-container {
+    padding: 0 16px;
+  }
+  
+  .tech-hero-section {
+    padding: 80px 0 60px;
+  }
+  
+  .tech-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .tech-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .tech-btn {
+    justify-content: center;
+  }
+  
+  .tech-tabs-nav {
+    flex-direction: column;
+    max-width: 300px;
+  }
+  
+  .tech-features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tech-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tech-testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tech-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tech-btn-large {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .tech-integration-logos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tech-security-features {
+    grid-template-columns: 1fr;
+  }
+}
