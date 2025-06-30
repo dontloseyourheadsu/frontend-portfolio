@@ -57,6 +57,11 @@ import ProductLaunchMicrosite from './pages/microsite/ProductLaunchMicrosite';
 import EventMicrosite from './pages/microsite/EventMicrosite';
 import CampaignMicrosite from './pages/microsite/CampaignMicrosite';
 
+// Import pricing examples
+import ModernSaaSPricing from './pages/pricing/ModernSaaSPricing';
+import CreativeAgencyPricing from './pages/pricing/CreativeAgencyPricing';
+import EnterprisePricing from './pages/pricing/EnterprisePricing';
+
 // Import advertisement
 import Advertisement from './pages/Advertisement';
 
@@ -109,6 +114,10 @@ const App = () => {
     { path: '/microsite/product-launch', name: 'Product Launch Microsite', component: <ProductLaunchMicrosite /> },
     { path: '/microsite/event', name: 'Event Microsite', component: <EventMicrosite /> },
     { path: '/microsite/campaign', name: 'Campaign Microsite', component: <CampaignMicrosite /> },
+    // Pricing examples
+    { path: '/pricing/saas', name: 'Modern SaaS Pricing', component: <ModernSaaSPricing /> },
+    { path: '/pricing/agency', name: 'Creative Agency Pricing', component: <CreativeAgencyPricing /> },
+    { path: '/pricing/enterprise', name: 'Enterprise Pricing', component: <EnterprisePricing /> },
     // Advertisement
     { path: '/advertisement', name: 'Fiverr Service Advertisement', component: <Advertisement /> },
     // Add more examples as they get implemented
@@ -317,7 +326,12 @@ const App = () => {
               <div className="placeholder-page">
                 <div>
                   <h2>Pricing Pages</h2>
-                  <p>Examples of converting pricing pages coming soon!</p>
+                  <p>Check out our pricing page examples:</p>
+                  <div className="example-links">
+                    <Link to="/pricing/saas" className="example-link">Modern SaaS Pricing</Link>
+                    <Link to="/pricing/agency" className="example-link">Creative Agency Pricing</Link>
+                    <Link to="/pricing/enterprise" className="example-link">Enterprise Pricing</Link>
+                  </div>
                 </div>
               </div>
             } />
