@@ -67,6 +67,11 @@ import TechProductSales from './pages/product-sales-page/TechProductSales';
 import FashionProductSales from './pages/product-sales-page/FashionProductSales';
 import FitnessProductSales from './pages/product-sales-page/FitnessProductSales';
 
+// Import splash page examples
+import AnimatedSplash from './pages/splash/AnimatedSplash';
+import MinimalSplash from './pages/splash/MinimalSplash';
+import CreativeSplash from './pages/splash/CreativeSplash';
+
 // Import advertisement
 import Advertisement from './pages/Advertisement';
 
@@ -127,6 +132,10 @@ const App = () => {
     { path: '/product-sales-page/tech', name: 'Tech Product Sales Page', component: <TechProductSales /> },
     { path: '/product-sales-page/fashion', name: 'Fashion Product Sales Page', component: <FashionProductSales /> },
     { path: '/product-sales-page/fitness', name: 'Fitness Product Sales Page', component: <FitnessProductSales /> },
+    // Splash page examples
+    { path: '/splash/animated', name: 'Animated Splash Page', component: <AnimatedSplash /> },
+    { path: '/splash/minimal', name: 'Minimal Splash Page', component: <MinimalSplash /> },
+    { path: '/splash/creative', name: 'Creative Splash Page', component: <CreativeSplash /> },
     // Advertisement
     { path: '/advertisement', name: 'Fiverr Service Advertisement', component: <Advertisement /> },
     // Add more examples as they get implemented
@@ -314,8 +323,11 @@ const App = () => {
               <div className="placeholder-page">
                 <div>
                   <h2>Splash & Coming Soon Pages</h2>
-                  <p>Check out our coming soon page examples:</p>
+                  <p>Check out our splash and coming soon page examples:</p>
                   <div className="example-links">
+                    <Link to="/splash/animated" className="example-link">Animated Splash</Link>
+                    <Link to="/splash/minimal" className="example-link">Minimal Splash</Link>
+                    <Link to="/splash/creative" className="example-link">Creative Splash</Link>
                     <Link to="/coming-soon/countdown" className="example-link">Countdown Timer</Link>
                     <Link to="/coming-soon/animated" className="example-link">Animated Background</Link>
                     <Link to="/coming-soon/minimal" className="example-link">Minimal Design</Link>

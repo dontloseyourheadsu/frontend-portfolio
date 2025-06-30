@@ -1,0 +1,514 @@
+/* Minimal Splash Styles */
+.minimal-splash {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #111827;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background Elements */
+.minimal-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.bg-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(156, 163, 175, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(156, 163, 175, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: -1px -1px;
+}
+
+/* Floating Shapes */
+.floating-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.1;
+  animation: float-minimal 8s ease-in-out infinite;
+}
+
+.circle-1 {
+  width: 100px;
+  height: 100px;
+  background: #6b7280;
+  border-radius: 50%;
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  width: 60px;
+  height: 60px;
+  background: #9ca3af;
+  border-radius: 50%;
+  top: 70%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.square-1 {
+  width: 80px;
+  height: 80px;
+  background: #6b7280;
+  transform: rotate(45deg);
+  top: 40%;
+  right: 20%;
+  animation-delay: 4s;
+}
+
+.triangle-1 {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 69px solid #9ca3af;
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 6s;
+}
+
+@keyframes float-minimal {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Main Content */
+.minimal-content {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-out;
+}
+
+.minimal-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-container {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Header Section */
+.minimal-header {
+  margin-bottom: 80px;
+}
+
+.brand-mark {
+  margin: 0 auto 24px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mark-inner {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #e5e7eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.mark-inner:hover {
+  border-color: #6b7280;
+  transform: scale(1.05);
+}
+
+.mark-dot {
+  width: 8px;
+  height: 8px;
+  background: #111827;
+  border-radius: 50%;
+  animation: pulse-minimal 2s ease-in-out infinite;
+}
+
+@keyframes pulse-minimal {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.brand-name {
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  margin: 0 0 8px 0;
+  color: #111827;
+}
+
+.brand-tagline {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Main Message */
+.main-message {
+  margin-bottom: 80px;
+}
+
+.message-title {
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0 0 24px 0;
+  color: #111827;
+  letter-spacing: -0.025em;
+}
+
+.message-description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Countdown Section */
+.countdown-section {
+  margin-bottom: 80px;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.countdown-item {
+  text-align: center;
+  padding: 24px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: #f9fafb;
+}
+
+.countdown-item:hover {
+  border-color: #d1d5db;
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.countdown-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+  font-family: 'Courier New', monospace;
+}
+
+.countdown-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* Signup Section */
+.signup-section {
+  margin-bottom: 60px;
+}
+
+.signup-container {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.signup-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0 0 24px 0;
+  color: #111827;
+}
+
+.signup-form {
+  margin-bottom: 16px;
+}
+
+.input-group {
+  display: flex;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  transition: border-color 0.3s ease;
+}
+
+.input-group:focus-within {
+  border-color: #6b7280;
+  box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.1);
+}
+
+.email-input {
+  flex: 1;
+  padding: 16px 20px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+  color: #111827;
+}
+
+.email-input::placeholder {
+  color: #9ca3af;
+}
+
+.submit-button {
+  padding: 16px 24px;
+  background: #111827;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background: #374151;
+}
+
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.submit-button:hover .arrow-icon {
+  transform: translateX(2px);
+}
+
+.signup-note {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Social Section */
+.social-section {
+  margin-bottom: 40px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.social-link:hover {
+  color: #111827;
+  border-color: #d1d5db;
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+.social-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Footer */
+.minimal-footer {
+  position: relative;
+  z-index: 10;
+  padding: 24px 20px;
+  border-top: 1px solid #f3f4f6;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.current-time {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.time-display {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  font-family: 'Courier New', monospace;
+}
+
+.date-display {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.footer-links {
+  display: flex;
+  gap: 32px;
+}
+
+.footer-link {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #111827;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .minimal-content {
+    padding: 20px;
+  }
+  
+  .message-title {
+    font-size: 1.875rem;
+  }
+  
+  .brand-name {
+    font-size: 2rem;
+  }
+  
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 300px;
+  }
+  
+  .countdown-item {
+    padding: 20px 12px;
+  }
+  
+  .countdown-number {
+    font-size: 1.5rem;
+  }
+  
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .submit-button {
+    justify-content: center;
+  }
+  
+  .social-links {
+    gap: 16px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .message-title {
+    font-size: 1.5rem;
+  }
+  
+  .brand-name {
+    font-size: 1.75rem;
+  }
+  
+  .countdown-grid {
+    grid-template-columns: 1fr;
+    max-width: 200px;
+  }
+  
+  .countdown-item {
+    padding: 16px 12px;
+  }
+  
+  .message-description {
+    font-size: 1rem;
+  }
+  
+  .signup-container {
+    max-width: 100%;
+  }
+  
+  .email-input,
+  .submit-button {
+    padding: 14px 16px;
+  }
+}
