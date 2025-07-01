@@ -1,0 +1,574 @@
+/* Gentle Farewell Unsubscribe Page Styles */
+/* Using gentle-farewell-unsubscribe as root class to prevent CSS conflicts */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap');
+
+.gentle-farewell-unsubscribe {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f9ff 0%, #dbeafe 50%, #bfdbfe 100%);
+  color: #374151;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background Elements */
+.gentle-farewell-unsubscribe .gentle-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.gentle-farewell-unsubscribe .floating-bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.gentle-farewell-unsubscribe .bubble {
+  position: absolute;
+  bottom: -100px;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.1), rgba(147, 197, 253, 0.05));
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: gentle-bubble-float 20s infinite linear;
+}
+
+.gentle-farewell-unsubscribe .bubble:nth-child(2n) {
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at 30% 30%, rgba(34, 197, 94, 0.1), rgba(134, 239, 172, 0.05));
+}
+
+.gentle-farewell-unsubscribe .bubble:nth-child(3n) {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 30% 30%, rgba(168, 85, 247, 0.1), rgba(196, 181, 253, 0.05));
+}
+
+.gentle-farewell-unsubscribe .gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(240, 249, 255, 0.3) 100%);
+}
+
+/* Main Container */
+.gentle-farewell-unsubscribe .gentle-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.gentle-farewell-unsubscribe .gentle-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gentle-farewell-unsubscribe .content-wrapper {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  padding: 50px 40px;
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+/* Header */
+.gentle-farewell-unsubscribe .gentle-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.gentle-farewell-unsubscribe .header-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 30px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+  animation: gentle-pulse 3s ease-in-out infinite;
+}
+
+.gentle-farewell-unsubscribe .header-icon svg {
+  width: 36px;
+  height: 36px;
+  color: white;
+}
+
+.gentle-farewell-unsubscribe .gentle-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 500;
+  color: #1f2937;
+  margin-bottom: 16px;
+  font-family: 'Merriweather', serif;
+  line-height: 1.3;
+}
+
+.gentle-farewell-unsubscribe .gentle-subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Main Content */
+.gentle-farewell-unsubscribe .gentle-content {
+  margin-bottom: 40px;
+}
+
+.gentle-farewell-unsubscribe .farewell-message {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 30px;
+  background: rgba(249, 250, 251, 0.8);
+  border-radius: 16px;
+  border-left: 4px solid #3b82f6;
+}
+
+.gentle-farewell-unsubscribe .message-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #1f2937;
+  margin-bottom: 16px;
+  font-family: 'Merriweather', serif;
+}
+
+.gentle-farewell-unsubscribe .message-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+/* Options */
+.gentle-farewell-unsubscribe .unsubscribe-options {
+  display: grid;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.gentle-farewell-unsubscribe .option-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.gentle-farewell-unsubscribe .option-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.05), transparent);
+  transition: left 0.6s ease;
+}
+
+.gentle-farewell-unsubscribe .option-card:hover::before {
+  left: 100%;
+}
+
+.gentle-farewell-unsubscribe .option-card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+}
+
+.gentle-farewell-unsubscribe .option-card.preferred {
+  border-color: #10b981;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(255, 255, 255, 0.8));
+}
+
+.gentle-farewell-unsubscribe .option-card.preferred:hover {
+  border-color: #10b981;
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
+}
+
+.gentle-farewell-unsubscribe .option-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 16px;
+}
+
+.gentle-farewell-unsubscribe .option-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.gentle-farewell-unsubscribe .option-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.gentle-farewell-unsubscribe .option-card p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.gentle-farewell-unsubscribe .option-button {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.gentle-farewell-unsubscribe .option-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.gentle-farewell-unsubscribe .option-button:hover::before {
+  left: 100%;
+}
+
+.gentle-farewell-unsubscribe .option-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.gentle-farewell-unsubscribe .option-button.primary {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.gentle-farewell-unsubscribe .option-button.primary:hover {
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+.gentle-farewell-unsubscribe .option-button.secondary {
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+}
+
+.gentle-farewell-unsubscribe .option-button.secondary:hover {
+  box-shadow: 0 8px 25px rgba(107, 114, 128, 0.3);
+}
+
+/* Form Elements */
+.gentle-farewell-unsubscribe .unsubscribe-form {
+  margin-top: 20px;
+}
+
+.gentle-farewell-unsubscribe .form-group {
+  margin-bottom: 20px;
+}
+
+.gentle-farewell-unsubscribe .form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.gentle-farewell-unsubscribe .gentle-select,
+.gentle-farewell-unsubscribe .gentle-textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  color: #374151;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.gentle-farewell-unsubscribe .gentle-select:focus,
+.gentle-farewell-unsubscribe .gentle-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.gentle-farewell-unsubscribe .gentle-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Reassurance Section */
+.gentle-farewell-unsubscribe .reassurance-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  background: rgba(249, 250, 251, 0.6);
+  border-radius: 12px;
+  border: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+.gentle-farewell-unsubscribe .reassurance-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.gentle-farewell-unsubscribe .reassurance-icon {
+  font-size: 1.2rem;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+/* Success State */
+.gentle-farewell-unsubscribe .success-content {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.gentle-farewell-unsubscribe .success-animation {
+  margin-bottom: 40px;
+}
+
+.gentle-farewell-unsubscribe .success-checkmark {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: gentle-success-bounce 0.6s ease-out;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+}
+
+.gentle-farewell-unsubscribe .success-checkmark svg {
+  width: 48px;
+  height: 48px;
+  color: white;
+  stroke-width: 3;
+}
+
+.gentle-farewell-unsubscribe .success-title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #1f2937;
+  margin-bottom: 20px;
+  font-family: 'Merriweather', serif;
+}
+
+.gentle-farewell-unsubscribe .success-message {
+  font-size: 1.1rem;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+.gentle-farewell-unsubscribe .feedback-received {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 40px;
+}
+
+.gentle-farewell-unsubscribe .feedback-received h3 {
+  color: #047857;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.gentle-farewell-unsubscribe .feedback-received p {
+  color: #065f46;
+  margin: 0;
+}
+
+.gentle-farewell-unsubscribe .final-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.gentle-farewell-unsubscribe .action-button {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.gentle-farewell-unsubscribe .action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.gentle-farewell-unsubscribe .action-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.gentle-farewell-unsubscribe .action-link:hover {
+  color: #1d4ed8;
+}
+
+/* Footer */
+.gentle-farewell-unsubscribe .gentle-footer {
+  border-top: 1px solid rgba(229, 231, 235, 0.8);
+  padding-top: 30px;
+  text-align: center;
+}
+
+.gentle-farewell-unsubscribe .footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.gentle-farewell-unsubscribe .footer-text {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.gentle-farewell-unsubscribe .footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.gentle-farewell-unsubscribe .footer-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.gentle-farewell-unsubscribe .footer-link:hover {
+  color: #1d4ed8;
+}
+
+.gentle-farewell-unsubscribe .footer-divider {
+  color: #d1d5db;
+}
+
+/* Animations */
+@keyframes gentle-bubble-float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes gentle-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes gentle-success-bounce {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gentle-farewell-unsubscribe .content-wrapper {
+    padding: 30px 25px;
+  }
+  
+  .gentle-farewell-unsubscribe .gentle-title {
+    font-size: 1.8rem;
+  }
+  
+  .gentle-farewell-unsubscribe .gentle-subtitle {
+    font-size: 1rem;
+  }
+  
+  .gentle-farewell-unsubscribe .farewell-message {
+    padding: 20px;
+  }
+  
+  .gentle-farewell-unsubscribe .option-card {
+    padding: 25px 20px;
+  }
+  
+  .gentle-farewell-unsubscribe .reassurance-section {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .gentle-farewell-unsubscribe .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .gentle-farewell-unsubscribe .final-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
