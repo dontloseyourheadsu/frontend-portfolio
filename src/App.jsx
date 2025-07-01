@@ -77,6 +77,11 @@ import NeonCyberpunkSqueeze from './pages/squeeze-page/NeonCyberpunkSqueeze';
 import MinimalZenSqueeze from './pages/squeeze-page/MinimalZenSqueeze';
 import RetroVintageSqueeze from './pages/squeeze-page/RetroVintageSqueeze';
 
+// Import thank you page examples
+import AnimatedCelebrationThanks from './pages/thank-you/AnimatedCelebrationThanks';
+import ElegantMinimalistThanks from './pages/thank-you/ElegantMinimalistThanks';
+import FuturisticHologramThanks from './pages/thank-you/FuturisticHologramThanks';
+
 // Import advertisement
 import Advertisement from './pages/Advertisement';
 
@@ -145,6 +150,10 @@ const App = () => {
     { path: '/squeeze-page/cyberpunk', name: 'Neon Cyberpunk Squeeze Page', component: <NeonCyberpunkSqueeze /> },
     { path: '/squeeze-page/zen', name: 'Minimal Zen Squeeze Page', component: <MinimalZenSqueeze /> },
     { path: '/squeeze-page/retro', name: 'Retro Vintage Squeeze Page', component: <RetroVintageSqueeze /> },
+    // Thank you page examples
+    { path: '/thank-you/animated', name: 'Animated Celebration Thank You Page', component: <AnimatedCelebrationThanks /> },
+    { path: '/thank-you/elegant', name: 'Elegant Minimalist Thank You Page', component: <ElegantMinimalistThanks /> },
+    { path: '/thank-you/hologram', name: 'Futuristic Hologram Thank You Page', component: <FuturisticHologramThanks /> },
     // Advertisement
     { path: '/advertisement', name: 'Fiverr Service Advertisement', component: <Advertisement /> },
     // Add more examples as they get implemented
@@ -164,6 +173,7 @@ const App = () => {
     { path: '/microsite', name: 'Microsite' },
     { path: '/splash', name: 'Splash / Coming Soon' },
     { path: '/squeeze-page', name: 'Squeeze Page' },
+    { path: '/thank-you', name: 'Thank You Page' },
     { path: '/404', name: '404 / Utility' },
     { path: '/pricing', name: 'Pricing' },
     { path: '/advertisement', name: 'Advertisement' },
@@ -358,6 +368,19 @@ const App = () => {
                 </div>
               </div>
             } />
+            <Route path="/thank-you" element={
+              <div className="placeholder-page">
+                <div>
+                  <h2>Thank You Pages</h2>
+                  <p>Check out our thank you page examples:</p>
+                  <div className="example-links">
+                    <Link to="/thank-you/animated" className="example-link">Animated Celebration</Link>
+                    <Link to="/thank-you/elegant" className="example-link">Elegant Minimalist</Link>
+                    <Link to="/thank-you/hologram" className="example-link">Futuristic Hologram</Link>
+                  </div>
+                </div>
+              </div>
+            } />
             <Route path="/404" element={
               <div className="placeholder-page">
                 <div>
@@ -436,6 +459,7 @@ const App = () => {
                   <li><Link to="/microsite" onClick={() => setIsNavOpen(false)}>Microsite</Link></li>
                   <li><Link to="/splash" onClick={() => setIsNavOpen(false)}>Splash / Coming Soon</Link></li>
                   <li><Link to="/squeeze-page" onClick={() => setIsNavOpen(false)}>Squeeze Page</Link></li>
+                  <li><Link to="/thank-you" onClick={() => setIsNavOpen(false)}>Thank You Page</Link></li>
                   <li><Link to="/404" onClick={() => setIsNavOpen(false)}>404 / Utility</Link></li>
                   <li><Link to="/pricing" onClick={() => setIsNavOpen(false)}>Pricing</Link></li>
                   <li><Link to="/advertisement" onClick={() => setIsNavOpen(false)}>Advertisement</Link></li>
