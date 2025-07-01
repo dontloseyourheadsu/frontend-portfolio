@@ -72,6 +72,11 @@ import AnimatedSplash from './pages/splash/AnimatedSplash';
 import MinimalSplash from './pages/splash/MinimalSplash';
 import CreativeSplash from './pages/splash/CreativeSplash';
 
+// Import squeeze page examples
+import NeonCyberpunkSqueeze from './pages/squeeze-page/NeonCyberpunkSqueeze';
+import MinimalZenSqueeze from './pages/squeeze-page/MinimalZenSqueeze';
+import RetroVintageSqueeze from './pages/squeeze-page/RetroVintageSqueeze';
+
 // Import advertisement
 import Advertisement from './pages/Advertisement';
 
@@ -136,6 +141,10 @@ const App = () => {
     { path: '/splash/animated', name: 'Animated Splash Page', component: <AnimatedSplash /> },
     { path: '/splash/minimal', name: 'Minimal Splash Page', component: <MinimalSplash /> },
     { path: '/splash/creative', name: 'Creative Splash Page', component: <CreativeSplash /> },
+    // Squeeze page examples
+    { path: '/squeeze-page/cyberpunk', name: 'Neon Cyberpunk Squeeze Page', component: <NeonCyberpunkSqueeze /> },
+    { path: '/squeeze-page/zen', name: 'Minimal Zen Squeeze Page', component: <MinimalZenSqueeze /> },
+    { path: '/squeeze-page/retro', name: 'Retro Vintage Squeeze Page', component: <RetroVintageSqueeze /> },
     // Advertisement
     { path: '/advertisement', name: 'Fiverr Service Advertisement', component: <Advertisement /> },
     // Add more examples as they get implemented
@@ -154,6 +163,7 @@ const App = () => {
     { path: '/membership', name: 'Membership' },
     { path: '/microsite', name: 'Microsite' },
     { path: '/splash', name: 'Splash / Coming Soon' },
+    { path: '/squeeze-page', name: 'Squeeze Page' },
     { path: '/404', name: '404 / Utility' },
     { path: '/pricing', name: 'Pricing' },
     { path: '/advertisement', name: 'Advertisement' },
@@ -335,6 +345,19 @@ const App = () => {
                 </div>
               </div>
             } />
+            <Route path="/squeeze-page" element={
+              <div className="placeholder-page">
+                <div>
+                  <h2>Squeeze Pages</h2>
+                  <p>Check out our high-converting squeeze page examples:</p>
+                  <div className="example-links">
+                    <Link to="/squeeze-page/cyberpunk" className="example-link">Neon Cyberpunk</Link>
+                    <Link to="/squeeze-page/zen" className="example-link">Minimal Zen</Link>
+                    <Link to="/squeeze-page/retro" className="example-link">Retro Vintage</Link>
+                  </div>
+                </div>
+              </div>
+            } />
             <Route path="/404" element={
               <div className="placeholder-page">
                 <div>
@@ -412,6 +435,7 @@ const App = () => {
                   <li><Link to="/membership" onClick={() => setIsNavOpen(false)}>Membership</Link></li>
                   <li><Link to="/microsite" onClick={() => setIsNavOpen(false)}>Microsite</Link></li>
                   <li><Link to="/splash" onClick={() => setIsNavOpen(false)}>Splash / Coming Soon</Link></li>
+                  <li><Link to="/squeeze-page" onClick={() => setIsNavOpen(false)}>Squeeze Page</Link></li>
                   <li><Link to="/404" onClick={() => setIsNavOpen(false)}>404 / Utility</Link></li>
                   <li><Link to="/pricing" onClick={() => setIsNavOpen(false)}>Pricing</Link></li>
                   <li><Link to="/advertisement" onClick={() => setIsNavOpen(false)}>Advertisement</Link></li>

@@ -1,0 +1,727 @@
+/* Minimal Zen Squeeze Page Styles */
+/* Using minimal-zen-squeeze as root class to prevent CSS conflicts */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Crimson+Text:ital,wght@0,400;1,400&display=swap');
+
+.minimal-zen-squeeze {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
+  color: #1a202c;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background Elements */
+.minimal-zen-squeeze .zen-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.minimal-zen-squeeze .floating-orbs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.minimal-zen-squeeze .orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(99, 102, 241, 0.1), rgba(59, 130, 246, 0.05));
+  filter: blur(40px);
+  animation: zen-float 20s ease-in-out infinite;
+}
+
+.minimal-zen-squeeze .orb-1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.minimal-zen-squeeze .orb-2 {
+  width: 200px;
+  height: 200px;
+  top: 60%;
+  right: 15%;
+  animation-delay: 7s;
+}
+
+.minimal-zen-squeeze .orb-3 {
+  width: 150px;
+  height: 150px;
+  bottom: 20%;
+  left: 60%;
+  animation-delay: 14s;
+}
+
+.minimal-zen-squeeze .zen-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.1) 1px, transparent 0);
+  background-size: 40px 40px;
+  opacity: 0.3;
+}
+
+/* Main Container */
+.minimal-zen-squeeze .zen-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Breathing Guide */
+.minimal-zen-squeeze .breathing-guide {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 10;
+}
+
+.minimal-zen-squeeze .breathe-circle {
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(99, 102, 241, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 4s ease-in-out;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.minimal-zen-squeeze .breathe-circle.inhale {
+  transform: scale(1.2);
+  border-color: rgba(99, 102, 241, 0.6);
+}
+
+.minimal-zen-squeeze .breathe-circle.exhale {
+  transform: scale(0.8);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.minimal-zen-squeeze .breathe-inner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+}
+
+.minimal-zen-squeeze .breathe-text {
+  font-size: 10px;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Header */
+.minimal-zen-squeeze .zen-header {
+  text-align: center;
+  margin-bottom: 80px;
+  padding-top: 60px;
+}
+
+.minimal-zen-squeeze .zen-logo {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.minimal-zen-squeeze .logo-circle {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #6366f1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.minimal-zen-squeeze .logo-dot {
+  width: 8px;
+  height: 8px;
+  background: #6366f1;
+  border-radius: 50%;
+  animation: zen-pulse 3s ease-in-out infinite;
+}
+
+.minimal-zen-squeeze .zen-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: #1a202c;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.minimal-zen-squeeze .zen-subtitle {
+  font-size: 1.2rem;
+  color: #64748b;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* Main Content */
+.minimal-zen-squeeze .zen-content {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Value Section */
+.minimal-zen-squeeze .value-section {
+  text-align: center;
+}
+
+.minimal-zen-squeeze .zen-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  padding: 60px 40px;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  position: relative;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.minimal-zen-squeeze .zen-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #6366f1, transparent);
+}
+
+.minimal-zen-squeeze .value-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 400;
+  color: #1a202c;
+  margin-bottom: 30px;
+  line-height: 1.3;
+}
+
+.minimal-zen-squeeze .highlight {
+  color: #6366f1;
+  font-weight: 500;
+  display: block;
+  margin-top: 8px;
+}
+
+.minimal-zen-squeeze .value-description {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.minimal-zen-squeeze .zen-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 40px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.minimal-zen-squeeze .stat-group {
+  text-align: center;
+}
+
+.minimal-zen-squeeze .stat-number {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #6366f1;
+  display: block;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.minimal-zen-squeeze .stat-label {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Benefits Section */
+.minimal-zen-squeeze .benefits-section {
+  text-align: center;
+}
+
+.minimal-zen-squeeze .benefits-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #1a202c;
+  margin-bottom: 50px;
+}
+
+.minimal-zen-squeeze .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.minimal-zen-squeeze .benefit-item {
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.minimal-zen-squeeze .benefit-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.02), rgba(139, 92, 246, 0.02));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.minimal-zen-squeeze .benefit-item:hover::before {
+  opacity: 1;
+}
+
+.minimal-zen-squeeze .benefit-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+.minimal-zen-squeeze .benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 24px;
+  filter: grayscale(0.2);
+}
+
+.minimal-zen-squeeze .benefit-item h4 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #1a202c;
+  margin-bottom: 16px;
+}
+
+.minimal-zen-squeeze .benefit-item p {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Capture Section */
+.minimal-zen-squeeze .capture-section {
+  text-align: center;
+}
+
+.minimal-zen-squeeze .capture-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 50px 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.minimal-zen-squeeze .capture-header {
+  margin-bottom: 40px;
+}
+
+.minimal-zen-squeeze .capture-title {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #1a202c;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.minimal-zen-squeeze .capture-subtitle {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.minimal-zen-squeeze .zen-form {
+  margin-bottom: 30px;
+}
+
+.minimal-zen-squeeze .form-group {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.minimal-zen-squeeze .form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+.minimal-zen-squeeze .input-container {
+  position: relative;
+}
+
+.minimal-zen-squeeze .zen-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #e2e8f0;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  color: #1a202c;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.minimal-zen-squeeze .zen-input:focus {
+  border-bottom-color: #6366f1;
+}
+
+.minimal-zen-squeeze .zen-input::placeholder {
+  color: #94a3b8;
+}
+
+.minimal-zen-squeeze .input-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  transition: width 0.3s ease;
+}
+
+.minimal-zen-squeeze .zen-input:focus + .input-underline {
+  width: 100%;
+}
+
+.minimal-zen-squeeze .zen-button {
+  width: 100%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  border-radius: 12px;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.minimal-zen-squeeze .zen-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+.minimal-zen-squeeze .zen-button.submitted {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.minimal-zen-squeeze .button-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.minimal-zen-squeeze .arrow {
+  transition: transform 0.3s ease;
+}
+
+.minimal-zen-squeeze .zen-button:hover .arrow {
+  transform: translateX(4px);
+}
+
+.minimal-zen-squeeze .check-icon {
+  font-size: 1.2rem;
+  animation: zen-check-bounce 0.6s ease-out;
+}
+
+.minimal-zen-squeeze .button-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+}
+
+.minimal-zen-squeeze .zen-button:active .button-ripple {
+  width: 300px;
+  height: 300px;
+}
+
+.minimal-zen-squeeze .privacy-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #64748b;
+  font-size: 0.9rem;
+  padding: 20px;
+  background: rgba(241, 245, 249, 0.6);
+  border-radius: 12px;
+}
+
+.minimal-zen-squeeze .privacy-icon {
+  font-size: 1.2rem;
+}
+
+/* Testimonial Section */
+.minimal-zen-squeeze .testimonial-section {
+  text-align: center;
+}
+
+.minimal-zen-squeeze .testimonial-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 50px 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.minimal-zen-squeeze .quote-mark {
+  font-size: 4rem;
+  color: #6366f1;
+  font-family: 'Crimson Text', serif;
+  line-height: 1;
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+
+.minimal-zen-squeeze .testimonial-quote {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #374151;
+  font-style: italic;
+  margin-bottom: 40px;
+  font-family: 'Crimson Text', serif;
+}
+
+.minimal-zen-squeeze .testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.minimal-zen-squeeze .author-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.minimal-zen-squeeze .author-info {
+  text-align: left;
+}
+
+.minimal-zen-squeeze .author-name {
+  font-weight: 500;
+  color: #1a202c;
+  margin-bottom: 4px;
+}
+
+.minimal-zen-squeeze .author-title {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* Footer */
+.minimal-zen-squeeze .zen-footer {
+  margin-top: 100px;
+  padding-top: 60px;
+  border-top: 1px solid rgba(226, 232, 240, 0.6);
+  text-align: center;
+}
+
+.minimal-zen-squeeze .footer-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.minimal-zen-squeeze .footer-quote {
+  font-size: 1.1rem;
+  color: #475569;
+  font-style: italic;
+  margin-bottom: 8px;
+  font-family: 'Crimson Text', serif;
+  line-height: 1.6;
+}
+
+.minimal-zen-squeeze .footer-attribution {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 40px;
+}
+
+.minimal-zen-squeeze .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.minimal-zen-squeeze .footer-link {
+  color: #6366f1;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.minimal-zen-squeeze .footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #6366f1;
+  transition: width 0.3s ease;
+}
+
+.minimal-zen-squeeze .footer-link:hover::after {
+  width: 100%;
+}
+
+.minimal-zen-squeeze .footer-link:hover {
+  color: #4f46e5;
+}
+
+/* Animations */
+@keyframes zen-float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  33% { transform: translateY(-20px) scale(1.1); }
+  66% { transform: translateY(10px) scale(0.9); }
+}
+
+@keyframes zen-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+}
+
+@keyframes zen-check-bounce {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .minimal-zen-squeeze .zen-container {
+    padding: 20px 15px;
+  }
+  
+  .minimal-zen-squeeze .breathing-guide {
+    top: 20px;
+    right: 20px;
+  }
+  
+  .minimal-zen-squeeze .breathe-circle {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .minimal-zen-squeeze .breathe-inner {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .minimal-zen-squeeze .breathe-text {
+    font-size: 8px;
+  }
+  
+  .minimal-zen-squeeze .zen-header {
+    padding-top: 40px;
+    margin-bottom: 60px;
+  }
+  
+  .minimal-zen-squeeze .zen-content {
+    gap: 60px;
+  }
+  
+  .minimal-zen-squeeze .zen-card {
+    padding: 40px 20px;
+  }
+  
+  .minimal-zen-squeeze .zen-stats {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .minimal-zen-squeeze .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .minimal-zen-squeeze .capture-container {
+    padding: 40px 30px;
+  }
+  
+  .minimal-zen-squeeze .testimonial-card {
+    padding: 40px 30px;
+  }
+  
+  .minimal-zen-squeeze .testimonial-author {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .minimal-zen-squeeze .author-info {
+    text-align: center;
+  }
+  
+  .minimal-zen-squeeze .footer-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
