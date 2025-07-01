@@ -82,6 +82,11 @@ import AnimatedCelebrationThanks from './pages/thank-you/AnimatedCelebrationThan
 import ElegantMinimalistThanks from './pages/thank-you/ElegantMinimalistThanks';
 import FuturisticHologramThanks from './pages/thank-you/FuturisticHologramThanks';
 
+// Import unsubscribe page examples
+import GentleFarewellUnsubscribe from './pages/unsubscribe/GentleFarewellUnsubscribe';
+import InteractiveFeedbackUnsubscribe from './pages/unsubscribe/InteractiveFeedbackUnsubscribe';
+import MinimalCorporateUnsubscribe from './pages/unsubscribe/MinimalCorporateUnsubscribe';
+
 // Import advertisement
 import Advertisement from './pages/Advertisement';
 
@@ -154,6 +159,10 @@ const App = () => {
     { path: '/thank-you/animated', name: 'Animated Celebration Thank You Page', component: <AnimatedCelebrationThanks /> },
     { path: '/thank-you/elegant', name: 'Elegant Minimalist Thank You Page', component: <ElegantMinimalistThanks /> },
     { path: '/thank-you/hologram', name: 'Futuristic Hologram Thank You Page', component: <FuturisticHologramThanks /> },
+    // Unsubscribe page examples
+    { path: '/unsubscribe/gentle', name: 'Gentle Farewell Unsubscribe Page', component: <GentleFarewellUnsubscribe /> },
+    { path: '/unsubscribe/feedback', name: 'Interactive Feedback Unsubscribe Page', component: <InteractiveFeedbackUnsubscribe /> },
+    { path: '/unsubscribe/corporate', name: 'Minimal Corporate Unsubscribe Page', component: <MinimalCorporateUnsubscribe /> },
     // Advertisement
     { path: '/advertisement', name: 'Fiverr Service Advertisement', component: <Advertisement /> },
     // Add more examples as they get implemented
@@ -174,6 +183,7 @@ const App = () => {
     { path: '/splash', name: 'Splash / Coming Soon' },
     { path: '/squeeze-page', name: 'Squeeze Page' },
     { path: '/thank-you', name: 'Thank You Page' },
+    { path: '/unsubscribe', name: 'Unsubscribe Page' },
     { path: '/404', name: '404 / Utility' },
     { path: '/pricing', name: 'Pricing' },
     { path: '/advertisement', name: 'Advertisement' },
@@ -381,6 +391,19 @@ const App = () => {
                 </div>
               </div>
             } />
+            <Route path="/unsubscribe" element={
+              <div className="placeholder-page">
+                <div>
+                  <h2>Unsubscribe Pages</h2>
+                  <p>Check out our unsubscribe page examples:</p>
+                  <div className="example-links">
+                    <Link to="/unsubscribe/gentle" className="example-link">Gentle Farewell</Link>
+                    <Link to="/unsubscribe/feedback" className="example-link">Interactive Feedback</Link>
+                    <Link to="/unsubscribe/corporate" className="example-link">Minimal Corporate</Link>
+                  </div>
+                </div>
+              </div>
+            } />
             <Route path="/404" element={
               <div className="placeholder-page">
                 <div>
@@ -460,6 +483,7 @@ const App = () => {
                   <li><Link to="/splash" onClick={() => setIsNavOpen(false)}>Splash / Coming Soon</Link></li>
                   <li><Link to="/squeeze-page" onClick={() => setIsNavOpen(false)}>Squeeze Page</Link></li>
                   <li><Link to="/thank-you" onClick={() => setIsNavOpen(false)}>Thank You Page</Link></li>
+                  <li><Link to="/unsubscribe" onClick={() => setIsNavOpen(false)}>Unsubscribe Page</Link></li>
                   <li><Link to="/404" onClick={() => setIsNavOpen(false)}>404 / Utility</Link></li>
                   <li><Link to="/pricing" onClick={() => setIsNavOpen(false)}>Pricing</Link></li>
                   <li><Link to="/advertisement" onClick={() => setIsNavOpen(false)}>Advertisement</Link></li>
