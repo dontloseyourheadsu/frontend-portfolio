@@ -135,8 +135,8 @@
   display: flex;
   align-items: center;
   width: 100%;
-  /* Add margin-top to create space between toggle button and content */
-  margin-top: 15px;
+  /* Add padding-top to create space between toggle button and content */
+  padding-top: 1.5em;
 }
 
 .nav-top {
@@ -144,7 +144,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 10px 5px; /* Add horizontal padding */
+  padding: 1em;
 }
 
 .nav-logo {
@@ -155,8 +155,10 @@
 .logo-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   min-width: 55px; /* Fixed minimum width */
-  margin-right: 5px;
+  height: 40px; /* Match the height of other nav elements */
+  margin: 0 !important;
 }
 
 /* Mobile responsive styles */
@@ -224,6 +226,7 @@
   height: 35px; /* Slightly smaller */
   width: auto;
   object-fit: contain;
+  vertical-align: middle; /* Ensure vertical alignment */
 }
 
 /* Links in navigation - Revised with scrollbar */
@@ -233,7 +236,7 @@
   justify-content: flex-start;
   overflow-x: auto;
   max-width: 60%;
-  scrollbar-width: thin; /* For Firefox */
+  scrollbar-width: 25px; /* For Firefox */
   scrollbar-color: var(--purple) #333; /* For Firefox */
   margin: 0 10px;
   padding: 0 2px 8px 2px; /* Add bottom padding for scrollbar */
@@ -243,7 +246,7 @@
 /* Style scrollbar for Chrome, Safari and Opera */
 .nav-categories::-webkit-scrollbar {
   display: block;
-  height: 4px;
+  height: 8px;
   width: auto;
 }
 
