@@ -179,6 +179,7 @@ const App = () => {
 
   // Define categories
   const categories = [
+    { path: '/portfolio', name: 'Portfolio' },
     { path: '/lead-capture', name: 'Lead Capture' },
     { path: '/click-through', name: 'Click-Through' },
     { path: '/product-sales-page', name: 'Product / Sales' },
@@ -189,13 +190,13 @@ const App = () => {
     { path: '/course', name: 'Course / Membership' },
     { path: '/membership', name: 'Membership' },
     { path: '/microsite', name: 'Microsite' },
-    { path: '/splash', name: 'Splash / Coming Soon' },
+    { path: '/coming-soon', name: 'Coming Soon' },
+    { path: '/splash', name: 'Splash Page' },
     { path: '/squeeze-page', name: 'Squeeze Page' },
     { path: '/thank-you', name: 'Thank You Page' },
     { path: '/unsubscribe', name: 'Unsubscribe Page' },
     { path: '/404', name: '404 / Utility' },
     { path: '/pricing', name: 'Pricing' },
-    { path: '/advertisement', name: 'Advertisement' },
   ];
 
   // Select a random example on first load
@@ -233,6 +234,19 @@ const App = () => {
             ))}
 
             {/* Routes for categories */}
+            <Route path="/portfolio" element={
+              <div className="placeholder-page">
+                <div>
+                  <h2>Portfolio Pages</h2>
+                  <p>Check out our portfolio page examples:</p>
+                  <div className="example-links">
+                    <Link to="/portfolio/gamedev" className="example-link">Game Developer Portfolio</Link>
+                    <Link to="/portfolio/webdev" className="example-link">Web Developer Portfolio</Link>
+                    <Link to="/portfolio/uxdesign" className="example-link">UX Designer Portfolio</Link>
+                  </div>
+                </div>
+              </div>
+            } />
             <Route path="/lead-capture" element={
               <div className="placeholder-page">
                 <div>
@@ -363,18 +377,28 @@ const App = () => {
                 </div>
               </div>
             } />
+            <Route path="/coming-soon" element={
+              <div className="placeholder-page">
+                <div>
+                  <h2>Coming Soon Pages</h2>
+                  <p>Check out our coming soon page examples:</p>
+                  <div className="example-links">
+                    <Link to="/coming-soon/countdown" className="example-link">Countdown Timer</Link>
+                    <Link to="/coming-soon/animated" className="example-link">Animated Background</Link>
+                    <Link to="/coming-soon/minimal" className="example-link">Minimal Design</Link>
+                  </div>
+                </div>
+              </div>
+            } />
             <Route path="/splash" element={
               <div className="placeholder-page">
                 <div>
-                  <h2>Splash & Coming Soon Pages</h2>
-                  <p>Check out our splash and coming soon page examples:</p>
+                  <h2>Splash Pages</h2>
+                  <p>Check out our splash page examples:</p>
                   <div className="example-links">
                     <Link to="/splash/animated" className="example-link">Animated Splash</Link>
                     <Link to="/splash/minimal" className="example-link">Minimal Splash</Link>
                     <Link to="/splash/creative" className="example-link">Creative Splash</Link>
-                    <Link to="/coming-soon/countdown" className="example-link">Countdown Timer</Link>
-                    <Link to="/coming-soon/animated" className="example-link">Animated Background</Link>
-                    <Link to="/coming-soon/minimal" className="example-link">Minimal Design</Link>
                   </div>
                 </div>
               </div>
@@ -444,17 +468,6 @@ const App = () => {
                 </div>
               </div>
             } />
-            <Route path="/advertisement" element={
-              <div className="placeholder-page">
-                <div>
-                  <h2>Service Advertisement</h2>
-                  <p>Check out this promotional page for web design services:</p>
-                  <div className="example-links">
-                    <Link to="/advertisement" className="example-link">Landing Page Service</Link>
-                  </div>
-                </div>
-              </div>
-            } />
 
             {/* Home route shows the random example */}
             <Route path="/" element={randomExample?.component ||
@@ -484,6 +497,7 @@ const App = () => {
 
               <div className="nav-categories">
                 <ul>
+                  <li><Link to="/portfolio" onClick={() => setIsNavOpen(false)}>Portfolio</Link></li>
                   <li><Link to="/lead-capture" onClick={() => setIsNavOpen(false)}>Lead Capture</Link></li>
                   <li><Link to="/click-through" onClick={() => setIsNavOpen(false)}>Click-Through</Link></li>
                   <li><Link to="/product-sales-page" onClick={() => setIsNavOpen(false)}>Product / Sales</Link></li>
@@ -494,13 +508,13 @@ const App = () => {
                   <li><Link to="/course" onClick={() => setIsNavOpen(false)}>Course / Membership</Link></li>
                   <li><Link to="/membership" onClick={() => setIsNavOpen(false)}>Membership</Link></li>
                   <li><Link to="/microsite" onClick={() => setIsNavOpen(false)}>Microsite</Link></li>
-                  <li><Link to="/splash" onClick={() => setIsNavOpen(false)}>Splash / Coming Soon</Link></li>
+                  <li><Link to="/coming-soon" onClick={() => setIsNavOpen(false)}>Coming Soon</Link></li>
+                  <li><Link to="/splash" onClick={() => setIsNavOpen(false)}>Splash Page</Link></li>
                   <li><Link to="/squeeze-page" onClick={() => setIsNavOpen(false)}>Squeeze Page</Link></li>
                   <li><Link to="/thank-you" onClick={() => setIsNavOpen(false)}>Thank You Page</Link></li>
                   <li><Link to="/unsubscribe" onClick={() => setIsNavOpen(false)}>Unsubscribe Page</Link></li>
                   <li><Link to="/404" onClick={() => setIsNavOpen(false)}>404 / Utility</Link></li>
                   <li><Link to="/pricing" onClick={() => setIsNavOpen(false)}>Pricing</Link></li>
-                  <li><Link to="/advertisement" onClick={() => setIsNavOpen(false)}>Advertisement</Link></li>
                 </ul>
               </div>
 
