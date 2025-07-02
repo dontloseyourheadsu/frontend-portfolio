@@ -1,0 +1,716 @@
+/* 
+  Tech Innovation Webinar Page Styling
+  
+  Approach: Futuristic, high-tech design with dark theme and neon accents.
+  Grid patterns, terminal aesthetics, and tech-inspired UI elements.
+  Emphasizes cutting-edge technology and innovation.
+  
+  Key Features:
+  - Dark theme with neon accents (#0f172a, #00d9ff, #7c3aed)
+  - Terminal and code aesthetics
+  - Grid patterns and tech-inspired backgrounds
+  - Glitch effects and matrix animations
+  - Monospace typography for tech feel
+  - Animated elements and interactive effects
+  
+  Root class: .tech-innovation-webinar
+*/
+
+.tech-innovation-webinar {
+  min-height: 100vh;
+  background: #0f172a;
+  color: #00d9ff;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.tech-innovation-webinar__matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.tech-innovation-webinar__matrix-char {
+  position: absolute;
+  color: #00d9ff;
+  font-size: 1rem;
+  opacity: 0.1;
+  animation: techMatrixFall 4s linear infinite;
+}
+
+.tech-innovation-webinar__grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.1;
+}
+
+.tech-innovation-webinar__grid {
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 217, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 217, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: techGridPulse 4s ease-in-out infinite;
+}
+
+.tech-innovation-webinar__container {
+  position: relative;
+  z-index: 10;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.tech-innovation-webinar__header {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.9) 100%);
+  border: 1px solid #00d9ff;
+  border-radius: 0;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-innovation-webinar__header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00d9ff, transparent);
+  animation: techScanline 3s linear infinite;
+}
+
+.tech-innovation-webinar__header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.tech-innovation-webinar__status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.tech-innovation-webinar__status-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tech-innovation-webinar__status-dot {
+  width: 8px;
+  height: 8px;
+  background: #00ff41;
+  border-radius: 50%;
+  animation: techPulse 2s ease-in-out infinite;
+}
+
+.tech-innovation-webinar__title {
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 0 0 1rem 0;
+  text-shadow: 0 0 10px #00d9ff;
+  animation: techGlitch 6s linear infinite;
+  position: relative;
+}
+
+.tech-innovation-webinar__title-prefix {
+  color: #7c3aed;
+  margin-right: 1rem;
+}
+
+.tech-innovation-webinar__cursor {
+  animation: techBlink 1s linear infinite;
+  color: #00ff41;
+}
+
+.tech-innovation-webinar__subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tech-innovation-webinar__prompt {
+  color: #00ff41;
+  font-weight: 600;
+}
+
+.tech-innovation-webinar__command {
+  color: #fbbf24;
+}
+
+.tech-innovation-webinar__event-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.tech-innovation-webinar__info-block {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #7c3aed;
+  padding: 1.5rem;
+  border-radius: 0;
+}
+
+.tech-innovation-webinar__info-label {
+  color: #7c3aed;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.tech-innovation-webinar__info-value {
+  color: #00d9ff;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.tech-innovation-webinar__main {
+  position: relative;
+}
+
+.tech-innovation-webinar__content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+
+.tech-innovation-webinar__left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.tech-innovation-webinar__section {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  padding: 2rem;
+  position: relative;
+}
+
+.tech-innovation-webinar__section-header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 217, 255, 0.3);
+  padding-bottom: 1rem;
+}
+
+.tech-innovation-webinar__section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00d9ff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tech-innovation-webinar__section-icon {
+  color: #7c3aed;
+  font-size: 1.2rem;
+}
+
+.tech-innovation-webinar__code-block {
+  background: #000;
+  border: 1px solid #333;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.tech-innovation-webinar__code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a1a1a;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #333;
+  font-size: 0.9rem;
+}
+
+.tech-innovation-webinar__code-status {
+  color: #00ff41;
+  font-weight: 600;
+}
+
+.tech-innovation-webinar__code-content {
+  padding: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.tech-innovation-webinar__code-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.tech-innovation-webinar__line-number {
+  color: #666;
+  width: 30px;
+  font-size: 0.8rem;
+  margin-right: 1rem;
+}
+
+.tech-innovation-webinar__keyword {
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+.tech-innovation-webinar__class {
+  color: #fbbf24;
+}
+
+.tech-innovation-webinar__function {
+  color: #00d9ff;
+}
+
+.tech-innovation-webinar__string {
+  color: #00ff41;
+}
+
+.tech-innovation-webinar__modules-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.tech-innovation-webinar__module {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #7c3aed;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-innovation-webinar__module::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.tech-innovation-webinar__module:hover::before {
+  left: 100%;
+}
+
+.tech-innovation-webinar__module:hover {
+  border-color: #00d9ff;
+  transform: translateY(-5px);
+}
+
+.tech-innovation-webinar__module-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.tech-innovation-webinar__module-icon {
+  font-size: 1.5rem;
+}
+
+.tech-innovation-webinar__module-name {
+  color: #00d9ff;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.tech-innovation-webinar__module-desc {
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.tech-innovation-webinar__module-status {
+  color: #fbbf24;
+  font-size: 0.8rem;
+  font-weight: 600;
+  animation: techLoading 2s ease-in-out infinite;
+}
+
+.tech-innovation-webinar__speaker {
+  position: relative;
+}
+
+.tech-innovation-webinar__speaker-terminal {
+  background: #000;
+  border: 1px solid #00d9ff;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.tech-innovation-webinar__terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a1a1a;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.tech-innovation-webinar__terminal-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tech-innovation-webinar__terminal-controls span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #666;
+}
+
+.tech-innovation-webinar__terminal-controls span:nth-child(1) {
+  background: #ff5f56;
+}
+
+.tech-innovation-webinar__terminal-controls span:nth-child(2) {
+  background: #ffbd2e;
+}
+
+.tech-innovation-webinar__terminal-controls span:nth-child(3) {
+  background: #27ca3f;
+}
+
+.tech-innovation-webinar__terminal-content {
+  padding: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1.6;
+}
+
+.tech-innovation-webinar__terminal-content > div {
+  margin-bottom: 0.5rem;
+}
+
+.tech-innovation-webinar__right-column {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.tech-innovation-webinar__registration {
+  position: relative;
+}
+
+.tech-innovation-webinar__terminal {
+  background: #000;
+  border: 2px solid #00d9ff;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+}
+
+.tech-innovation-webinar__control-close {
+  background: #ff5f56;
+}
+
+.tech-innovation-webinar__control-minimize {
+  background: #ffbd2e;
+}
+
+.tech-innovation-webinar__control-maximize {
+  background: #27ca3f;
+}
+
+.tech-innovation-webinar__terminal-body {
+  padding: 2rem;
+}
+
+.tech-innovation-webinar__registration-header {
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.tech-innovation-webinar__registration-header > div {
+  margin-bottom: 0.5rem;
+}
+
+.tech-innovation-webinar__loading {
+  color: #fbbf24;
+}
+
+.tech-innovation-webinar__dots {
+  animation: techDots 2s linear infinite;
+}
+
+.tech-innovation-webinar__success {
+  color: #00ff41;
+}
+
+.tech-innovation-webinar__access {
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+.tech-innovation-webinar__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tech-innovation-webinar__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tech-innovation-webinar__label {
+  color: #00d9ff;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.tech-innovation-webinar__input {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #333;
+  color: #00d9ff;
+  padding: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border-radius: 0;
+}
+
+.tech-innovation-webinar__input:focus {
+  outline: none;
+  border-color: #00d9ff;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+  background: rgba(0, 217, 255, 0.05);
+}
+
+.tech-innovation-webinar__input::placeholder {
+  color: #666;
+}
+
+.tech-innovation-webinar__submit {
+  background: linear-gradient(135deg, #7c3aed 0%, #00d9ff 100%);
+  border: none;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-innovation-webinar__submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.tech-innovation-webinar__submit:hover::before {
+  left: 100%;
+}
+
+.tech-innovation-webinar__submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+}
+
+.tech-innovation-webinar__terminal-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.tech-innovation-webinar__terminal-footer > div {
+  margin-bottom: 0.5rem;
+}
+
+.tech-innovation-webinar__status-live {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #00ff41;
+  font-weight: 600;
+}
+
+.tech-innovation-webinar__live-dot {
+  width: 8px;
+  height: 8px;
+  background: #00ff41;
+  border-radius: 50%;
+  animation: techPulse 1.5s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes techMatrixFall {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes techGridPulse {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes techScanline {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes techPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes techGlitch {
+  0%, 95%, 100% {
+    filter: none;
+  }
+  96% {
+    filter: hue-rotate(90deg) contrast(150%);
+  }
+  97% {
+    filter: hue-rotate(180deg) contrast(200%);
+  }
+  98% {
+    filter: hue-rotate(270deg) contrast(100%);
+  }
+  99% {
+    filter: hue-rotate(360deg) contrast(150%);
+  }
+}
+
+@keyframes techBlink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes techLoading {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes techDots {
+  0% {
+    content: '...';
+  }
+  33% {
+    content: '.  ';
+  }
+  66% {
+    content: '.. ';
+  }
+  100% {
+    content: '...';
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tech-innovation-webinar__content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .tech-innovation-webinar__right-column {
+    position: static;
+  }
+  
+  .tech-innovation-webinar__modules-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-innovation-webinar__container {
+    padding: 1rem;
+  }
+  
+  .tech-innovation-webinar__title {
+    font-size: 2.5rem;
+  }
+  
+  .tech-innovation-webinar__header {
+    padding: 2rem;
+  }
+  
+  .tech-innovation-webinar__status-bar {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .tech-innovation-webinar__event-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .tech-innovation-webinar__subtitle {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

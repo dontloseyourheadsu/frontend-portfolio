@@ -1,0 +1,704 @@
+/* 
+  Creative Workshop Webinar Page Styling
+  
+  Approach: Artistic, vibrant design with colorful gradients and playful geometric shapes.
+  Dynamic animations, interactive elements, and creative typography. Emphasizes fun,
+  inspiration, and creative energy.
+  
+  Key Features:
+  - Colorful gradient backgrounds (#ff6b6b, #4ecdc4, #45b7d1, #96ceb4)
+  - Playful geometric shapes and floating elements
+  - Interactive mouse-tracking effects
+  - Creative typography with emoji integration
+  - Dynamic animations and hover effects
+  - Artistic form design with creative styling
+  
+  Root class: .creative-workshop-webinar
+*/
+
+.creative-workshop-webinar {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #2d3748;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.creative-workshop-webinar__bg-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.creative-workshop-webinar__shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: creativeFloat 20s ease-in-out infinite;
+}
+
+.creative-workshop-webinar__shape--1 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.creative-workshop-webinar__shape--2 {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(45deg, #4ecdc4, #00cec9);
+  top: 60%;
+  right: 15%;
+  animation-delay: 5s;
+}
+
+.creative-workshop-webinar__shape--3 {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #45b7d1, #3742fa);
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 10s;
+}
+
+.creative-workshop-webinar__shape--4 {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(45deg, #96ceb4, #ffeaa7);
+  top: 30%;
+  right: 30%;
+  animation-delay: 15s;
+}
+
+.creative-workshop-webinar__cursor-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+.creative-workshop-webinar__container {
+  position: relative;
+  z-index: 10;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.creative-workshop-webinar__hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem 0;
+}
+
+.creative-workshop-webinar__hero-content {
+  animation: creativeSlideInLeft 1s ease-out;
+}
+
+.creative-workshop-webinar__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.creative-workshop-webinar__badge-emoji {
+  font-size: 1.2rem;
+}
+
+.creative-workshop-webinar__title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.creative-workshop-webinar__title-line {
+  animation: creativeSlideUp 1s ease-out;
+}
+
+.creative-workshop-webinar__title-line:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.creative-workshop-webinar__title-line:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.creative-workshop-webinar__title-line--gradient {
+  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+.creative-workshop-webinar__subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  animation: creativeSlideUp 1s ease-out 0.6s both;
+}
+
+.creative-workshop-webinar__stats {
+  display: flex;
+  gap: 2rem;
+  animation: creativeSlideUp 1s ease-out 0.8s both;
+}
+
+.creative-workshop-webinar__stat {
+  background: rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.creative-workshop-webinar__stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ff6b6b;
+  margin-bottom: 0.5rem;
+}
+
+.creative-workshop-webinar__stat-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.creative-workshop-webinar__hero-visual {
+  position: relative;
+  height: 500px;
+  animation: creativeSlideInRight 1s ease-out;
+}
+
+.creative-workshop-webinar__floating-elements {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.creative-workshop-webinar__floating-element {
+  position: absolute;
+  animation: creativeFloatElement 6s ease-in-out infinite;
+}
+
+.creative-workshop-webinar__floating-element--1 {
+  top: 10%;
+  left: 10%;
+  width: 120px;
+  height: 120px;
+  animation-delay: 0s;
+}
+
+.creative-workshop-webinar__floating-element--2 {
+  top: 20%;
+  right: 20%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 1.5s;
+}
+
+.creative-workshop-webinar__floating-element--3 {
+  bottom: 30%;
+  left: 30%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 3s;
+}
+
+.creative-workshop-webinar__floating-element--4 {
+  bottom: 10%;
+  right: 10%;
+  width: 90px;
+  height: 90px;
+  animation-delay: 4.5s;
+}
+
+.creative-workshop-webinar__floating-element svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+}
+
+.creative-workshop-webinar__content {
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  padding: 4rem;
+  margin: 4rem 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.creative-workshop-webinar__content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+}
+
+.creative-workshop-webinar__left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.creative-workshop-webinar__section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.creative-workshop-webinar__title-emoji {
+  font-size: 2.5rem;
+}
+
+.creative-workshop-webinar__creation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.creative-workshop-webinar__creation-item {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.creative-workshop-webinar__creation-item:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.creative-workshop-webinar__creation-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.creative-workshop-webinar__creation-item h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.creative-workshop-webinar__creation-item p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.creative-workshop-webinar__timeline {
+  position: relative;
+}
+
+.creative-workshop-webinar__timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #ff6b6b, #4ecdc4);
+}
+
+.creative-workshop-webinar__timeline-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.creative-workshop-webinar__timeline-dot {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.creative-workshop-webinar__timeline-content {
+  flex: 1;
+  background: #f7fafc;
+  padding: 1.5rem;
+  border-radius: 15px;
+  border-left: 4px solid #ff6b6b;
+}
+
+.creative-workshop-webinar__timeline-time {
+  background: #667eea;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.creative-workshop-webinar__timeline-content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+}
+
+.creative-workshop-webinar__timeline-content p {
+  margin: 0;
+  color: #4a5568;
+}
+
+.creative-workshop-webinar__instructor {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.creative-workshop-webinar__instructor-avatar {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.creative-workshop-webinar__avatar-bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.creative-workshop-webinar__avatar-emoji {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+}
+
+.creative-workshop-webinar__instructor-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.creative-workshop-webinar__instructor-title {
+  margin: 0 0 1rem 0;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.creative-workshop-webinar__instructor-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.creative-workshop-webinar__instructor-tags span {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.creative-workshop-webinar__instructor-bio {
+  margin: 0;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.creative-workshop-webinar__right-column {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.creative-workshop-webinar__registration {
+  background: white;
+  border-radius: 25px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.creative-workshop-webinar__registration::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+  border-radius: 25px;
+  z-index: -1;
+}
+
+.creative-workshop-webinar__form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.creative-workshop-webinar__form-badge {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.creative-workshop-webinar__form-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 1rem 0;
+}
+
+.creative-workshop-webinar__price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.creative-workshop-webinar__price-old {
+  font-size: 1.2rem;
+  color: #a0aec0;
+  text-decoration: line-through;
+}
+
+.creative-workshop-webinar__price-new {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ff6b6b;
+}
+
+.creative-workshop-webinar__price-note {
+  color: #4a5568;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.creative-workshop-webinar__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.creative-workshop-webinar__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.creative-workshop-webinar__form-group label {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.9rem;
+}
+
+.creative-workshop-webinar__form-group input,
+.creative-workshop-webinar__form-group select,
+.creative-workshop-webinar__form-group textarea {
+  padding: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 15px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f7fafc;
+}
+
+.creative-workshop-webinar__form-group input:focus,
+.creative-workshop-webinar__form-group select:focus,
+.creative-workshop-webinar__form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.creative-workshop-webinar__submit {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1.25rem 2rem;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.creative-workshop-webinar__submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.creative-workshop-webinar__submit-emoji {
+  font-size: 1.3rem;
+}
+
+.creative-workshop-webinar__form-features {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.creative-workshop-webinar__feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.creative-workshop-webinar__feature-icon {
+  font-size: 1.2rem;
+}
+
+/* Animations */
+@keyframes creativeFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-20px) rotate(90deg); }
+  50% { transform: translateY(-10px) rotate(180deg); }
+  75% { transform: translateY(-30px) rotate(270deg); }
+}
+
+@keyframes creativeFloatElement {
+  0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+  33% { transform: translateY(-15px) rotate(120deg) scale(1.1); }
+  66% { transform: translateY(-5px) rotate(240deg) scale(0.9); }
+}
+
+@keyframes creativeSlideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes creativeSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes creativeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .creative-workshop-webinar__hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .creative-workshop-webinar__content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .creative-workshop-webinar__right-column {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .creative-workshop-webinar__container {
+    padding: 1rem;
+  }
+  
+  .creative-workshop-webinar__title {
+    font-size: 2.5rem;
+  }
+  
+  .creative-workshop-webinar__content {
+    padding: 2rem;
+  }
+  
+  .creative-workshop-webinar__stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .creative-workshop-webinar__creation-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .creative-workshop-webinar__instructor {
+    flex-direction: column;
+    text-align: center;
+  }
+}

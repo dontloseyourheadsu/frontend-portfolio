@@ -87,6 +87,11 @@ import GentleFarewellUnsubscribe from './pages/unsubscribe/GentleFarewellUnsubsc
 import InteractiveFeedbackUnsubscribe from './pages/unsubscribe/InteractiveFeedbackUnsubscribe';
 import MinimalCorporateUnsubscribe from './pages/unsubscribe/MinimalCorporateUnsubscribe';
 
+// Import webinar page examples
+import ProfessionalExecutiveWebinar from './pages/webinar/ProfessionalExecutiveWebinar';
+import CreativeWorkshopWebinar from './pages/webinar/CreativeWorkshopWebinar';
+import TechInnovationWebinar from './pages/webinar/TechInnovationWebinar';
+
 // Import advertisement
 import Advertisement from './pages/Advertisement';
 
@@ -161,8 +166,12 @@ const App = () => {
     { path: '/thank-you/hologram', name: 'Futuristic Hologram Thank You Page', component: <FuturisticHologramThanks /> },
     // Unsubscribe page examples
     { path: '/unsubscribe/gentle', name: 'Gentle Farewell Unsubscribe Page', component: <GentleFarewellUnsubscribe /> },
-    { path: '/unsubscribe/feedback', name: 'Interactive Feedback Unsubscribe Page', component: <InteractiveFeedbackUnsubscribe /> },
+    { path: '/unsubscribe/interactive', name: 'Interactive Feedback Unsubscribe Page', component: <InteractiveFeedbackUnsubscribe /> },
     { path: '/unsubscribe/corporate', name: 'Minimal Corporate Unsubscribe Page', component: <MinimalCorporateUnsubscribe /> },
+    // Webinar page examples
+    { path: '/webinar/executive', name: 'Professional Executive Webinar', component: <ProfessionalExecutiveWebinar /> },
+    { path: '/webinar/creative', name: 'Creative Workshop Webinar', component: <CreativeWorkshopWebinar /> },
+    { path: '/webinar/tech', name: 'Tech Innovation Webinar', component: <TechInnovationWebinar /> },
     // Advertisement
     { path: '/advertisement', name: 'Fiverr Service Advertisement', component: <Advertisement /> },
     // Add more examples as they get implemented
@@ -280,7 +289,12 @@ const App = () => {
               <div className="placeholder-page">
                 <div>
                   <h2>Webinar Registration Pages</h2>
-                  <p>Examples of engaging webinar registration pages coming soon!</p>
+                  <p>Check out our webinar registration page examples:</p>
+                  <div className="example-links">
+                    <Link to="/webinar/executive" className="example-link">Professional Executive</Link>
+                    <Link to="/webinar/creative" className="example-link">Creative Workshop</Link>
+                    <Link to="/webinar/tech" className="example-link">Tech Innovation</Link>
+                  </div>
                 </div>
               </div>
             } />
@@ -398,7 +412,7 @@ const App = () => {
                   <p>Check out our unsubscribe page examples:</p>
                   <div className="example-links">
                     <Link to="/unsubscribe/gentle" className="example-link">Gentle Farewell</Link>
-                    <Link to="/unsubscribe/feedback" className="example-link">Interactive Feedback</Link>
+                    <Link to="/unsubscribe/interactive" className="example-link">Interactive Feedback</Link>
                     <Link to="/unsubscribe/corporate" className="example-link">Minimal Corporate</Link>
                   </div>
                 </div>
