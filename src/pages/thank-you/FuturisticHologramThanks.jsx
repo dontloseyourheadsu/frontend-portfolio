@@ -8,7 +8,7 @@ const FuturisticHologramThanks = () => {
   useEffect(() => {
     // Glitch effect for title
     const glitchInterval = setInterval(() => {
-      const glitchChars = ['THANK YOU', 'TH4NK Y0U', 'THA|\|K YOU', 'THANK YOU'];
+      const glitchChars = ['THANK YOU', 'TH4NK Y0U', 'THA|\\|K YOU', 'THANK YOU'];
       const randomIndex = Math.floor(Math.random() * glitchChars.length);
       setGlitchText(glitchChars[randomIndex]);
       
