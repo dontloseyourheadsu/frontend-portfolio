@@ -5,7 +5,7 @@ const CampaignMicrosite = () => {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const [progress, setProgress] = useState(75); // Campaign progress percentage
+  const [progress] = useState(75); // Campaign progress percentage
 
   const testimonials = [
     {

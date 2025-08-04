@@ -497,24 +497,13 @@ const App = () => {
 
               <div className="nav-categories">
                 <ul>
-                  <li><Link to="/portfolio" onClick={() => setIsNavOpen(false)}>Portfolio</Link></li>
-                  <li><Link to="/lead-capture" onClick={() => setIsNavOpen(false)}>Lead Capture</Link></li>
-                  <li><Link to="/click-through" onClick={() => setIsNavOpen(false)}>Click-Through</Link></li>
-                  <li><Link to="/product-sales-page" onClick={() => setIsNavOpen(false)}>Product / Sales</Link></li>
-                  <li><Link to="/e-book" onClick={() => setIsNavOpen(false)}>E-Book</Link></li>
-                  <li><Link to="/webinar" onClick={() => setIsNavOpen(false)}>Webinar Registration</Link></li>
-                  <li><Link to="/event-registration" onClick={() => setIsNavOpen(false)}>Event Registration</Link></li>
-                  <li><Link to="/get-started" onClick={() => setIsNavOpen(false)}>Get Started / Onboarding</Link></li>
-                  <li><Link to="/course" onClick={() => setIsNavOpen(false)}>Course / Membership</Link></li>
-                  <li><Link to="/membership" onClick={() => setIsNavOpen(false)}>Membership</Link></li>
-                  <li><Link to="/microsite" onClick={() => setIsNavOpen(false)}>Microsite</Link></li>
-                  <li><Link to="/coming-soon" onClick={() => setIsNavOpen(false)}>Coming Soon</Link></li>
-                  <li><Link to="/splash" onClick={() => setIsNavOpen(false)}>Splash Page</Link></li>
-                  <li><Link to="/squeeze-page" onClick={() => setIsNavOpen(false)}>Squeeze Page</Link></li>
-                  <li><Link to="/thank-you" onClick={() => setIsNavOpen(false)}>Thank You Page</Link></li>
-                  <li><Link to="/unsubscribe" onClick={() => setIsNavOpen(false)}>Unsubscribe Page</Link></li>
-                  <li><Link to="/404" onClick={() => setIsNavOpen(false)}>404 / Utility</Link></li>
-                  <li><Link to="/pricing" onClick={() => setIsNavOpen(false)}>Pricing</Link></li>
+                  {categories.map((category) => (
+                    <li key={category.path}>
+                      <Link to={category.path} onClick={() => setIsNavOpen(false)}>
+                        {category.name}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
