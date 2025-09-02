@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    max-height: 100dvh;
+    margin: 0 !important;
+}
+
+app-root {
+    display: flex;
+    max-height: inherit;
+}

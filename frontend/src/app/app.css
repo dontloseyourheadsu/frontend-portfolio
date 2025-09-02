@@ -1,0 +1,11 @@
+.header {
+  height: 100dvh;
+  max-height: 100dvh;
+  min-height: 100dvh;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
