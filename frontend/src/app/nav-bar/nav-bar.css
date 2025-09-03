@@ -1,6 +1,6 @@
 .nav-bar {
-    background-color: black;
-    color: white;
+    background-color: var(--nav-background-color);
+    color: var(--text-color);
     height: 100dvh;
     width: 100px;
 
@@ -19,6 +19,10 @@ button {
     padding: 0;
 }
 
+span.material-icons {
+    color: var(--link-color);
+}
+
 .nav-links {
     list-style: none;
     padding: 0;
@@ -30,10 +34,11 @@ button {
 }
 
 .nav-links a {
-    color: white;
+    color: var(--nav-link-color);
     text-decoration: none;
 }
 
 .nav-links a.active {
     font-weight: bold;
+    color: var(--nav-link-active-color);
 }
