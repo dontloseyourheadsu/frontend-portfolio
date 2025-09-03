@@ -3,11 +3,11 @@
     color: var(--text-color);
     height: 100dvh;
     width: 100px;
-
+    /* Vertical layout */
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    /* Spacing */
     padding: 1em;
 }
 
@@ -39,6 +39,68 @@ span.material-icons {
 }
 
 .nav-links a.active {
+    font-weight: bold;
+    color: var(--nav-link-active-color);
+}
+
+/* Group Parent Styles */
+.nav-group-parent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.group-parent-link,
+.group-parent-text {
+    color: var(--nav-link-color);
+    text-decoration: none;
+    flex-grow: 1;
+}
+
+.group-parent-text {
+    cursor: pointer;
+}
+
+.group-parent-link.active {
+    font-weight: bold;
+    color: var(--nav-link-active-color);
+}
+
+.group-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    margin-left: 4px;
+}
+
+.group-toggle .material-icons {
+    font-size: 18px;
+    color: var(--nav-link-color);
+}
+
+/* Group Children Styles */
+.nav-group-children {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 0.75rem; /* Left padding for group members */
+    margin-top: 4px;
+}
+
+.nav-group-children li {
+    margin: 8px 0;
+}
+
+.group-child-link {
+    color: var(--nav-link-color);
+    text-decoration: none;
+    display: block;
+}
+
+.group-child-link.active {
     font-weight: bold;
     color: var(--nav-link-active-color);
 }
