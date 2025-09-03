@@ -17,4 +17,11 @@ enum Themes {
 export class NavBar {
   theme = Themes.LIGHT;
   Themes = Themes;
+  
+  
+  switchTheme() {
+    this.theme = this.theme === Themes.LIGHT ? Themes.DARK : Themes.LIGHT;
+
+    document.body.classList.toggle('dark-theme', this.theme === Themes.DARK);
+  }
 }

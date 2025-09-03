@@ -1,5 +1,5 @@
 <nav class="nav-bar">
-  <button (click)="theme = theme === Themes.LIGHT ? Themes.DARK : Themes.LIGHT" aria-label="Toggle Theme" type="button">
+  <button (click)="switchTheme()" aria-label="Toggle Theme" type="button">
     <span class="material-icons">{{theme === Themes.LIGHT ? 'light_mode' : 'dark_mode'}}</span>
   </button>
   <ul class="nav-links">

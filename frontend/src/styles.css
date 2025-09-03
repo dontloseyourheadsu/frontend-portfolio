@@ -1,10 +1,56 @@
 .dark-theme {
-    --background-color: #121212;
-    --text-color: #e0e0e0;
-    --link-color: #8F87F1;
-    --nav-background-color: #1f1f1f;
-    --nav-link-color: #C68EFD;
-    --nav-link-active-color: #8F87F1;
+    /* Backgrounds */
+    --background-color: #1a1625;
+    --secondary-background-color: #252035;
+    --nav-background-color: #2a2540;
+
+    /* Text colors */
+    --text-color: #e8e4f0;
+    --secondary-text-color: #c4bdd1;
+    --muted-text-color: #a394b3;
+
+    /* Violet accents */
+    --link-color: #b8a9ff;
+    --nav-link-color: #d4c7ff;
+    --nav-link-active-color: #9d88ff;
+    --accent-color: #a390ff;
+    --accent-hover-color: #8f7aff;
+
+    /* Interactive elements */
+    --button-background: #6b5ce6;
+    --button-hover: #7c6df0;
+    --border-color: #4a4060;
+    --input-background: #2d2442;
+}
+
+.light-theme {
+    /* Backgrounds */
+    --background-color: #fdfcff;
+    --secondary-background-color: #f8f5ff;
+    --nav-background-color: #f3f0ff;
+
+    /* Text colors */
+    --text-color: #2d2142;
+    --secondary-text-color: #4a3f5e;
+    --muted-text-color: #6b5d7a;
+
+    /* Violet accents */
+    --link-color: #6b4ce6;
+    --nav-link-color: #5a3dd4;
+    --nav-link-active-color: #4a2fc2;
+    --accent-color: #7c5ef0;
+    --accent-hover-color: #6b4ce6;
+
+    /* Interactive elements */
+    --button-background: #7c5ef0;
+    --button-hover: #6b4ce6;
+    --border-color: #d4c7ff;
+    --input-background: #ffffff;
+}
+
+/* Optional: Smooth theme transition */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .material-icons {
