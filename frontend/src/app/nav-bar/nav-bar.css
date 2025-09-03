@@ -1,6 +1,44 @@
 .nav-bar {
-    background-color: black;
-    color: white;
+    background-color: var(--nav-background-color);
+    color: var(--text-color);
     height: 100dvh;
     width: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 1em;
+}
+
+button {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
+span.material-icons {
+    color: var(--link-color);
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 12px 0;
+}
+
+.nav-links a {
+    color: var(--nav-link-color);
+    text-decoration: none;
+}
+
+.nav-links a.active {
+    font-weight: bold;
+    color: var(--nav-link-active-color);
 }
