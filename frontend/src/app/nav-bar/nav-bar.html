@@ -1,9 +1,67 @@
 <nav class="nav-bar">
   <button (click)="switchTheme()" aria-label="Toggle Theme" type="button">
-    <span class="material-icons">{{theme === Themes.LIGHT ? 'light_mode' : 'dark_mode'}}</span>
+    <span class="material-icons">{{
+      theme === Themes.LIGHT ? "light_mode" : "dark_mode"
+    }}</span>
   </button>
   <ul class="nav-links">
-    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
-    <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+    @for (item of navElements; track item.name) {
+    <li class="inter-regular">
+      <!-- Group Parent (has children) -->
+      @if (item.childs && item.childs.length > 0) {
+        <div class="nav-group-parent">
+          <!-- Parent link/button -->
+          @if (item.link) {
+          <!-- Clickable parent with link -->
+          <a
+            [routerLink]="item.link"
+            routerLinkActive="active"
+            (click)="handleGroupParentClick(item, $event)"
+            class="group-parent-link"
+          >
+            {{ item.name }}
+          </a>
+          } @else {
+          <!-- Non-clickable parent (text only) -->
+          <span class="group-parent-text" (click)="toggleGroup(item)">
+            {{ item.name }}
+          </span>
+          }
+          <!-- Expand/Collapse Arrow -->
+          <button
+            type="button"
+            class="group-toggle"
+            (click)="toggleGroup(item)"
+            [attr.aria-expanded]="item.expanded"
+            [attr.aria-label]="'Toggle ' + item.name + ' group'"
+          >
+            <span class="material-icons">
+              {{ item.expanded ? "keyboard_arrow_up" : "keyboard_arrow_down" }}
+            </span>
+          </button>
+        </div>
+
+        <!-- Group Children -->
+        @if (item.expanded) {
+        <ul class="nav-group-children">
+          @for (child of item.childs; track child.name) {
+          <li class="inter-regular">
+            <a
+              [routerLink]="child.link"
+              routerLinkActive="active"
+              class="group-child-link"
+            >
+              {{ child.name }}
+            </a>
+          </li>
+          }
+        </ul>
+        } 
+    } @else {
+        <!-- Regular Navigation Item (no children) -->
+        <a [routerLink]="item.link" routerLinkActive="active">{{ item.name }}</a>
+      }
+    </li>
+    }
   </ul>
 </nav>
