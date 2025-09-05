@@ -53,7 +53,7 @@
       @if (item.expanded) {
       <ul class="nav-group-children">
         @for (child of item.childs; track child.name) {
-        <li class="inter-regular">
+        <li class="children-link inter-regular">
           <a
             [routerLink]="child.link"
             routerLinkActive="active"
