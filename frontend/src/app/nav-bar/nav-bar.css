@@ -2,13 +2,11 @@
     background-color: var(--nav-background-color);
     color: var(--text-color);
     height: 100dvh;
-    width: 100px;
+    width: 100%;
     /* Vertical layout */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Spacing */
-    padding: 1em;
 }
 
 button {
@@ -103,4 +101,30 @@ span.material-icons {
 .group-child-link.active {
     font-weight: bold;
     color: var(--nav-link-active-color);
+}
+
+.nav-toggle {
+    /*Form and color*/
+    background-color: var(--button-background-secondary);
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+
+    /*Positioning of inner elements*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /*Positioning*/
+    position: absolute;
+    right: calc(-25px);
+    top: 20px;
+}
+
+.nav-toggle:hover {
+    background-color: var(--button-hover-secondary);
+}
+
+.nav-toggle .material-icons {
+    color: var(--text-color);
 }
