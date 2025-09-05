@@ -24,7 +24,9 @@ span.material-icons {
 .nav-links {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 1rem 0 0;
+
+    align-self: flex-end;
 }
 
 .nav-links li {
@@ -47,10 +49,18 @@ span.material-icons {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+
+    background-color: var(--background-color);
+    padding: 0.5rem 1rem;
+    border-radius: 40px;
 }
 
 .group-parent-link,
 .group-parent-text {
+    background-color: var(--nav-background-color);
+    padding: 0.5rem 1rem;
+    border-radius: 45px;
+
     color: var(--nav-link-color);
     text-decoration: none;
     flex-grow: 1;
@@ -131,4 +141,5 @@ span.material-icons {
 
 .theme-toggle {
     padding: 1rem;
+    align-self:flex-start;
 }
