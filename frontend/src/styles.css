@@ -6,16 +6,15 @@
     font-weight: 400;
     font-style: normal;
 }
-
 .dark-theme {
     /* Backgrounds */
-    --background-color: #1a1625;
-    --secondary-background-color: #252035;
-    --nav-background-color: #2a2540;
+    --background-color: #1e1a2e;
+    --background-color-secondary: #252035;
+    --secondary-background-color: #2a2540;
+    --nav-background-color: #2f2a45;
 
     /* Text colors */
-    --text-color: #e8e4f0;
-    --secondary-text-color: #c4bdd1;
+    --text-color: #e6e1f0;
     --muted-text-color: #a394b3;
 
     /* Violet accents */
@@ -30,7 +29,6 @@
     --button-hover: #7c6df0;
     --border-color: #4a4060;
     --input-background: #2d2442;
-
     --button-background-secondary: #b8a9ff;
     --button-hover-secondary: #a390ff;
 }
@@ -38,12 +36,12 @@
 .light-theme {
     /* Backgrounds */
     --background-color: #fdfcff;
+    --background-color-secondary: #f5f0ff;
     --secondary-background-color: #f8f5ff;
     --nav-background-color: #f3f0ff;
 
     /* Text colors */
     --text-color: #2d2142;
-    --secondary-text-color: #4a3f5e;
     --muted-text-color: #6b5d7a;
 
     /* Violet accents */
@@ -58,7 +56,6 @@
     --button-hover: #6b4ce6;
     --border-color: #d4c7ff;
     --input-background: #ffffff;
-
     --button-background-secondary: #6b4ce6;
     --button-hover-secondary: #5a3dd4;
 }
