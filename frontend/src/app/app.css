@@ -1,11 +1,18 @@
-.header {
+header {
   height: 100dvh;
   max-height: 100dvh;
   min-height: 100dvh;
+  width: 200px;
+  transform: translateX(-200px);
+  transition: transform 0.3s ease;
 }
 
 .main {
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
+}
+
+.nav-open {
+  transform: translateX(0);
 }
