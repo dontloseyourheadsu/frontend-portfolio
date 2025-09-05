@@ -128,3 +128,7 @@ span.material-icons {
 .nav-toggle .material-icons {
     color: var(--text-color);
 }
+
+.theme-toggle {
+    padding: 1rem;
+}
