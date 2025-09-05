@@ -24,6 +24,8 @@ interface NavLink {
 export class NavBar {
   theme = Themes.LIGHT;
   Themes = Themes;
+  hidden = true;
+
   navElements: NavLink[] = [
     { name: 'Home', link: '/', childs: null },
     { 
@@ -46,6 +48,14 @@ export class NavBar {
   toggleGroup(item: NavLink) {
     if (item.childs && item.childs.length > 0) {
       item.expanded = !item.expanded;
+    }
+  }
+
+  toggleHidden() {
+    this.hidden = !this.hidden;
+    const header = document.querySelector('header');
+    if (header) {
+      header.classList.toggle('nav-open', !this.hidden);
     }
   }
 
