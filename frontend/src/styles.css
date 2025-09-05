@@ -30,6 +30,9 @@
     --button-hover: #7c6df0;
     --border-color: #4a4060;
     --input-background: #2d2442;
+
+    --button-background-secondary: #b8a9ff;
+    --button-hover-secondary: #a390ff;
 }
 
 .light-theme {
@@ -55,6 +58,9 @@
     --button-hover: #6b4ce6;
     --border-color: #d4c7ff;
     --input-background: #ffffff;
+
+    --button-background-secondary: #6b4ce6;
+    --button-hover-secondary: #5a3dd4;
 }
 
 /* Optional: Smooth theme transition */
