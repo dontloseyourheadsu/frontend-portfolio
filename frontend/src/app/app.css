@@ -3,6 +3,7 @@ header {
   max-height: 100dvh;
   min-height: 100dvh;
   width: 200px;
+  position: absolute;
   transform: translateX(-200px);
   transition: transform 0.3s ease;
 }
@@ -11,6 +12,9 @@ header {
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
+  flex-grow: 1;
+
+  background-color: var(--background-color);
 }
 
 .nav-open {
