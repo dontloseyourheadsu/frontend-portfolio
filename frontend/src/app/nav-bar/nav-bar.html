@@ -1,13 +1,20 @@
 <nav class="nav-bar">
-  <button (click)="toggleHidden()"
+  <button
+    (click)="toggleHidden()"
     aria-label="Toggle Navigation"
     type="button"
-    class="nav-toggle">
+    class="nav-toggle"
+  >
     <span class="material-icons">{{
       hidden ? "keyboard_arrow_right" : "keyboard_arrow_left"
     }}</span>
   </button>
-  <button class="theme-toggle" (click)="switchTheme()" aria-label="Toggle Theme" type="button">
+  <button
+    class="theme-toggle"
+    (click)="switchTheme()"
+    aria-label="Toggle Theme"
+    type="button"
+  >
     <span class="material-icons">{{
       theme === Themes.LIGHT ? "light_mode" : "dark_mode"
     }}</span>
@@ -24,6 +31,7 @@
         <a
           [routerLink]="item.link"
           routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
           (click)="handleGroupParentClick(item, $event)"
           class="group-parent-link"
         >
@@ -57,6 +65,7 @@
           <a
             [routerLink]="child.link"
             routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
             class="group-child-link"
           >
             {{ child.name }}
@@ -66,7 +75,12 @@
       </ul>
       } } @else {
       <!-- Regular Navigation Item (no children) -->
-      <a [routerLink]="item.link" routerLinkActive="active">{{ item.name }}</a>
+      <a
+        [routerLink]="item.link"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >{{ item.name }}</a
+      >
       }
     </li>
     }

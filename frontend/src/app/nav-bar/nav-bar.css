@@ -6,7 +6,7 @@
     /* Vertical layout */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 button {
@@ -41,6 +41,30 @@ span.material-icons {
 .nav-links a.active {
     font-weight: bold;
     color: var(--nav-link-active-color);
+
+    background-color: var(--nav-background-color);
+    padding: 0.5rem 3rem 0.5rem 1.5rem;
+    border-radius: 45px;
+
+    color: var(--nav-link-color);
+    flex-grow: 1;
+}
+
+
+.nav-links>li:has(> a.active),
+.nav-links>li:has(> .nav-group-parent > a.active) {
+    width: 100%;
+    background-color: var(--background-color);
+    padding: 1rem;
+    border-radius: 40px;
+}
+
+/* Child li only when its own direct link is active */
+.nav-group-children>li:has(> a.active) {
+    width: calc(100% + 1rem);
+    background-color: var(--background-color);
+    padding: 1rem;
+    border-radius: 40px;
 }
 
 /* Group Parent Styles */
@@ -48,22 +72,6 @@ span.material-icons {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-
-    background-color: var(--background-color);
-    padding: 0.5rem 1rem;
-    border-radius: 40px;
-}
-
-.group-parent-link,
-.group-parent-text {
-    background-color: var(--nav-background-color);
-    padding: 0.5rem 1rem;
-    border-radius: 45px;
-
-    color: var(--nav-link-color);
-    text-decoration: none;
-    flex-grow: 1;
 }
 
 .group-parent-text {
@@ -96,6 +104,8 @@ span.material-icons {
     margin: 0;
     padding-left: 0.75rem; /* Left padding for group members */
     margin-top: 4px;
+
+    margin-right: 0.75rem;
 }
 
 .nav-group-children li {
