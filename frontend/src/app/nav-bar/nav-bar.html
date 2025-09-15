@@ -19,70 +19,57 @@
       theme === Themes.LIGHT ? "light_mode" : "dark_mode"
     }}</span>
   </button>
-  <ul class="nav-links">
-    @for (item of navElements; track item.name) {
-    <li class="inter-regular">
-      <!-- Group Parent (has children) -->
-      @if (item.childs && item.childs.length > 0) {
-      <div class="nav-group-parent">
-        <!-- Parent link/button -->
-        @if (item.link) {
-        <!-- Clickable parent with link -->
-        <a
-          [routerLink]="item.link"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          (click)="handleGroupParentClick(item, $event)"
-          class="group-parent-link"
-        >
-          {{ item.name }}
-        </a>
-        } @else {
-        <!-- Non-clickable parent (text only) -->
-        <span class="group-parent-text" (click)="toggleGroup(item)">
-          {{ item.name }}
-        </span>
-        }
-        <!-- Expand/Collapse Arrow -->
-        <button
-          type="button"
-          class="group-toggle"
-          (click)="toggleGroup(item)"
-          [attr.aria-expanded]="item.expanded"
-          [attr.aria-label]="'Toggle ' + item.name + ' group'"
-        >
-          <span class="material-icons">
-            {{ item.expanded ? "keyboard_arrow_up" : "keyboard_arrow_down" }}
-          </span>
-        </button>
-      </div>
 
-      <!-- Group Children -->
-      @if (item.expanded) {
-      <ul class="nav-group-children">
-        @for (child of item.childs; track child.name) {
-        <li class="children-link inter-regular">
+  <hr class="list-separator" />
+
+  <!-- Single flat list with animated background -->
+  <div class="list-container">
+    <div class="list-indent"></div>
+    <ul class="nav-links" #navList>
+      <div class="nav-background" #navBg></div>
+      @for (item of visibleItems; track item.name) {
+      <li class="nav-item inter-regular" (click)="onNavClick($event)">
+        <div class="nav-row">
+          <!-- indentation spans (0.25rem each) placed inside row so they sit to the left -->
+          @for (_ of indentArray(item.depth); track _) {
+          <span class="indent"></span>
+          }
+  
+          <!-- link or text -->
+          @if (item.link) {
           <a
-            [routerLink]="child.link"
+            class="nav-link"
+            [routerLink]="item.link"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
-            class="group-child-link"
           >
-            {{ child.name }}
+            {{ item.name }}
           </a>
-        </li>
-        }
-      </ul>
-      } } @else {
-      <!-- Regular Navigation Item (no children) -->
-      <a
-        [routerLink]="item.link"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >{{ item.name }}</a
-      >
+          } @else {
+          <span
+            class="nav-link nav-link-text"
+            (click)="toggleParentByIndex(item.parentIndex)"
+          >
+            {{ item.name }}
+          </span>
+          }
+  
+          <!-- parent toggler if parent and has children (to the right of text) -->
+          @if (item.isParent) {
+          <span
+            class="toggle-span material-icons"
+            (click)="
+              toggleParentByIndex(item.parentIndex); $event.stopPropagation()
+            "
+            [attr.aria-expanded]="item.expanded"
+            [attr.aria-label]="'Toggle ' + item.name + ' group'"
+          >
+            {{ item.expanded ? "keyboard_arrow_up" : "keyboard_arrow_down" }}
+          </span>
+          }
+        </div>
+      </li>
       }
-    </li>
-    }
-  </ul>
+    </ul>
+  </div>
 </nav>

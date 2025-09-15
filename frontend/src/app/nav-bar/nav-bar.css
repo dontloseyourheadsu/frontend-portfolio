@@ -3,7 +3,6 @@
     color: var(--text-color);
     height: 100dvh;
     width: 100%;
-    /* Vertical layout */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -21,106 +20,106 @@ span.material-icons {
     color: var(--link-color);
 }
 
-.nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0 1rem 0 0;
-
-    align-self: flex-end;
+.list-separator {
+    width: 100%;
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 1rem 0;
 }
 
-.nav-links li {
-    margin: 12px 0;
+.list-container {
+    display: flex;
+    width: 100%;
 }
 
-.nav-links a {
-    color: var(--nav-link-color);
-    text-decoration: none;
-}
-
-.nav-links a.active {
-    font-weight: bold;
-    color: var(--nav-link-active-color);
-
-    background-color: var(--nav-background-color);
-    padding: 0.5rem 3rem 0.5rem 1.5rem;
-    border-radius: 45px;
-
-    color: var(--nav-link-color);
+.list-container > ul {
     flex-grow: 1;
 }
 
-
-.nav-links>li:has(> a.active),
-.nav-links>li:has(> .nav-group-parent > a.active) {
-    width: 100%;
-    background-color: var(--background-color);
-    padding: 1rem;
-    border-radius: 40px;
+.list-container .list-indent {
+    width: 20px;
+    flex-shrink: 0;
 }
 
-/* Child li only when its own direct link is active */
-.nav-group-children>li:has(> a.active) {
-    width: calc(100% + 1rem);
-    background-color: var(--background-color);
-    padding: 1rem;
-    border-radius: 40px;
+/* Flat list + animated background */
+.nav-links {
+    list-style: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+    margin: 0 8px 0 0;
+    align-self: stretch;
 }
 
-/* Group Parent Styles */
-.nav-group-parent {
+.nav-item {
+    position: relative;
+}
+
+.nav-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 8px;
 }
 
-.group-parent-text {
+.nav-link,
+.nav-link.nav-link-text {
+    display: block;
+    padding: 12px 16px;
+    color: var(--nav-link-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.25s ease, transform 0.25s ease;
+    position: relative;
+    z-index: 2; /* above the background */
+}
+
+.nav-link:hover,
+.nav-link.nav-link-text:hover {
+    color: var(--text-color);
+    transform: translateX(6px);
+}
+
+.nav-link.active {
+    color: var(--nav-link-active-color);
+}
+
+.nav-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 44px;
+    padding-left: 1rem;
+    width: 100%;
+    background: var(--background-color);
+    border-radius: 10px;
+    transition: top 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+                height 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* indentation spans */
+.indent {
+    display: inline-block;
+    width: 0.25rem;
+}
+
+/* Group toggle span */
+.toggle-span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    margin-left: 6px;
+    color: var(--nav-link-color);
     cursor: pointer;
 }
 
-.group-parent-link.active {
-    font-weight: bold;
-    color: var(--nav-link-active-color);
-}
-
-.group-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 24px;
-    height: 24px;
-    margin-left: 4px;
-}
-
-.group-toggle .material-icons {
+.toggle-span .material-icons {
     font-size: 18px;
-    color: var(--nav-link-color);
-}
-
-/* Group Children Styles */
-.nav-group-children {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    padding-left: 0.75rem; /* Left padding for group members */
-    margin-top: 4px;
-
-    margin-right: 0.75rem;
-}
-
-.nav-group-children li {
-    margin: 8px 0;
-}
-
-.group-child-link {
-    color: var(--nav-link-color);
-    text-decoration: none;
-    display: block;
-}
-
-.group-child-link.active {
-    font-weight: bold;
-    color: var(--nav-link-active-color);
 }
 
 .nav-toggle {
