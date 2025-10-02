@@ -6,3 +6,7 @@ h1 {
   letter-spacing: 0.5px;
   margin: 2rem 1.5rem;
 }
+
+.app-smaincolor {
+  color: var(--app-smaincolor, #007bff);
+}
