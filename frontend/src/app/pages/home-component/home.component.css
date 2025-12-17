@@ -8,5 +8,5 @@ h1 {
 }
 
 .app-smaincolor {
-  color: var(--app-smaincolor, #007bff);
+  color: var(--primary-color);
 }
