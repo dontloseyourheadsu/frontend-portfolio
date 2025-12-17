@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SnackbarService } from '../shared/snackbar/snackbar';
 
 interface CodeToken {
   text: string;
@@ -90,6 +91,8 @@ export class CodeEditor implements OnInit, OnDestroy {
   private typingTimeout: any;
   private cursorInterval: any;
 
+  constructor(private snackbar: SnackbarService) { }
+
   ngOnInit() {
     this.startTypingAnimation();
 
@@ -105,7 +108,13 @@ export class CodeEditor implements OnInit, OnDestroy {
   }
 
   selectTab(index: number) {
-    if (this.activeFileIndex === index || this.isTyping) return;
+    if (this.activeFileIndex === index) return;
+
+    if (this.isTyping) {
+      this.snackbar.show('Please wait for the animation to finish', 'warning');
+      return;
+    }
+
     this.activeFileIndex = index;
     this.startTypingAnimation();
   }
