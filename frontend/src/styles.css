@@ -105,9 +105,12 @@
 body {
     max-height: 100dvh;
     margin: 0 !important;
+    overflow: hidden;
 }
 
 app-root {
     display: flex;
     max-height: inherit;
+    overflow: hidden;
+    height: 100%;
 }
