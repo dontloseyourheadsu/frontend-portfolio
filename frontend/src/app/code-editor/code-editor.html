@@ -1,0 +1,57 @@
+<div class="editor-container">
+  <div class="editor-header">
+    <div class="tabs">
+      @for (file of files; track i; let i = $index) {
+        <div 
+          class="tab" 
+          [class.active]="i === activeFileIndex"
+          [class.disabled]="isTyping && i !== activeFileIndex"
+          (click)="selectTab(i)">
+          <span class="file-icon" [ngClass]="file.language"></span>
+          <span class="file-name">{{ file.name }}</span>
+        </div>
+      }
+    </div>
+    <div class="window-controls">
+      <span class="control close"></span>
+      <span class="control minimize"></span>
+      <span class="control maximize"></span>
+    </div>
+  </div>
+  
+  <div class="editor-body">
+    <div class="code-content">
+      @for (token of displayedTokens; track $index) {
+        <span [class]="token.type">{{ token.text }}</span>
+      }
+      @if (showCursor && isTyping && !displayedOutput) {
+        <span class="cursor">|</span>
+      }
+    </div>
+  </div>
+
+  <div class="output-window">
+    <div class="output-header">
+      <span class="tab-title active">TERMINAL</span>
+      <span class="tab-title">OUTPUT</span>
+      <span class="tab-title">DEBUG CONSOLE</span>
+    </div>
+    <div class="output-content">
+      <div class="terminal-line">
+        <span class="prompt">➜  project </span>
+        @if (files[activeFileIndex].language === 'csharp') {
+          <span class="command">dotnet run</span>
+        }
+        @if (files[activeFileIndex].language === 'rust') {
+          <span class="command">cargo run</span>
+        }
+      </div>
+      <div class="program-output">
+        {{ displayedOutput }}
+        @if (showCursor && (displayedOutput || !isTyping)) {
+          <span class="cursor">|</span>
+        }
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,155 @@
+.editor-container {
+  background-color: #1e1e1e; /* VS Code dark bg */
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  border: 1px solid #333;
+}
+
+.editor-header {
+  background-color: #252526;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.tabs {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.tabs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.tab {
+  padding: 10px 20px;
+  background-color: #2d2d2d;
+  color: #969696;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-right: 1px solid #1e1e1e;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+  -webkit-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tab:hover {
+  background-color: #2a2d2e;
+}
+
+.tab.active {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-top: 2px solid var(--primary-color, #007acc);
+}
+
+.tab.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.window-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.control.close { background-color: #ff5f56; }
+.control.minimize { background-color: #ffbd2e; }
+.control.maximize { background-color: #27c93f; }
+
+.editor-body {
+  padding: 20px;
+  min-height: 300px;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-y: auto;
+}
+
+.code-content {
+  white-space: pre-wrap;
+}
+
+/* Syntax Highlighting */
+.keyword { color: #569cd6; }
+.type { color: #4ec9b0; }
+.string { color: #ce9178; }
+.function { color: #dcdcaa; }
+.comment { color: #6a9955; }
+.plain { color: #d4d4d4; }
+
+/* File Icons */
+.file-icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.file-icon.csharp { background-color: #178600; } /* C# Green */
+.file-icon.rust { background-color: #dea584; } /* Rust Orange-ish */
+
+/* Output Window */
+.output-window {
+  border-top: 1px solid #333;
+  background-color: #1e1e1e;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.output-header {
+  display: flex;
+  gap: 20px;
+  padding: 5px 20px;
+  border-bottom: 1px solid #333;
+  font-size: 0.8rem;
+  color: #969696;
+  text-transform: uppercase;
+  cursor: default;
+}
+
+.tab-title.active {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.output-content {
+  padding: 10px 20px;
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
+  color: #cccccc;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.prompt { color: #87d441; }
+.command { color: #fff; }
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  background-color: #fff;
+  vertical-align: text-bottom;
+  height: 1em;
+  margin-left: 1px;
+}
