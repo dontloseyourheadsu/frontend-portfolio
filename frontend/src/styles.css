@@ -6,7 +6,13 @@
     font-weight: 400;
     font-style: normal;
 }
+
 .dark-theme {
+    /* Core colors */
+    --primary-color: #8f7aff;
+    --secondary-color: #6b5ce6;
+    --tertiary-color: #4a3f7a;
+
     /* Backgrounds */
     --background-color: #1e1a2e;
     --background-color-secondary: #252035;
@@ -34,6 +40,11 @@
 }
 
 .light-theme {
+    /* Core colors */
+    --primary-color: #6b4ce6;
+    --secondary-color: #5a3dd4;
+    --tertiary-color: #4a2fc2;
+    
     /* Backgrounds */
     --background-color: #fdfcff;
     --background-color-secondary: #f5f0ff;
@@ -94,9 +105,12 @@
 body {
     max-height: 100dvh;
     margin: 0 !important;
+    overflow: hidden;
 }
 
 app-root {
     display: flex;
     max-height: inherit;
+    overflow: hidden;
+    height: 100%;
 }

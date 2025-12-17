@@ -1,12 +1,29 @@
+.home-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 80vh;
+  padding: 2rem;
+  gap: 2rem;
+}
+
 h1 {
   font-family: 'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   font-weight: 700;
   line-height: 1.2;
   color: var(--text-color);
   letter-spacing: 0.5px;
-  margin: 2rem 1.5rem;
+  margin: 0;
 }
 
 .app-smaincolor {
-  color: var(--app-smaincolor, #007bff);
+  color: var(--primary-color);
+}
+
+/* Ensure code editor doesn't overflow */
+app-code-editor {
+  max-width: 100%;
+  flex: 0 1 800px;
+  /* Grow 0, Shrink 1, Basis 800px */
 }

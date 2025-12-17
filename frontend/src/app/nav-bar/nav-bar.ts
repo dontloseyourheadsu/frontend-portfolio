@@ -33,7 +33,7 @@ interface VisibleItem {
 })
 
 export class NavBar implements AfterViewInit {
-  theme = Themes.LIGHT;
+  theme = Themes.DARK;
   Themes = Themes;
   hidden = true;
 
