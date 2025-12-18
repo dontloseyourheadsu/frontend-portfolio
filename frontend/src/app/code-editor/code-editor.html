@@ -32,26 +32,44 @@
 
   <div class="output-window">
     <div class="output-header">
-      <span class="tab-title active">TERMINAL</span>
-      <span class="tab-title">OUTPUT</span>
+      <span class="tab-title" [class.active]="!isUiOutput()">TERMINAL</span>
+      <span class="tab-title" [class.active]="isUiOutput()">OUTPUT</span>
       <span class="tab-title">DEBUG CONSOLE</span>
     </div>
-    <div class="output-content">
-      <div class="terminal-line">
-        <span class="prompt">➜  project </span>
-        @if (files[activeFileIndex].language === 'csharp') {
-          <span class="command">dotnet run</span>
-        }
-        @if (files[activeFileIndex].language === 'rust') {
-          <span class="command">cargo run</span>
-        }
-      </div>
-      <div class="program-output">
-        {{ displayedOutput }}
-        @if (showCursor && (displayedOutput || !isTyping)) {
-          <span class="cursor">|</span>
-        }
-      </div>
+    <div class="output-content" [class.rust-terminal]="files[activeFileIndex].language === 'rust'">
+      @if (!isUiOutput()) {
+        <div class="terminal-line">
+          <span class="prompt">➜  project </span>
+          @if (files[activeFileIndex].language === 'csharp') {
+            <span class="command">dotnet run</span>
+          }
+          @if (files[activeFileIndex].language === 'rust') {
+            <span class="command">cargo run</span>
+          }
+        </div>
+        <div class="program-output">
+          {{ displayedOutput }}
+          @if (showCursor && (displayedOutput || !isTyping)) {
+            <span class="cursor">|</span>
+          }
+        </div>
+      } @else {
+        <div class="ui-output">
+          @if (files[activeFileIndex].output === 'angular-ui') {
+            <div class="angular-preview">
+              <h1>Hello World</h1>
+              <div class="angular-badge">Angular App</div>
+            </div>
+          }
+          @if (files[activeFileIndex].output === 'godot-game') {
+            <div class="godot-preview">
+              <div class="player-sprite"></div>
+              <div class="obstacle"></div>
+              <div class="platform"></div>
+            </div>
+          }
+        </div>
+      }
     </div>
   </div>
 </div>
