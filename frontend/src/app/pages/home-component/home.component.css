@@ -8,6 +8,12 @@
   gap: 2rem;
 }
 
+.intro-section {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
 h1 {
   font-family: 'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   font-weight: 700;
@@ -15,6 +21,38 @@ h1 {
   color: var(--text-color);
   letter-spacing: 0.5px;
   margin: 0;
+}
+
+.description {
+  color: var(--text-color);
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+  font-size: 1.15rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.tech-stack img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.tech-stack img:hover {
+  transform: translateY(-5px);
+}
+
+/* Rust icon visibility in dark theme */
+:host-context(.dark-theme) .tech-stack img[alt="Rust"] {
+  filter: invert(1) grayscale(100%) brightness(200%);
 }
 
 .app-smaincolor {

@@ -1,5 +1,6 @@
 .editor-container {
-  background-color: #1e1e1e; /* VS Code dark bg */
+  background-color: #1e1e1e;
+  /* VS Code dark bg */
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
@@ -21,12 +22,15 @@
 .tabs {
   display: flex;
   overflow-x: auto;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE 10+ */
 }
 
 .tabs::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
+  /* Chrome, Safari, Opera */
 }
 
 .tab {
@@ -72,9 +76,17 @@
   border-radius: 50%;
 }
 
-.control.close { background-color: #ff5f56; }
-.control.minimize { background-color: #ffbd2e; }
-.control.maximize { background-color: #27c93f; }
+.control.close {
+  background-color: #ff5f56;
+}
+
+.control.minimize {
+  background-color: #ffbd2e;
+}
+
+.control.maximize {
+  background-color: #27c93f;
+}
 
 .editor-body {
   padding: 20px;
@@ -91,12 +103,29 @@
 }
 
 /* Syntax Highlighting */
-.keyword { color: #569cd6; }
-.type { color: #4ec9b0; }
-.string { color: #ce9178; }
-.function { color: #dcdcaa; }
-.comment { color: #6a9955; }
-.plain { color: #d4d4d4; }
+.keyword {
+  color: #569cd6;
+}
+
+.type {
+  color: #4ec9b0;
+}
+
+.string {
+  color: #ce9178;
+}
+
+.function {
+  color: #dcdcaa;
+}
+
+.comment {
+  color: #6a9955;
+}
+
+.plain {
+  color: #d4d4d4;
+}
 
 /* File Icons */
 .file-icon {
@@ -105,14 +134,30 @@
   border-radius: 50%;
   display: inline-block;
 }
-.file-icon.csharp { background-color: #178600; } /* C# Green */
-.file-icon.rust { background-color: #dea584; } /* Rust Orange-ish */
+
+.file-icon.csharp {
+  background-color: #178600;
+}
+
+/* C# Green */
+.file-icon.rust {
+  background-color: #dea584;
+}
+
+/* Rust Orange-ish */
+.file-icon.typescript {
+  background-color: #2b7489;
+}
+
+.file-icon.gdscript {
+  background-color: #478cbf;
+}
 
 /* Output Window */
 .output-window {
   border-top: 1px solid #333;
   background-color: #1e1e1e;
-  height: 150px;
+  height: 250px;
   display: flex;
   flex-direction: column;
 }
@@ -142,8 +187,99 @@
   overflow-y: auto;
 }
 
-.prompt { color: #87d441; }
-.command { color: #fff; }
+.ui-output {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  /* Angular usually white bg */
+  color: #333;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.angular-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #333;
+  font-family: 'Helvetica Neue', sans-serif;
+  width: 100%;
+}
+
+.angular-preview h1 {
+  color: #dd0031;
+  font-size: 2.5rem;
+  margin: 0 0 15px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
+.angular-badge {
+  background-color: #dd0031;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(221, 0, 49, 0.3);
+}
+
+.godot-preview {
+  background-color: #202531;
+  /* Godot editor bg color */
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.player-sprite {
+  width: 30px;
+  height: 30px;
+  background-color: #478cbf;
+  /* Godot blue */
+  position: absolute;
+  bottom: 40px;
+  left: 50px;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.obstacle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid #ff5f56;
+  position: absolute;
+  bottom: 40px;
+  right: -30px;
+}
+
+.platform {
+  width: 100%;
+  height: 40px;
+  background-color: #1a1c23;
+  border-top: 2px solid #666;
+  position: absolute;
+  bottom: 0;
+}
+
+.prompt {
+  color: #87d441;
+}
+
+.command {
+  color: #fff;
+}
 
 .cursor {
   display: inline-block;
@@ -205,14 +341,39 @@
   color: #333333;
 }
 
-:host-context(.light-theme) .prompt { color: #008000; }
-:host-context(.light-theme) .command { color: #000000; }
-:host-context(.light-theme) .cursor { background-color: #000000; }
+:host-context(.light-theme) .prompt {
+  color: #008000;
+}
+
+:host-context(.light-theme) .command {
+  color: #000000;
+}
+
+:host-context(.light-theme) .cursor {
+  background-color: #000000;
+}
 
 /* Light Theme Syntax Highlighting */
-:host-context(.light-theme) .keyword { color: #0000ff; }
-:host-context(.light-theme) .type { color: #267f99; }
-:host-context(.light-theme) .string { color: #a31515; }
-:host-context(.light-theme) .function { color: #795e26; }
-:host-context(.light-theme) .comment { color: #008000; }
-:host-context(.light-theme) .plain { color: #000000; }
+:host-context(.light-theme) .keyword {
+  color: #0000ff;
+}
+
+:host-context(.light-theme) .type {
+  color: #267f99;
+}
+
+:host-context(.light-theme) .string {
+  color: #a31515;
+}
+
+:host-context(.light-theme) .function {
+  color: #795e26;
+}
+
+:host-context(.light-theme) .comment {
+  color: #008000;
+}
+
+:host-context(.light-theme) .plain {
+  color: #000000;
+}
