@@ -1,0 +1,46 @@
+<div class="card" (click)="openModal()">
+  <div class="card-image" [style.backgroundImage]="'url(' + project.imageUrl + ')'"></div>
+  <div class="card-content">
+    <a [href]="project.projectUrl" target="_blank" class="card-title" (click)="$event.stopPropagation()">
+      {{ project.title }}
+      <span class="material-icons link-icon">open_in_new</span>
+    </a>
+    <div class="description-container">
+      <p class="card-description">{{ project.description }}</p>
+    </div>
+    <div class="tech-stack">
+      <span class="chip" *ngFor="let tech of project.techStack">{{ tech }}</span>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" *ngIf="isModalOpen" (click)="closeModal($event)">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close-button" (click)="closeModal($event)">
+      <span class="material-icons">close</span>
+    </button>
+    
+    <div class="modal-header">
+      <h2>{{ project.title }}</h2>
+    </div>
+
+    <div class="modal-body">
+      <img [src]="project.imageUrl" [alt]="project.title" class="modal-image">
+      
+      <div class="modal-details">
+        <p class="modal-description">{{ project.details || project.description }}</p>
+        
+        <a [href]="project.projectUrl" target="_blank" class="visit-button">
+          Visit Project <span class="material-icons">open_in_new</span>
+        </a>
+
+        <div class="modal-tech-stack">
+          <h3>Tech Stack</h3>
+          <div class="chips">
+            <span class="chip" *ngFor="let tech of project.techStack">{{ tech }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
