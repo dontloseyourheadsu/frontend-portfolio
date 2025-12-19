@@ -63,12 +63,14 @@ export class NavBar implements AfterViewInit {
   constructor(private router: Router) {
     // Update the background after route changes complete
     this.router.events.pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd)).subscribe(() => {
+      this.expandActiveParents();
       // Small delay to allow RouterLinkActive to update DOM classes
       setTimeout(() => this.updateBackgroundToActive(), 0);
     });
   }
 
   ngAfterViewInit(): void {
+    this.expandActiveParents();
     // Initial background positioning
     setTimeout(() => this.updateBackgroundToActive(), 0);
   }
@@ -85,10 +87,38 @@ export class NavBar implements AfterViewInit {
     if (parentIndex === undefined) return;
     const item = this.navElements[parentIndex];
     if (item && item.childs && item.childs.length > 0) {
+      // Prevent collapsing if any child is active
+      if (item.expanded && this.hasActiveChild(item)) {
+        return;
+      }
+
       item.expanded = !item.expanded;
       // Reposition the background to the active element after list height changes
       setTimeout(() => this.updateBackgroundToActive(), 100);
     }
+  }
+
+  private hasActiveChild(item: NavLink): boolean {
+    if (!item.childs) return false;
+    return item.childs.some(child => this.isLinkActive(child.link) || this.hasActiveChild(child));
+  }
+
+  private isLinkActive(link: string | null): boolean {
+    if (!link) return false;
+    return this.router.isActive(link, {
+      paths: 'exact',
+      queryParams: 'ignored',
+      fragment: 'ignored',
+      matrixParams: 'ignored'
+    });
+  }
+
+  private expandActiveParents() {
+    this.navElements.forEach(item => {
+      if (this.hasActiveChild(item)) {
+        item.expanded = true;
+      }
+    });
   }
 
   toggleHidden() {
