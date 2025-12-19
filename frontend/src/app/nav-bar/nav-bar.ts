@@ -43,6 +43,14 @@ export class NavBar implements AfterViewInit {
   navElements: NavLink[] = [
     { name: 'Home', link: '/', childs: null },
     {
+      name: 'Projects',
+      link: '/projects',
+      childs: [
+        { name: 'Low-level', link: '/projects/low-level', childs: null }
+      ],
+      expanded: false
+    },
+    {
       name: 'Contact',
       link: null,
       childs: [
