@@ -1,1 +1,10 @@
-<p>low-level-projects-page works!</p>
+<div class="projects-container">
+  <div class="header-section">
+    <h1>Low Level Projects</h1>
+    <p class="subtitle">Exploring systems programming, kernels, and performance optimization.</p>
+  </div>
+  
+  <div class="projects-grid">
+    <app-project-card *ngFor="let project of projects" [project]="project"></app-project-card>
+  </div>
+</div>

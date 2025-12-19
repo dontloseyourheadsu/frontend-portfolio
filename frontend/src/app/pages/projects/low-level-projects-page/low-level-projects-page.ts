@@ -1,11 +1,63 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ProjectCard, Project } from '../../../shared/project-card/project-card';
 
 @Component({
   selector: 'app-low-level-projects-page',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, ProjectCard],
   templateUrl: './low-level-projects-page.html',
   styleUrl: './low-level-projects-page.css'
 })
 export class LowLevelProjectsPage {
-
+  projects: Project[] = [
+    {
+      title: 'Custom Memory Allocator',
+      description: 'A high-performance memory allocator written in C++ designed for embedded systems with limited resources.',
+      imageUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop',
+      projectUrl: 'https://github.com/dontloseyourheadsu',
+      techStack: ['C++', 'C', 'Assembly'],
+      details: 'This project implements a custom memory allocator that outperforms standard malloc/free in specific scenarios. It uses a segregated free list approach and supports custom alignment. Key features include: \n- O(1) allocation and deallocation for fixed-size blocks.\n- Low fragmentation overhead.\n- Thread-safe implementation using atomic operations.'
+    },
+    {
+      title: 'Simple OS Kernel',
+      description: 'A minimal operating system kernel written in Rust, featuring basic task scheduling and memory management.',
+      imageUrl: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=2070&auto=format&fit=crop',
+      projectUrl: 'https://github.com/dontloseyourheadsu',
+      techStack: ['Rust', 'Assembly', 'QEMU'],
+      details: 'A hobby OS kernel exploring the internals of operating systems. It boots on x86_64 architecture and includes:\n- VGA text mode driver.\n- Interrupt handling (IDT).\n- Paging and memory management.\n- Cooperative multitasking.'
+    },
+    {
+      title: 'Network Packet Sniffer',
+      description: 'A raw socket packet sniffer that captures and analyzes TCP/IP traffic in real-time.',
+      imageUrl: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop',
+      projectUrl: 'https://github.com/dontloseyourheadsu',
+      techStack: ['C', 'Linux API', 'Networking'],
+      details: 'This tool captures network packets using raw sockets on Linux. It parses Ethernet, IP, TCP, and UDP headers and displays the traffic in a readable format. It also supports filtering by protocol and port.'
+    },
+    {
+      title: 'Custom Memory Allocator',
+      description: 'A high-performance memory allocator written in C++ designed for embedded systems with limited resources.',
+      imageUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop',
+      projectUrl: 'https://github.com/dontloseyourheadsu',
+      techStack: ['C++', 'C', 'Assembly'],
+      details: 'This project implements a custom memory allocator that outperforms standard malloc/free in specific scenarios. It uses a segregated free list approach and supports custom alignment. Key features include: \n- O(1) allocation and deallocation for fixed-size blocks.\n- Low fragmentation overhead.\n- Thread-safe implementation using atomic operations.'
+    },
+    {
+      title: 'Simple OS Kernel',
+      description: 'A minimal operating system kernel written in Rust, featuring basic task scheduling and memory management.',
+      imageUrl: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=2070&auto=format&fit=crop',
+      projectUrl: 'https://github.com/dontloseyourheadsu',
+      techStack: ['Rust', 'Assembly', 'QEMU'],
+      details: 'A hobby OS kernel exploring the internals of operating systems. It boots on x86_64 architecture and includes:\n- VGA text mode driver.\n- Interrupt handling (IDT).\n- Paging and memory management.\n- Cooperative multitasking.'
+    },
+    {
+      title: 'Network Packet Sniffer',
+      description: 'A raw socket packet sniffer that captures and analyzes TCP/IP traffic in real-time.',
+      imageUrl: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop',
+      projectUrl: 'https://github.com/dontloseyourheadsu',
+      techStack: ['C', 'Linux API', 'Networking'],
+      details: 'This tool captures network packets using raw sockets on Linux. It parses Ethernet, IP, TCP, and UDP headers and displays the traffic in a readable format. It also supports filtering by protocol and port.'
+    }
+  ];
 }
