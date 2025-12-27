@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { ProjectCard, Project } from '../../../shared/project-card/project-card';
+import { ProjectService } from '../../../services/project.service';
 
 @Component({
   selector: 'app-projects-page',
@@ -16,7 +16,7 @@ export class ProjectsPage implements OnInit {
   title: string = 'Projects';
   subtitle: string = 'Explore my work.';
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private projectService: ProjectService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -36,7 +36,7 @@ export class ProjectsPage implements OnInit {
   }
 
   loadProjects(category: string) {
-    this.http.get<Project[]>(`data/projects/${category}.json`).subscribe({
+    this.projectService.getProjects(category).subscribe({
       next: (data) => {
         this.projects = data;
       },
