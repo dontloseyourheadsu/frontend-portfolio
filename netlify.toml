@@ -3,12 +3,16 @@
 # Docs: https://docs.netlify.com/configure-builds/file-based-configuration/
 
 [build]
-# Build from the frontend folder
-base = "frontend"
-# Use CI-friendly install and Angular build
-command = "npm ci && npm run build"
-# Angular 16+ default output is dist/<project-name>/browser (relative to base)
-publish = "dist/frontend/browser"
+# Build from the root, but run commands in frontend
+command = "cd frontend && npm ci && npm run build"
+# Angular 16+ default output is dist/<project-name>/browser (relative to root)
+publish = "frontend/dist/frontend/browser"
+functions = "netlify/functions"
+
+[dev]
+command = "npm start --prefix frontend"
+targetPort = 4200
+publish = "frontend/dist/frontend/browser"
 
 # Force the Node.js version if needed (optional)
 [build.environment]
@@ -39,15 +43,15 @@ for = "/assets/*"
 [headers.values]
 Cache-Control = "public, max-age=31536000, immutable"
 
-[[headers]]
-for = "/**/*.{png,jpg,jpeg,gif,webp,avif,svg,ico}"
-[headers.values]
-Cache-Control = "public, max-age=31536000, immutable"
+# [[headers]]
+# for = "/**/*.{png,jpg,jpeg,gif,webp,avif,svg,ico}"
+# [headers.values]
+# Cache-Control = "public, max-age=31536000, immutable"
 
-[[headers]]
-for = "/**/*.{woff,woff2,ttf,otf}"
-[headers.values]
-Cache-Control = "public, max-age=31536000, immutable"
+# [[headers]]
+# for = "/**/*.{woff,woff2,ttf,otf}"
+# [headers.values]
+# Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
 for = "/index.html"
