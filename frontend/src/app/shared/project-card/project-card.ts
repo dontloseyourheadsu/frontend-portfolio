@@ -1,14 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-export interface Project {
-  title: string;
-  description: string;
-  imageUrl: string;
-  projectUrl: string;
-  techStack: string[];
-  details?: string;
-}
+import { Project } from '../../models/projects/project-model';
 
 @Component({
   selector: 'app-project-card',
