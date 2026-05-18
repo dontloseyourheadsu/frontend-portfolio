@@ -1,6 +1,9 @@
-import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { ProjectService } from '../services/project.service';
+import { AuthService } from '../services/auth.service';
+import { CommonModule } from '@angular/common';
 
 enum Themes {
   LIGHT = 'light',
@@ -26,13 +29,13 @@ interface VisibleItem {
 
 @Component({
   selector: 'app-nav-bar',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, CommonModule],
   standalone: true,
   templateUrl: './nav-bar.html',
   styleUrl: './nav-bar.css'
 })
 
-export class NavBar implements AfterViewInit {
+export class NavBar implements AfterViewInit, OnInit {
   theme = Themes.DARK;
   Themes = Themes;
   hidden = true;
@@ -45,9 +48,7 @@ export class NavBar implements AfterViewInit {
     {
       name: 'Projects',
       link: '/projects',
-      childs: [
-        { name: 'Low-level', link: '/projects/low-level', childs: null }
-      ],
+      childs: [],
       expanded: false
     },
     {
@@ -60,7 +61,11 @@ export class NavBar implements AfterViewInit {
     }
   ];
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router, 
+    public authService: AuthService,
+    private projectService: ProjectService
+  ) {
     // Update the background after route changes complete
     this.router.events.pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd)).subscribe(() => {
       this.expandActiveParents();
@@ -69,10 +74,41 @@ export class NavBar implements AfterViewInit {
     });
   }
 
+  ngOnInit(): void {
+    this.loadDynamicNav();
+  }
+
   ngAfterViewInit(): void {
     this.expandActiveParents();
     // Initial background positioning
     setTimeout(() => this.updateBackgroundToActive(), 0);
+  }
+
+  private loadDynamicNav() {
+    this.projectService.projects$.subscribe(res => {
+      if (!res) {
+        // Initial fetch if the stream is empty
+        this.projectService.refreshProjects();
+        return;
+      }
+
+      const projects = res.projects || [];
+      // Extract unique categories
+      const categories = [...new Set(projects.map((p: any) => p.category))] as string[];
+      
+      const projectNav = this.navElements.find(n => n.name === 'Projects');
+      if (projectNav) {
+        projectNav.childs = categories.map(cat => ({
+          name: cat.charAt(0).toUpperCase() + cat.slice(1),
+          link: `/projects/${cat.toLowerCase()}`,
+          childs: null
+        }));
+        
+        // Recalculate background and expansion now that menu might have grown
+        this.expandActiveParents();
+        setTimeout(() => this.updateBackgroundToActive(), 100);
+      }
+    });
   }
 
   switchTheme() {
