@@ -1,0 +1,94 @@
+<div class="contact-container">
+  <div class="terminal-window">
+    <div class="terminal-header">
+      <div class="terminal-controls">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <div class="terminal-title">contact_node.sh</div>
+    </div>
+    
+    <div class="terminal-body">
+      <div class="logs">
+        @for (log of systemLogs; track $index) {
+          <div class="log-line">
+            <span class="timestamp">{{ log.split('] ')[0] }}]</span>
+            <span class="message">{{ log.split('] ')[1] }}</span>
+          </div>
+        }
+        <div class="log-line active-line">
+          <span class="prompt">➜</span>
+          <span class="cursor">_</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-card connection-card">
+      <h3>Handshake Details</h3>
+      <div class="config-view">
+        <div class="config-line">
+          <span class="key">"name":</span>
+          <span class="value">"{{ contactInfo.name }}"</span>
+        </div>
+        <div class="config-line">
+          <span class="key">"role":</span>
+          <span class="value">"{{ contactInfo.role }}"</span>
+        </div>
+        <div class="config-line">
+          <span class="key">"status":</span>
+          <span class="value status-ready">"{{ contactInfo.status }}"</span>
+        </div>
+        <div class="config-line">
+          <span class="key">"location":</span>
+          <span class="value">"{{ contactInfo.location }}"</span>
+        </div>
+        <div class="config-line">
+          <span class="key">"tags":</span>
+          <span class="bracket">[</span>
+          <div class="nested">
+            @for (tag of contactInfo.specialization; track tag) {
+              <span class="value">"{{ tag }}"</span>{{ !$last ? ',' : '' }}
+            }
+          </div>
+          <span class="bracket">]</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="links-section">
+      @for (social of socials; track social.name) {
+        <a [href]="social.link" target="_blank" class="social-link">
+          <div class="link-icon">
+            <span class="material-icons">{{ social.icon }}</span>
+          </div>
+          <div class="link-details">
+            <span class="link-label">{{ social.name }}</span>
+            <span class="link-value">{{ social.value }}</span>
+          </div>
+          <span class="material-icons arrow">chevron_right</span>
+        </a>
+      }
+
+      <div class="info-card form-card">
+        <h3>Send a Handshake</h3>
+        <form (submit)="sendMessage($event)">
+          <div class="form-field">
+            <label>source_email</label>
+            <input type="email" placeholder="visitor@domain.com" required>
+          </div>
+          <div class="form-field">
+            <label>payload</label>
+            <textarea placeholder="Write your message here..." required rows="4"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            <span class="material-icons">send</span>
+            EXECUTE POST /contact
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
