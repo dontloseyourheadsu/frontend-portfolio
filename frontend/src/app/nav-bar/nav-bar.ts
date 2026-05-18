@@ -52,10 +52,10 @@ export class NavBar implements AfterViewInit, OnInit {
       expanded: false
     },
     {
-      name: 'Contact',
-      link: null,
+      name: 'About',
+      link: '/about',
       childs: [
-        { name: 'About', link: '/about', childs: null }
+        { name: 'Contact', link: '/contact', childs: null }
       ],
       expanded: false
     }
