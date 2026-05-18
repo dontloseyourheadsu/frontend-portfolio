@@ -1,0 +1,103 @@
+<div class="about-container">
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="hero-content">
+      <h1 class="glitch-text">SYSTEM_PROFILE: JESUS_ALVAREZ</h1>
+      <p class="lead-text">
+        Backend Software Engineer specialized in <strong>Distributed Systems</strong> and <strong>AI Integration</strong>. 
+        I build high-performance infrastructure that bridges the gap between complex industrial workflows and intuitive digital experiences.
+      </p>
+      <div class="status-tags">
+        <span class="status-tag"><span class="pulse"></span> Active_Node: Puebla, MX</span>
+        <span class="status-tag">Stack: .NET / Rust / Azure</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engineering Philosophy -->
+  <section class="section philosophy-section">
+    <h2 class="section-title">ENGINEERING_PHILOSOPHY</h2>
+    <div class="philosophy-grid">
+      @for (point of philosophyPoints; track point.title) {
+        <div class="philosophy-card">
+          <span class="material-icons card-icon">{{ point.icon }}</span>
+          <h3>{{ point.title }}</h3>
+          <p>{{ point.text }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Career Timeline -->
+  <section class="section timeline-section">
+    <h2 class="section-title">CORE_EXPERIENCE_LOG</h2>
+    <div class="timeline">
+      @for (item of careerTimeline; track item.period) {
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="period">{{ item.period }}</span>
+            <span class="company">{{ item.company }}</span>
+          </div>
+          <div class="timeline-content">
+            <h3 class="role-title">{{ item.role }}</h3>
+            <ul class="experience-bullets">
+              @for (bullet of item.description; track bullet) {
+                <li>{{ bullet }}</li>
+              }
+            </ul>
+            <div class="timeline-tech">
+              @for (t of item.tech; track t) {
+                <span class="tech-pill">{{ t }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Education & Certifications -->
+  <section class="section edu-section">
+    <h2 class="section-title">ACADEMIC_&_CREDENTIALS</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-header">
+          <span class="material-icons">school</span>
+          <h3>EDUCATION</h3>
+        </div>
+        <div class="edu-details">
+          <p class="degree">{{ education.degree }}</p>
+          <p class="school">{{ education.school }}</p>
+          <p class="expected">Expected {{ education.expected }}</p>
+          <p class="highlights">{{ education.highlights }}</p>
+        </div>
+      </div>
+
+      <div class="certs-container">
+        @for (cert of certifications; track cert.name) {
+          <div class="cert-card">
+            <div class="cert-info">
+              <h4>{{ cert.name }}</h4>
+              <p>{{ cert.issuer }} • {{ cert.date }}</p>
+              <a [href]="cert.link" target="_blank" class="cert-link">
+                View Certificate <span class="material-icons">open_in_new</span>
+              </a>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="section contact-cta">
+    <div class="cta-card">
+      <h3>Intrigued by the architecture?</h3>
+      <p>I'm always open to discussing distributed systems, AI integration, or new engineering challenges.</p>
+      <a routerLink="/contact" class="cta-button">
+        <span class="material-icons">terminal</span>
+        ESTABLISH_CONNECTION
+      </a>
+    </div>
+  </section>
+</div>
