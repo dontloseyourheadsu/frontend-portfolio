@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "netlify dev",
-    "seed": "node scripts/seed-db.js"
+    "dev": "netlify dev"
   },
   "repository": {
     "type": "git",
@@ -20,12 +19,11 @@
   },
   "homepage": "https://github.com/dontloseyourheadsu/frontend-portfolio#readme",
   "dependencies": {
+    "@netlify/blobs": "^10.7.7",
     "@netlify/functions": "^5.1.2",
-    "dotenv": "^17.2.3",
-    "pg": "^8.16.3"
+    "dotenv": "^17.2.3"
   },
   "devDependencies": {
-    "@types/pg": "^8.16.0",
     "netlify-cli": "^23.13.0",
     "typescript": "^5.9.3"
   }

@@ -21,10 +21,10 @@ publish = "frontend/dist/frontend/browser"
 
 # Redirect all SPA routes to index.html so Angular Router can handle them
 # This is equivalent to _redirects: /*  /index.html  200
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+# [[redirects]]
+# from = "/*"
+# to = "/index.html"
+# status = 200
 
 # Set useful caching headers
 # Fingerprinted assets can be cached long-term, HTML should not
