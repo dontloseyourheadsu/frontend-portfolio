@@ -6,7 +6,7 @@ import { ProjectService } from '../../../services/project.service';
 import { debounceTime } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { LoadingComponent } from '../../../shared/loading/loading.component';
-import { Project } from '../../models/projects/project-model';
+import { Project } from '../../../models/projects/project-model';
 
 @Component({
   selector: 'app-projects-page',
