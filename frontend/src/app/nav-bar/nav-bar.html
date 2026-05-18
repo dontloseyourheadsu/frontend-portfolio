@@ -70,6 +70,18 @@
         </div>
       </li>
       }
+      
+      <!-- Login Fallback -->
+      @if (!(authService.user$ | async)) {
+        <li class="nav-item inter-regular" (click)="authService.login()">
+          <div class="nav-row">
+            <a class="nav-link">
+              <span class="material-icons" style="font-size: 1.2rem; margin-right: 0.5rem; vertical-align: middle;">login</span>
+              Login
+            </a>
+          </div>
+        </li>
+      }
     </ul>
   </div>
 </nav>
